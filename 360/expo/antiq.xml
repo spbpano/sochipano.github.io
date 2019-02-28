@@ -1,0 +1,26 @@
+<krpano version="1.0.8.15">
+	
+<view hlookat="2.5" vlookat="0" fovtype="MFOV" fov="117" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/antiqua.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="4691" tiledimageheight="4691">
+				<cube url="panos/antiqua.tiles/l4_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2346" tiledimageheight="2346">
+				<cube url="panos/antiqua.tiles/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1173" tiledimageheight="1173">
+				<cube url="panos/antiqua.tiles/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="587" tiledimageheight="587">
+				<cube url="panos/antiqua.tiles/l1_%s_%0v_%0h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/antiqua.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+
+</krpano>

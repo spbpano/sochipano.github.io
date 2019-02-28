@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>expo</title>
+	<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<style>
+		@media only screen and (min-device-width: 800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body { height:100%; overflow: hidden;  padding:0;  font-family:Arial, Helvetica, sans-serif; font-size:16px; color: rgba(11,57,17,0.45); text-shadow: 1px 1px 0px rgba(255,255,255,0.27); background-image: url(http://pano360.pro/backgroung/wood_pattern.png); background-repeat: repeat; text-align: center;}
+		a{ color:#1B1B1B; text-decoration:none; }
+		a:hover{ color:#FFFFFF; text-decoration:underline; }
+		#butt input {
+			color:rgba(29,85,40,0.95);
+			background-image: url(/background/paper.png);
+			font-weight:900;
+			text-shadow: 0px 1px 1px rgba(254,254,244,0.9);
+			box-shadow: 4px 4px 3px rgba(24,54,24,0.9);
+			margin-left: 7px;
+		}
+	</style>
+</head>
+<body>
+	<h2>PANO360.PRO</h2>
+
+<script src="tour.js"></script>
+
+<div id="pano" style="width:720px; height:480px; margin-top:37px;  margin-left:auto; margin-right: auto; box-shadow: 1px 1px 4px rgba(24,54,24,0.57);">
+	<noscript><table style="width:720px; height:480px;"><tr style="valign:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+</div>
+<div id="set_pano" style="width:720px; text-align: center; padding-top:3px; padding-bottom:3px; margin-left:auto; margin-right:auto; margin-top:17px; ">
+		
+				<!--<a href="#" style="color: rgba(29,85,40,0.95); font-weight:900; font-size: 1.41em; letter-spacing: 0.24em; text-decoration:none; text-shadow: 1px 1px 0px rgba(255,255,255,0.77); font-size: 15px; margin-left: 17px;" onclick="loadpano('antiq.xml')">Инструменты</a>-->
+				<a href="#" style="color: rgba(29,85,40,0.95); font-weight:900; font-size: 1.41em; letter-spacing: 0.24em; text-shadow: 1px 1px 0px rgba(255,255,255,0.77); text-decoration:none; font-size: 15px; margin-left: 17px;" onclick="loadpano('wood_fish.xml')">Рыбка</a>
+				<a href="#" style="color: rgba(29,85,40,0.95); font-weight:900; font-size: 1.41em; letter-spacing: 0.24em; text-shadow: 1px 1px 0px rgba(255,255,255,0.77); text-decoration:none; font-size: 15px; margin-left: 17px;" onclick="loadpano('wood_owl.xml')">Сова</a>
+				<a href="#" style="color: rgba(29,85,40,0.95); font-weight:900; font-size: 1.41em; letter-spacing: 0.24em; text-shadow: 1px 1px 0px rgba(255,255,255,0.77); text-decoration:none; font-size: 15px; margin-left: 17px;" onclick="loadpano('fmt.xml')">Leigh FMT</a>
+				
+</div>
+<script>
+
+// <![CDATA[
+
+	
+	embedpano({swf:"tour.swf",	xml:"tour.xml", target:"pano",	id:"krpanoSWFObject", html5:"auto",	width:"720px", height:"480px",html5:"auto", passQueryParameters:true});
+	function krpano() 
+	{
+		return document.getElementById("krpanoSWFObject");
+	}
+    
+	function loadpano(xmlname)
+	{
+		krpano().call("loadpano(" + xmlname + ", null, MERGE, BLEND(1));");	
+	}
+	
+// ]]>
+
+
+
+	</script>
+	<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25689224-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ?  'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+	</script>
+</body>
+</html>

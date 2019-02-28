@@ -1,0 +1,475 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE|KEEPVIEW"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+	<include url="skin/vtourskin_design_ultra_light.xml" />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+<scene name="scene_circle_02_botgrdn_abh_IMG_0099-HDR(3)_Natural_Panorama" title="circle_02_botgrdn_abh_IMG_0099-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_02_botgrdn_abh_IMG_0099-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_02_botgrdn_abh_IMG_0099-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_02_botgrdn_abh_IMG_0099-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_02_botgrdn_abh_IMG_0099-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_02_botgrdn_abh_IMG_0099-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="156.359" atv="5.088" linkedscene="scene_circle_03_botgrdn_abh_img_0123-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-23.690" atv="13.419" linkedscene="scene_circle_18_botgrdn_abh_img_0462-hdr(3)_natural_panorama" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="178.904" atv="9.372" linkedscene="scene_circle_04_botgrdn_abh_img_0144-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_03_botgrdn_abh_IMG_0123-HDR(3)_Natural_Panorama" title="circle_03_botgrdn_abh_IMG_0123-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_03_botgrdn_abh_IMG_0123-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="315.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_03_botgrdn_abh_IMG_0123-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_03_botgrdn_abh_IMG_0123-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_03_botgrdn_abh_IMG_0123-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_03_botgrdn_abh_IMG_0123-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-151.822" atv="15.384" linkedscene="scene_circle_04_botgrdn_abh_img_0144-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="109.341" atv="14.399" linkedscene="scene_circle_05_botgrdn_abh_img_0165-hdr(3)_natural_panorama" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-67.079" atv="10.014" linkedscene="scene_circle_02_botgrdn_abh_img_0099-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_04_botgrdn_abh_IMG_0144-HDR(3)_Natural_Panorama" title="circle_04_botgrdn_abh_IMG_0144-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_04_botgrdn_abh_IMG_0144-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_04_botgrdn_abh_IMG_0144-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/circle_04_botgrdn_abh_IMG_0144-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_04_botgrdn_abh_IMG_0144-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_04_botgrdn_abh_IMG_0144-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-163.964" atv="15.690" linkedscene="scene_circle_03_botgrdn_abh_img_0123-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="131.165" atv="11.279" linkedscene="scene_circle_02_botgrdn_abh_img_0099-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_05_botgrdn_abh_IMG_0165-HDR(3)_Natural_Panorama" title="circle_05_botgrdn_abh_IMG_0165-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_05_botgrdn_abh_IMG_0165-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_05_botgrdn_abh_IMG_0165-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_05_botgrdn_abh_IMG_0165-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_05_botgrdn_abh_IMG_0165-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_05_botgrdn_abh_IMG_0165-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="78.860" atv="12.085" linkedscene="scene_circle_06_botgrdn_abh_img_0186-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="3.064" atv="15.493" linkedscene="scene_circle_03_botgrdn_abh_img_0123-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_06_botgrdn_abh_IMG_0186-HDR(3)_Natural_Panorama" title="circle_06_botgrdn_abh_IMG_0186-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_06_botgrdn_abh_IMG_0186-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_06_botgrdn_abh_IMG_0186-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/circle_06_botgrdn_abh_IMG_0186-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_06_botgrdn_abh_IMG_0186-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_06_botgrdn_abh_IMG_0186-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="0.580" atv="10.900" linkedscene="scene_circle_07_botgrdn_abh_img_0207-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="160.181" atv="10.757" linkedscene="scene_circle_05_botgrdn_abh_img_0165-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_07_botgrdn_abh_IMG_0207-HDR(3)_Natural_Panorama" title="circle_07_botgrdn_abh_IMG_0207-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_07_botgrdn_abh_IMG_0207-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_07_botgrdn_abh_IMG_0207-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/circle_07_botgrdn_abh_IMG_0207-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_07_botgrdn_abh_IMG_0207-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_07_botgrdn_abh_IMG_0207-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="1.888" atv="11.462" linkedscene="scene_circle_08_botgrdn_abh_img_0228-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="179.677" atv="21.156" linkedscene="scene_circle_06_botgrdn_abh_img_0186-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	
+	<scene name="scene_circle_08_botgrdn_abh_IMG_0228-HDR(3)_Natural_Panorama" title="circle_08_botgrdn_abh_IMG_0228-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_08_botgrdn_abh_IMG_0228-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_08_botgrdn_abh_IMG_0228-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_08_botgrdn_abh_IMG_0228-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_08_botgrdn_abh_IMG_0228-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_08_botgrdn_abh_IMG_0228-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-2.033" atv="10.482" linkedscene="scene_circle_09_botgrdn_abh_img_0249-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-177.838" atv="16.946" linkedscene="scene_circle_07_botgrdn_abh_img_0207-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_09_botgrdn_abh_IMG_0249-HDR(3)_Natural_Panorama" title="circle_09_botgrdn_abh_IMG_0249-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_09_botgrdn_abh_IMG_0249-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_09_botgrdn_abh_IMG_0249-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_09_botgrdn_abh_IMG_0249-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_09_botgrdn_abh_IMG_0249-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_09_botgrdn_abh_IMG_0249-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="179.565" atv="15.968" linkedscene="scene_circle_08_botgrdn_abh_img_0228-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-65.293" atv="26.966" linkedscene="scene_circle_10_botgrdn_abh_img_0270-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_10_botgrdn_abh_IMG_0270-HDR(3)_Natural_Panorama" title="circle_10_botgrdn_abh_IMG_0270-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_10_botgrdn_abh_IMG_0270-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_10_botgrdn_abh_IMG_0270-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_10_botgrdn_abh_IMG_0270-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_10_botgrdn_abh_IMG_0270-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_10_botgrdn_abh_IMG_0270-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-16.258" atv="22.602" linkedscene="scene_circle_11_botgrdn_abh_img_0291-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="141.121" atv="19.004" linkedscene="scene_circle_09_botgrdn_abh_img_0249-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_11_botgrdn_abh_IMG_0291-HDR(3)_Natural_Panorama" title="circle_11_botgrdn_abh_IMG_0291-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_11_botgrdn_abh_IMG_0291-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_11_botgrdn_abh_IMG_0291-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_11_botgrdn_abh_IMG_0291-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_11_botgrdn_abh_IMG_0291-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_11_botgrdn_abh_IMG_0291-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-83.377" atv="24.224" linkedscene="scene_circle_12_botgrdn_abh_img_0312-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="152.354" atv="22.800" linkedscene="scene_circle_10_botgrdn_abh_img_0270-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_12_botgrdn_abh_IMG_0312-HDR(3)_Natural_Panorama" title="circle_12_botgrdn_abh_IMG_0312-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_12_botgrdn_abh_IMG_0312-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_12_botgrdn_abh_IMG_0312-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/circle_12_botgrdn_abh_IMG_0312-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_12_botgrdn_abh_IMG_0312-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_12_botgrdn_abh_IMG_0312-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-84.336" atv="19.741" linkedscene="scene_circle_13_botgrdn_abh_img_0333-hdr(3)_natural_panorama" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="96.152" atv="20.252" linkedscene="scene_circle_11_botgrdn_abh_img_0291-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_13_botgrdn_abh_IMG_0333-HDR(3)_Natural_Panorama" title="circle_13_botgrdn_abh_IMG_0333-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_13_botgrdn_abh_IMG_0333-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_13_botgrdn_abh_IMG_0333-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_13_botgrdn_abh_IMG_0333-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_13_botgrdn_abh_IMG_0333-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_13_botgrdn_abh_IMG_0333-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-115.693" atv="19.468" linkedscene="scene_circle_14_botgrdn_abh_img_0354-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="122.084" atv="30.693" linkedscene="scene_circle_12_botgrdn_abh_img_0312-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_14_botgrdn_abh_IMG_0354-HDR(3)_Natural_Panorama" title="circle_14_botgrdn_abh_IMG_0354-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_14_botgrdn_abh_IMG_0354-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_14_botgrdn_abh_IMG_0354-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_14_botgrdn_abh_IMG_0354-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_14_botgrdn_abh_IMG_0354-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_14_botgrdn_abh_IMG_0354-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="51.585" atv="18.667" linkedscene="scene_circle_13_botgrdn_abh_img_0333-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-90.768" atv="21.502" linkedscene="scene_circle_15_botgrdn_abh_img_0375-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_15_botgrdn_abh_IMG_0375-HDR(3)_Natural_Panorama" title="circle_15_botgrdn_abh_IMG_0375-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_15_botgrdn_abh_IMG_0375-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_15_botgrdn_abh_IMG_0375-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_15_botgrdn_abh_IMG_0375-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_15_botgrdn_abh_IMG_0375-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_15_botgrdn_abh_IMG_0375-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="46.806" atv="16.532" linkedscene="scene_circle_14_botgrdn_abh_img_0354-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="141.744" atv="25.211" linkedscene="scene_circle_16_botgrdn_abh_img_0396-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_16_botgrdn_abh_IMG_0396-HDR(3)_Natural_Panorama" title="circle_16_botgrdn_abh_IMG_0396-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_16_botgrdn_abh_IMG_0396-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_16_botgrdn_abh_IMG_0396-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_16_botgrdn_abh_IMG_0396-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_16_botgrdn_abh_IMG_0396-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_16_botgrdn_abh_IMG_0396-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-172.015" atv="13.871" linkedscene="scene_circle_17_botgrdn_abh_img_0417-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-12.400" atv="13.261" linkedscene="scene_circle_15_botgrdn_abh_img_0375-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_17_botgrdn_abh_IMG_0417-HDR(3)_Natural_Panorama" title="circle_17_botgrdn_abh_IMG_0417-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_17_botgrdn_abh_IMG_0417-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_17_botgrdn_abh_IMG_0417-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_17_botgrdn_abh_IMG_0417-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_17_botgrdn_abh_IMG_0417-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_17_botgrdn_abh_IMG_0417-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="178.402" atv="16.401" linkedscene="scene_circle_18_botgrdn_abh_img_0462-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="4.777" atv="18.900" linkedscene="scene_circle_16_botgrdn_abh_img_0396-hdr(3)_natural_panorama" />
+
+	</scene>
+
+	<scene name="scene_circle_18_botgrdn_abh_IMG_0462-HDR(3)_Natural_Panorama" title="circle_18_botgrdn_abh_IMG_0462-HDR(3)_Natural Panorama" onstart="" thumburl="panos/circle_18_botgrdn_abh_IMG_0462-HDR(3)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="128" vlookatmin="-90" vlookatmax="75" limitview="range"
+ />
+
+		<preview url="panos/circle_18_botgrdn_abh_IMG_0462-HDR(3)_Natural_Panorama.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3200" tiledimageheight="3200">
+				<cube url="panos/circle_18_botgrdn_abh_IMG_0462-HDR(3)_Natural_Panorama.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/circle_18_botgrdn_abh_IMG_0462-HDR(3)_Natural_Panorama.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/circle_18_botgrdn_abh_IMG_0462-HDR(3)_Natural_Panorama.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="109.811" atv="14.108" linkedscene="scene_circle_02_botgrdn_abh_img_0099-hdr(3)_natural_panorama" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-1.203" atv="10.451" linkedscene="scene_circle_17_botgrdn_abh_img_0417-hdr(3)_natural_panorama" />
+
+	</scene>
+
+
+</krpano>

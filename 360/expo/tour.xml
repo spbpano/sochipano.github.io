@@ -1,0 +1,134 @@
+<krpano version="1.0.8.15" title="Virtual Tour" onstart="startup();">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- set skin settings: bingmaps? gyro? -->
+	<skin_settings bingmaps="false" bingmaps_key="" bingmaps_zoombuttons="false"
+	               gyro="true"
+	               thumbsopened="false"
+	               tooltips_thumbs="false" tooltips_hotspots="false" tooltips_mapspots="false"
+	               controlbar_offset="20"
+	               />
+
+	<!-- set optional skin logo url -->
+	<layer name="skin_logo" url="" scale="0.25" opened_onclick="openurl('...',_blank);" />
+
+
+	<action name="startup">
+		if(startscene === null, copy(startscene,scene[1].name));
+		loadscene(get(startscene), null, MERGE);
+	</action>
+
+	<scene name="scene_antiqua" title="antiqua" onstart="" thumburl="panos/antiqua.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="2.5" vlookat="0" fovtype="MFOV" fov="117" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+		
+		<preview url="panos/antiqua.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="4691" tiledimageheight="4691">
+				<cube url="panos/antiqua.tiles/l4_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2346" tiledimageheight="2346">
+				<cube url="panos/antiqua.tiles/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1173" tiledimageheight="1173">
+				<cube url="panos/antiqua.tiles/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="587" tiledimageheight="587">
+				<cube url="panos/antiqua.tiles/l1_%s_%0v_%0h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/antiqua.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_wood_fish" title="wood_fish" onstart="" thumburl="panos/wood_fish.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-0.23" vlookat="21.78" fovtype="MFOV" fov="70.26" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/wood_fish.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="4697" tiledimageheight="4697">
+				<cube url="panos/wood_fish.tiles/l4_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2349" tiledimageheight="2349">
+				<cube url="panos/wood_fish.tiles/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1175" tiledimageheight="1175">
+				<cube url="panos/wood_fish.tiles/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="588" tiledimageheight="588">
+				<cube url="panos/wood_fish.tiles/l1_%s_%0v_%0h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/wood_fish.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_fmt" title="fmt" onstart="" thumburl="panos/fmt.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/fmt.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="4697" tiledimageheight="4697">
+				<cube url="panos/fmt.tiles/l4_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2349" tiledimageheight="2349">
+				<cube url="panos/fmt.tiles/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1175" tiledimageheight="1175">
+				<cube url="panos/fmt.tiles/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="588" tiledimageheight="588">
+				<cube url="panos/fmt.tiles/l1_%s_%0v_%0h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/fmt.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="scene_wood_owl" title="wood_owl" onstart="" thumburl="panos/wood_owl.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="4.89" vlookat="18.46" fovtype="MFOV" fov="58.22" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/wood_owl.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="4691" tiledimageheight="4691">
+				<cube url="panos/wood_owl.tiles/l4_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2346" tiledimageheight="2346">
+				<cube url="panos/wood_owl.tiles/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1173" tiledimageheight="1173">
+				<cube url="panos/wood_owl.tiles/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="587" tiledimageheight="587">
+				<cube url="panos/wood_owl.tiles/l1_%s_%0v_%0h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/wood_owl.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+</krpano>

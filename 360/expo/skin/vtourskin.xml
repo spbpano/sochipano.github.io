@@ -1,0 +1,125 @@
+<krpano><!-- krpano 1.0.8.15 - default pano360.pro skin -->
+
+		<display 	fps="60"
+					details="30"
+					tessmode="1"
+					movequality="HIGH"
+					stillquality="HIGHSHARP "
+					flash10="on"
+					movequality10="HIGH"
+					stillquality10="HIGHSHARP "
+					sharpen="9"
+					stilltime="0.25"
+					showpolys="false"
+        />	
+
+		<progress showload="none" showwait="auto" />
+
+<!-- Skin Events 	-->
+		<events 	name="skin_events" devices="all"
+					onenterfullscreen="set(layer[skin_btn_fs].crop, '0|360|60|60');"
+					onexitfullscreen="set(layer[skin_btn_fs].crop, '60|360|60|60');"
+		/>
+<!---->	
+		<events 	name="show_trace" keep="true" devices="all"
+					onkeyup="	if(keycode == 84,	showlog (true);)"
+		/>
+		
+		<events 	name="point_ath_atv_fov" keep="true" devices="all"
+					onkeyup="if(keycode == 32,
+					copy(cur_hlookat,view.hlookat);
+					mod(cur_hlookat,360);
+					roundval(cur_hlookat,2);
+					copy(cur_vlookat,view.vlookat);
+					roundval(cur_vlookat,2);
+					copy(cur_fov,view.fov);
+					roundval(cur_fov,2);
+					txtadd(msg,get(xml.scene),'&#040;',get(cur_hlookat),'&#044;',get(cur_vlookat),'&#044;',get(cur_fov),'&#041;');	
+					trace('msg'));"
+		/>
+		
+		<events 	name="mouse2sphaire" keep="true" devices="all"
+					onmousedown="screentosphere(mouse.x,mouse.y,curM_hlookat,curM_vlookat);
+					mod(curM_hlookat,360);
+					roundval(curM_hlookat,4);
+					roundval(curM_vlookat,4);
+					copy(curM_fov,view.fov);
+					roundval(curM_fov,2);
+					txtadd(msg,get(xml.scene),'&#040;',get(curM_hlookat),'&#044;',get(curM_vlookat),'&#044;',get(curM_fov),'&#041;');	
+					trace('msg'));"
+		/>
+
+
+<!--	Style	-->
+		<style 		name="next"
+					url="%SWFPATH%/skin/next.png"
+					edge="left"
+					crop="0|0|60|60"
+					framewidth="60" frameheight="60" frame="0" lastframe="9"
+					onloaded="hotspot_animate();"
+					scale="0.75"
+					alpha="0.8"
+					onhover="tween(alpha,1,distance(1,0.25));nextext_(name)"
+					onout="tween(alpha,0.8,distance(1,0.25));"
+		/>
+		
+		<style 		name="butt"
+					url="%SWFPATH%/skin/vtourskin.png"
+					align="bottom"
+					y="25"
+					edge="center"
+					scale="0.5"
+					onhover="tween(scale,0.75,distance(0.75,0.05));"
+					onout="tween(scale,0.5,distance(0.75,0.05));"
+		/>
+		
+		<textstyle name="NEXTSTYLE" font="Sans-Serif" fontsize="14" bold="true" italic="false"
+	           textcolor="0xFDD776" background="false" border="false"
+	           blendmode="layer" effect="glow(0x4F564D,0.9,2,1);		"
+	           origin="cursor" edge="center" xoffset="0" yoffset="-25" showtime="0.1" fadeintime="0.1" fadetime="0.1"
+			   
+		/>
+		
+		
+		<layer name="skin_control_bar" keep="true" type="container" bgcolor="0x1f1f1f" bgalpha="0.33" align="bottom" width="100%" height="50" x="0" y="0" y_shown="20" y_hidden="-42" zorder="3">
+				<!--<layer name="zabe_logo"     	url="zabe.png" crop="0|0|225|59"  align="leftbottom"      	x="2%" y="10"   scale="0.5" onclick="openurl('http://pano360.pro/',_blank);" />-->
+				<layer name="skin_btn_lt"    style="butt"  crop="0|0|60|60"        x="-100"    	scale="0.5" ondown="skin_buttonglow(get(name)); set(hlookat_moveforce,-1);" onup="skin_buttonglow(null);set(hlookat_moveforce,0);" />
+				<layer name="skin_btn_rt"    style="butt"  crop="60|0|60|60"       x="-60"     	scale="0.5" ondown="skin_buttonglow(get(name)); set(hlookat_moveforce,+1);" onup="skin_buttonglow(null);set(hlookat_moveforce,0);" />
+				<layer name="skin_btn_up"    style="butt"  crop="0|60|60|60"       x="-20"   	scale="0.5" ondown="skin_buttonglow(get(name)); set(vlookat_moveforce,-1);" onup="skin_buttonglow(null);set(vlookat_moveforce,0);" />
+				<layer name="skin_btn_dn"    style="butt"  crop="60|60|60|60"      x="+20"    	scale="0.5" ondown="skin_buttonglow(get(name)); set(vlookat_moveforce,+1);" onup="skin_buttonglow(null);set(vlookat_moveforce,0);" />
+				<layer name="skin_btn_in"    style="butt"  crop="0|120|60|60"      x="+60"   	scale="0.5" ondown="skin_buttonglow(get(name)); set(fov_moveforce,-1);" 	onup="skin_buttonglow(null);set(fov_moveforce,0);" />
+				<layer name="skin_btn_ou"    style="butt"  crop="60|120|60|60"     x="+100"  	scale="0.5" ondown="skin_buttonglow(get(name)); set(fov_moveforce,+1);" 	onup="skin_buttonglow(null);set(fov_moveforce,0);" />
+				<layer name="skin_btn_fs"    style="butt"  crop="61|360|60|60"     x="140"  	scale="0.5" ondown="skin_buttonglow(get(name));" 							onup="skin_buttonglow(null);" onclick="switch(fullscreen);" devices="Flash" />
+				<!--	<layer name="logo"     url="logo.png" crop="0|0|225|59"  align="rightbottom"      	x="2%" y="10"   scale="0.5" heandcoursor="false"	onclick="" />	-->
+		</layer>	
+		<layer name="skin_buttonglow"   keep="true" url="vtourskin.png" crop="60|180|60|60" align="center" x="0" y="1" alpha="0.0" visible="false" enabled="false" />
+		
+<!--	Actions	-->
+		
+		<action 	name="goto_h">
+					wait(load);
+					lookto(%1,%2,90,tween(easeOutQuad,4.8));
+		</action>
+		
+		<action 	name="hotspot_animate">
+					inc(frame,1,get(lastframe),0);
+					mul(ypos,frame,frameheight);
+					txtadd(crop,'0|',get(ypos),'|',get(framewidth),'|',get(frameheight));
+					delayedcall(0.08, if(loaded, hotspot_animate() ) );
+		</action>
+		
+		<action 	name="skin_buttonglow">
+					if(%1 != null,
+						set(layer[skin_buttonglow].parent, %1);
+						set(layer[skin_buttonglow].visible, true);
+						tween(layer[skin_buttonglow].alpha, 0.7, 0.07);
+					  ,
+						tween(layer[skin_buttonglow].alpha, 0.0, 0.1, default, set(layer[skin_buttonglow].parent, null); set(layer[skin_buttonglow].visible, false); );
+					  );
+		</action>
+		
+		<action name="nextext_">
+				if ( %1 == 'passage_recept',showtext('Рецепция[br]',NEXTSTYLE));
+		</action>
+	
+</krpano>

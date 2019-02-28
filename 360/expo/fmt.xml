@@ -1,0 +1,26 @@
+<krpano version="1.0.8.15">
+	
+<view hlookat="-2.78" vlookat="-4.25" fovtype="MFOV" fov="73.46" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/fmt.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="4697" tiledimageheight="4697">
+				<cube url="panos/fmt.tiles/l4_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2349" tiledimageheight="2349">
+				<cube url="panos/fmt.tiles/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1175" tiledimageheight="1175">
+				<cube url="panos/fmt.tiles/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="588" tiledimageheight="588">
+				<cube url="panos/fmt.tiles/l1_%s_%0v_%0h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/fmt.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+
+</krpano>

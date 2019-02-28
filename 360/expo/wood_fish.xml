@@ -1,0 +1,26 @@
+<krpano version="1.0.8.15">
+	
+<view hlookat="-0.23" vlookat="21.78" fovtype="MFOV" fov="70.26" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/wood_fish.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" progressive="false">
+			<level tiledimagewidth="4697" tiledimageheight="4697">
+				<cube url="panos/wood_fish.tiles/l4_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2349" tiledimageheight="2349">
+				<cube url="panos/wood_fish.tiles/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1175" tiledimageheight="1175">
+				<cube url="panos/wood_fish.tiles/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="588" tiledimageheight="588">
+				<cube url="panos/wood_fish.tiles/l1_%s_%0v_%0h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/wood_fish.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+
+</krpano>

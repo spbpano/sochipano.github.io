@@ -1,0 +1,230 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+    <include url="skin/vtourskin.xml" />
+
+    <!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+    <skin_settings maps="false"
+                   maps_type="google"
+                   maps_bing_api_key=""
+                   maps_google_api_key=""
+                   maps_zoombuttons="false"
+                   gyro="true"
+                   webvr="true"
+                   webvr_gyro_keeplookingdirection="false"
+                   webvr_prev_next_hotspots="true"
+                   littleplanetintro="false"
+                   title="true"
+                   thumbs="true"
+                   thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+                   thumbs_opened="false"
+                   thumbs_text="false"
+                   thumbs_dragging="true"
+                   thumbs_onhoverscrolling="false"
+                   thumbs_scrollbuttons="false"
+                   thumbs_scrollindicator="false"
+                   thumbs_loop="false"
+                   tooltips_buttons="false"
+                   tooltips_thumbs="true"
+                   tooltips_hotspots="true"
+                   tooltips_mapspots="false"
+                   deeplinking="false"
+                   loadscene_flags="MERGE|KEEPVIEW"
+                   loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+                   loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+                   loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+                   loadingtext="loading..."
+                   layout_width="100%"
+                   layout_maxwidth="814"
+                   controlbar_width="-24"
+                   controlbar_height="40"
+                   controlbar_offset="20"
+                   controlbar_offset_closed="-40"
+                   controlbar_overlap.no-fractionalscaling="10"
+                   controlbar_overlap.fractionalscaling="0"
+                   design_skin_images="vtourskin.png"
+                   design_bgcolor="0x2D3E50"
+                   design_bgalpha="0.8"
+                   design_bgborder="0"
+                   design_bgroundedge="1"
+                   design_bgshadow="0 4 10 0x000000 0.3"
+                   design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+                   design_thumbborder_padding="2"
+                   design_thumbborder_bgroundedge="0"
+                   design_text_css="color:#FFFFFF; font-family:Arial;"
+                   design_text_shadow="1"
+                   />
+<include url="skin/vtourskin_design_ultra_light.xml" />
+    <!--
+        For an alternative skin design either change the <skin_settings> values 
+        from above or optionally include one of the predefined designs from below.
+    -->
+    <!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+    <!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+    <!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+    <!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+    <!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+    <!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+    <!-- startup action - load the first scene -->
+    <action name="startup" autorun="onstart">
+        if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+        loadscene(get(startscene), null, MERGE);
+        if(startactions !== null, startactions() );
+    </action>
+
+    <scene name="scene_terrasa_logo_romanovskiy_hotel" title="терраса" onstart="" thumburl="panos/terrasa_logo_romanovskiy_hotel.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="87.957" vlookat="-11.908" fovtype="MFOV" fov="111.000" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/terrasa_logo_romanovskiy_hotel.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="3200" tiledimageheight="3200">
+                <cube url="panos/terrasa_logo_romanovskiy_hotel.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="1536" tiledimageheight="1536">
+                <cube url="panos/terrasa_logo_romanovskiy_hotel.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="768" tiledimageheight="768">
+                <cube url="panos/terrasa_logo_romanovskiy_hotel.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot9" style="skin_hotspotstyle" ath="2.596" atv="0.994" linkedscene="scene_003_romanovskiy_hotel" />
+        
+        <hotspot name="spot5" style="skin_hotspotstyle" ath="69.264" atv="-32.779" linkedscene="scene_401_romanovskiy_hotel" />
+        <hotspot name="spot6" style="skin_hotspotstyle" ath="85.206" atv="-34.099" linkedscene="scene_408_romanovskiy_hotel" />
+        <hotspot name="spot8" style="skin_hotspotstyle" ath="107.849" atv="-0.712" linkedscene="scene_109_romanovskiy_hotel" />
+        <hotspot name="spot4" style="skin_hotspotstyle" ath="113.662" atv="-17.570" linkedscene="scene_310_romanovskiy_hotel" />
+
+   
+		<hotspot name="spot10" style="skin_hotspotstyle" ath="77.383" atv="-22.793" linkedscene="scene_stairs_romanovskiy_hotel" />
+		<hotspot name="spot11" style="skin_hotspotstyle" ath="96.552" atv="-21.214" linkedscene="scene_311_romanovskiy_hotel" />
+    </scene>
+
+        <include url="003.xml" />
+        <include url="104.xml" />
+        <include url="108.xml" />
+        <include url="109.xml" />
+        <include url="304.xml" />
+        <include url="309.xml" />
+        <include url="310.xml" />
+        <include url="311.xml" />
+        <include url="401.xml" />
+        <include url="405.xml" />
+        <include url="406.xml" />
+        <include url="408.xml" />
+
+    <scene name="scene_stairs_romanovskiy_hotel" title="3 этаж коридор" onstart="" thumburl="panos/stairs_romanovskiy_hotel.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="74.861" vlookat="0.000" fovtype="MFOV" fov="111.000" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/stairs_romanovskiy_hotel.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="3200" tiledimageheight="3200">
+                <cube url="panos/stairs_romanovskiy_hotel.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="1536" tiledimageheight="1536">
+                <cube url="panos/stairs_romanovskiy_hotel.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="768" tiledimageheight="768">
+                <cube url="panos/stairs_romanovskiy_hotel.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot4" style="skin_hotspotstyle" ath="-176.627" atv="5.595" linkedscene="scene_310_romanovskiy_hotel" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="-155.959" atv="19.594" linkedscene="scene_311_romanovskiy_hotel" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="152.352" atv="12.033" linkedscene="scene_309_romanovskiy_hotel" />
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="106.231" atv="8.827" linkedscene="scene_304_romanovskiy_hotel" />
+
+    </scene>
+<!--
+    <scene name="scene_308_bed_romanovskiy_hotel" title="308_bed_romanovskiy_hotel" onstart="" thumburl="panos/308_bed_romanovskiy_hotel.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="111" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/308_bed_romanovskiy_hotel.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="3200" tiledimageheight="3200">
+                <cube url="panos/308_bed_romanovskiy_hotel.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="1536" tiledimageheight="1536">
+                <cube url="panos/308_bed_romanovskiy_hotel.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="768" tiledimageheight="768">
+                <cube url="panos/308_bed_romanovskiy_hotel.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot4" style="skin_hotspotstyle" ath="102.390" atv="23.382" linkedscene="scene_308_room_romanovskiy_hotel" />
+        <hotspot name="spot5" style="skin_hotspotstyle" ath="-91.681" atv="8.300" linkedscene="scene_terrasa_logo_romanovskiy_hotel" />
+
+    </scene>
+
+    <scene name="scene_308_in_romanovskiy_hotel" title="308_in_romanovskiy_hotel" onstart="" thumburl="panos/308_in_romanovskiy_hotel.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="111" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/308_in_romanovskiy_hotel.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="3200" tiledimageheight="3200">
+                <cube url="panos/308_in_romanovskiy_hotel.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="1536" tiledimageheight="1536">
+                <cube url="panos/308_in_romanovskiy_hotel.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="768" tiledimageheight="768">
+                <cube url="panos/308_in_romanovskiy_hotel.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot4" style="skin_hotspotstyle" ath="-1.083" atv="17.215" linkedscene="scene_stairs_romanovskiy_hotel" />
+        <hotspot name="spot5" style="skin_hotspotstyle" ath="-152.205" atv="32.643" linkedscene="scene_308_wc_romanovskiy_hotel" />
+        <hotspot name="spot6" style="skin_hotspotstyle" ath="-177.571" atv="20.704" linkedscene="scene_308_room_romanovskiy_hotel" />
+
+    </scene>
+
+    <scene name="scene_308_room_romanovskiy_hotel" title="308_room_romanovskiy_hotel" onstart="" thumburl="panos/308_room_romanovskiy_hotel.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="111" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/308_room_romanovskiy_hotel.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="3200" tiledimageheight="3200">
+                <cube url="panos/308_room_romanovskiy_hotel.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="1536" tiledimageheight="1536">
+                <cube url="panos/308_room_romanovskiy_hotel.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="768" tiledimageheight="768">
+                <cube url="panos/308_room_romanovskiy_hotel.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot4" style="skin_hotspotstyle" ath="-88.533" atv="26.187" linkedscene="scene_308_bed_romanovskiy_hotel" />
+        <hotspot name="spot5" style="skin_hotspotstyle" ath="40.759" atv="23.775" linkedscene="scene_308_in_romanovskiy_hotel" />
+
+    </scene>
+
+    <scene name="scene_308_wc_romanovskiy_hotel" title="308_wc_romanovskiy_hotel" onstart="" thumburl="panos/308_wc_romanovskiy_hotel.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="-164.930" vlookat="0.000" fovtype="MFOV" fov="111.000" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/308_wc_romanovskiy_hotel.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="3200" tiledimageheight="3200">
+                <cube url="panos/308_wc_romanovskiy_hotel.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="1536" tiledimageheight="1536">
+                <cube url="panos/308_wc_romanovskiy_hotel.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="768" tiledimageheight="768">
+                <cube url="panos/308_wc_romanovskiy_hotel.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot4" style="skin_hotspotstyle" ath="84.754" atv="25.106" linkedscene="scene_308_in_romanovskiy_hotel" />
+
+    </scene>
+-->
+</krpano>

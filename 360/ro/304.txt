@@ -1,0 +1,9 @@
+<script>
+        embedpano({
+            swf : "tour.swf",        // path to flash viewer (use null if no flash fallback will be requiered)
+            id : "krpanoSWFObject", 
+            xml : "304.xml", 
+            target : "pano", 
+            passQueryParameters : true,         // pass query parameters of the url to krpano
+        });
+</script>
