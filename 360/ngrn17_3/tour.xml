@@ -1,0 +1,401 @@
+<krpano version="1.19" title="Sochi, Nagornaya street 17/3" onstart=" trace (get(startscene)); loadscene(get(startscene), null, MERGE);">
+
+	<!-- startup action - load the first scene 
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+	-->
+	<include url="skin/vtourskin.xml" />
+
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="false"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="true"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0xDAA520"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<include url="skin/vtourskin_design_ultra_light.xml" />
+
+	<!--GoldenRod 	#DAA520-->
+	<!-- 
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+
+
+	<scene name="num1_a" title="hotel room #1a" onstart="" havevrimage="true" thumburl="panos/5from_nagornaya_17_3_no1_a.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/5from_nagornaya_17_3_no1_a.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/5from_nagornaya_17_3_no1_a.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/5from_nagornaya_17_3_no1_a.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/5from_nagornaya_17_3_no1_a.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/5from_nagornaya_17_3_no1_a.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here 
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-52.808" atv="7.958" linkedscene="scene_5from_nagornaya_17_3_no1_b" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-80.919" atv="7.750" linkedscene="scene_3from_nagornaya_17_3_blcn_1" />
+		-->
+	</scene>
+
+	<scene name="num1_b" title="hotel room #1b" onstart="" havevrimage="true" thumburl="panos/5from_nagornaya_17_3_no1_b.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/5from_nagornaya_17_3_no1_b.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/5from_nagornaya_17_3_no1_b.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/5from_nagornaya_17_3_no1_b.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/5from_nagornaya_17_3_no1_b.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/5from_nagornaya_17_3_no1_b.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here 
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="150.773" atv="8.919" linkedscene="scene_5from_nagornaya_17_3_no1_a" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-38.564" atv="11.860" linkedscene="scene_3from_nagornaya_17_3_wc_1" />
+		-->
+	</scene>
+
+<!--
+	<scene name="blcn_1" title="Balcony #1" onstart="" havevrimage="true" thumburl="panos/3from_nagornaya_17_3_blcn.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/3from_nagornaya_17_3_blcn.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/3from_nagornaya_17_3_blcn.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-154.806" atv="4.144" linkedscene="scene_5from_nagornaya_17_3_no1_a" />
+
+	</scene>
+
+	<scene name="wc_1" title="Shower Room #1" onstart="" havevrimage="true" thumburl="panos/3from_nagornaya_17_3_wc.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/3from_nagornaya_17_3_wc.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/3from_nagornaya_17_3_wc.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-65.515" atv="9.900" linkedscene="scene_5from_nagornaya_17_3_no1_b" />
+
+	</scene>
+-->
+	<scene name="num2" title="hotel room #2" onstart="" havevrimage="true" thumburl="panos/5from_nagornaya_17_3_no2.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/5from_nagornaya_17_3_no2.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/5from_nagornaya_17_3_no2.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/5from_nagornaya_17_3_no2.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/5from_nagornaya_17_3_no2.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/5from_nagornaya_17_3_no2.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here 
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="142.273" atv="8.550" linkedscene="scene_3from_nagornaya_17_3_blcn_2" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-65.034" atv="11.124" linkedscene="scene_3from_nagornaya_17_3_wc_2" />
+		-->
+	</scene>
+
+<!-- don't do this
+	<scene name="blcn_2" title="Balcony #2" onstart="" havevrimage="true" thumburl="panos/3from_nagornaya_17_3_blcn.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/3from_nagornaya_17_3_blcn.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/3from_nagornaya_17_3_blcn.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-158.676" atv="3.761" linkedscene="scene_5from_nagornaya_17_3_no2" />
+
+	</scene>
+
+	<scene name="wc_2" title="Shower Room #2" onstart="" havevrimage="true" thumburl="panos/3from_nagornaya_17_3_wc.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/3from_nagornaya_17_3_wc.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/3from_nagornaya_17_3_wc.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-52.138" atv="10.590" linkedscene="scene_5from_nagornaya_17_3_no2" />
+
+	</scene>
+-->
+	<scene name="num3" title="hotel room #3" onstart="" havevrimage="true" thumburl="panos/5from_nagornaya_17_3_no3.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/5from_nagornaya_17_3_no3.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/5from_nagornaya_17_3_no3.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/5from_nagornaya_17_3_no3.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/5from_nagornaya_17_3_no3.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/5from_nagornaya_17_3_no3.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<!-- place your scene hotspots here 
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-69.934" atv="3.633" linkedscene="scene_3from_nagornaya_17_3_blcn_3" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="124.720" atv="6.926" linkedscene="scene_3from_nagornaya_17_3_wc_3" />
+		-->
+	</scene>
+<!-- don't do this
+	<scene name="blcn_3" title="Balcony #3" onstart="" havevrimage="true" thumburl="panos/3from_nagornaya_17_3_blcn.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/3from_nagornaya_17_3_blcn.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/3from_nagornaya_17_3_blcn.tiles/vr/pano_%s.jpg" />
+		</image>
+
+
+	</scene>
+
+	<scene name="wc_3" title="Shower Room #3" onstart="" havevrimage="true" thumburl="panos/3from_nagornaya_17_3_wc.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/3from_nagornaya_17_3_wc.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/3from_nagornaya_17_3_wc.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-51.769" atv="6.221" linkedscene="scene_5from_nagornaya_17_3_no3" />
+		
+
+	</scene>
+-->	
+
+	<scene name="shwr" title="Shower Room" onstart="" havevrimage="true" thumburl="panos/3from_nagornaya_17_3_wc.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/3from_nagornaya_17_3_wc.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/3from_nagornaya_17_3_wc.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/3from_nagornaya_17_3_wc.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+	<scene name="blcn" title="Balcony" onstart="" havevrimage="true" thumburl="panos/3from_nagornaya_17_3_blcn.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" ffov="107" maxpixelzoom="0.90" fovmax="127" vlookatmin="-90" vlookatmax="75" limitview="range" />
+
+		<preview url="panos/3from_nagornaya_17_3_blcn.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+			<level tiledimagewidth="4160" tiledimageheight="4160">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l3/%0v/l3_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="2112" tiledimageheight="2112">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l2/%0v/l2_%s_%0v_%0h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="panos/3from_nagornaya_17_3_blcn.tiles/%s/l1/%0v/l1_%s_%0v_%0h.jpg" />
+			</level>
+		</image>
+
+		<image if="webvr.isenabled">
+			<cube url="panos/3from_nagornaya_17_3_blcn.tiles/vr/pano_%s.jpg" />
+		</image>
+
+	</scene>
+
+</krpano>
