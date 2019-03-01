@@ -1,4 +1,4 @@
-﻿<krpano>
+<krpano>
     <include url="%SWFPATH%/plugins/webvr.xml" />
 
     <plugin name="WebVR"
@@ -74,10 +74,10 @@
         onxmlcomplete="check_portrait_mode()"
         onexitvr="trace ('out from vr_support.xml'); tween(layer[webvr_enterbutton].alpha,0,0);"
         webvr_onexitvr="trace ('out from vr_support.xml'); tween(layer[webvr_enterbutton].alpha,0,0);"
+        onmousedown="close_if_open();"
     />
     <!--
         onnewscene="set_scene_title();"
-        onmousedown="close_if_open();"
     -->
     <style name="categories_background"
             type="container"
@@ -297,7 +297,7 @@
 
 <!--GO TO VR-->
     <layer name="wrrap_to_vr" type="container" keep="true" align="center" open_state="false"
-            alpha="1" autoalpha="true"
+            alpha="" autoalpha="true"
             bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="20 20 20 20"
             x="0" y="-100"
             width="470" height="350">
@@ -324,6 +324,20 @@
                 tween(layer[logo_text].alpha, 0.0, 0.1, easeInCubic);
             );
         );
+    </action>
+    <action name="open_close_vr_info">
+        trace(%1);
+        if(%1,
+                tween(layer[wrrap_to_vr].alpha, 0.0, 0.2, easeInCubic);
+                set(layer[wrrap_to_vr].open_state,false);
+            ,
+                close_if_open();
+                tween(layer[wrrap_to_vr].alpha, 1.0, 0.2, easeInCubic);
+                set(layer[wrrap_to_vr].open_state,true);
+        );
+    </action>
+    <action name="close_if_open">
+        if(layer[wrrap_to_vr].open_state, open_close_vr_info(get(layer[wrrap_to_vr].open_state)));
     </action>
 
 </krpano>
