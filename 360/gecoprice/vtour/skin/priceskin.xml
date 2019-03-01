@@ -20,9 +20,10 @@
                     webvr_gyro_keeplookingdirection="false"
                     webvr_prev_next_hotspots="true"
                     loadscene_flags="MERGE|KEEPVIEW"
+                    loadscene_flags_slide="MERGE|KEEPMOVING "
                     loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
                     loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
-                    loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+                    loadscene_blend_slide="BLEND(0.5, linear)"
                     loadingtext="loading..."
 
                     category_width="25%"
@@ -84,23 +85,15 @@
         mouse="moveto"
         touch="drag"
         movetorelative="true"
-         movetoaccelerate="0.90"
-         movetospeed="8.0"
-         movetofriction="0.7"
+        movetoaccelerate="0.90"
+        movetospeed="8.0"
+        movetofriction="0.7"
     />
     <events name="skin_events" keep="true"
         onresize="check_portrait_mode()"
-        onxmlcomplete="check_portrait_mode()"
+        onxmlcomplete="check_portrait_mode();"
+        onloadcomplete="setinterval(time, 7.0,  slide_panos());"
         webvr_onexitvr="trace ('out from vr_support.xml'); tween(layer[webvr_enterbutton].alpha,0,0);"
-        onexitvr="  
-                    trace('onexitvr');
-                    tween(hotspot[virtual_category_vr].alpha, 0,0);
-                    tween(hotspot[underwater_category_vr].alpha, 0,0);
-                    tween(hotspot[aerial_category_vr].alpha, 0,0);
-                "
-        onentervr=" 
-                    
-                "
         onmousedown="close_if_open();"
     />
     <!--
@@ -129,7 +122,7 @@
         width="100%"
         wordwrap="true"
         align="top" x="0" y="17%"
-            y.mobile="9"
+        y.mobile="9"
         css="get:skin_settings.category_text"
         vcenter="false"
         bg="false"
@@ -159,7 +152,7 @@
         width="100%"
         wordwrap="true"
         x="0" y="17%"
-            y.mobile="10"
+        y.mobile="10"
         css="get:skin_settings.price_text"
         bg="false"
         zorder="55"
@@ -391,6 +384,20 @@
     </action>
     <action name="close_if_open">
         if(layer[wrrap_to_vr].open_state, open_close_vr_info(get(layer[wrrap_to_vr].open_state)));
+    </action>
+    <action name="slide_panos">
+        set(newsceneindex, get(scene[get(xml.scene)].index));
+        inc(newsceneindex);
+        set(next_scene_name, get(scene[get(newsceneindex)].name));
+
+    trace('next_scene_name = ', next_scene_name);
+    
+        if(newsceneindex GE 0 AND newsceneindex LT scene.count,
+            loadscene(get(next_scene_name), null, get(skin_settings.loadscene_flags_slide), get(skin_settings.loadscene_blend_slide));
+        ,
+            loadscene(get(scene[0].name), null, get(skin_settings.loadscene_flags_slide), get(skin_settings.loadscene_blend_slide));
+            clearinterval(time);
+        );
     </action>
 
 </krpano>
