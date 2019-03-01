@@ -4,8 +4,15 @@
     <plugin name="WebVR"
         url="%SWFPATH%/plugins/webvr.js"
         mobilevr_fake_support="true"
-        onentervr="trace('onentervr'); webvr_onentervr();"
-        onexitvr="trace('onexitvr'); webvr_onexitvr();"
+        onentervr="trace('onentervr'); webvr_onentervr();
+                    tween(hotspot[virtual_category_vr].alpha, 1,0);
+                    tween(hotspot[underwater_category_vr].alpha, 1,0);
+                    tween(hotspot[aerial_category_vr].alpha, 1,0);"
+        onexitvr="trace('onexitvr'); webvr_onexitvr();
+                    trace('onentervr');
+                    tween(hotspot[virtual_category_vr].alpha, 0,0);
+                    tween(hotspot[underwater_category_vr].alpha, 0,0);
+                    tween(hotspot[aerial_category_vr].alpha, 0,0);"
         onavailable=""
     />  
     <skin_settings gyro="true"
@@ -84,8 +91,16 @@
     <events name="skin_events" keep="true"
         onresize="check_portrait_mode()"
         onxmlcomplete="check_portrait_mode()"
-        onexitvr="trace ('out from vr_support.xml'); tween(layer[webvr_enterbutton].alpha,0,0);"
         webvr_onexitvr="trace ('out from vr_support.xml'); tween(layer[webvr_enterbutton].alpha,0,0);"
+        onexitvr="  
+                    trace('onexitvr');
+                    tween(hotspot[virtual_category_vr].alpha, 0,0);
+                    tween(hotspot[underwater_category_vr].alpha, 0,0);
+                    tween(hotspot[aerial_category_vr].alpha, 0,0);
+                "
+        onentervr=" 
+                    
+                "
         onmousedown="close_if_open();"
     />
     <!--
@@ -124,6 +139,10 @@
     />
     <style name="category_hotspot"
         type="text"
+        keep="true"
+        visible="true"
+        alpha="0.0"
+        autoalpha="true"
         css="get:skin_settings.categories_text_vr"
         edge="center" distorted="false" renderer="webgl"
         vcenter="true"
@@ -185,9 +204,6 @@
 
 <!--VTOUR DEMO-->
     <hotspot name="virtual_category_vr"
-        keep="true"
-        visible="false"
-        visible.mobile="true"
         style="category_hotspot"
         html="360&amp;deg; VIRTUAL TOUR [br /][b style='font-family: Montserrat-Bold;  letter-spacing: 2px; font-size:18px;']400[/b][br /]USD&amp;nbsp;/&amp;nbsp;SPOT"
         ath="150" atv="0"
@@ -217,9 +233,6 @@
 
 <!--UNDERWATER DEMO-->
     <hotspot name="underwater_category_vr"
-        keep="true"
-        visible="false"
-        visible.mobile="true"
         style="category_hotspot"
         html="360&amp;deg; UNDERWATER[br /][b style='font-family: Montserrat-Bold;  letter-spacing: 2px; font-size:18px;']1400[/b][br /]USD&amp;nbsp;/&amp;nbsp;SPOT"
         ath="210" atv="0"
@@ -249,9 +262,6 @@
 <!--AERIAL DEMO-->
 
     <hotspot name="aerial_category_vr"
-        keep="true"
-        visible="false"
-        visible.mobile="true"
         style="category_hotspot"
         html="360&amp;deg; AERIAL[br /][b style='font-family: Montserrat-Bold;  letter-spacing: 2px; font-size:18px;']1000[/b][br /]USD&amp;nbsp;/&amp;nbsp;SPOT"
         ath="180" atv="0"
@@ -305,8 +315,8 @@
             bgalpha="0.0001"
             bgcapture="true"
             zorder="65"
-            onclick="trace('befrore'); open_close_vr_info(get(layer[wrrap_to_vr].open_state)); trace('after');"
-            onclick.mobile="trace('vr_click click'); webvr.enterVR();"
+            onclick.mobile="open_close_vr_info(get(layer[wrrap_to_vr].open_state));"
+            onclick="webvr.enterVR();"
         /><!--vr_click-->
         <layer name="vr_wrap" keep="true" type="text" align="center"
             width="230"
