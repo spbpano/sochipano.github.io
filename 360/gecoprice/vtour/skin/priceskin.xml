@@ -32,10 +32,13 @@
                     category_maxwidth="300"
                     category_maxwidth.mobile="170"
 
-                    vr_bttn_width="25%"
-                    vr_bttn_width.mobile="47%"
-                    vr_bttn_maxwidth="300"
-                    vr_bttn_maxwidth.mobile="180"
+                    vr_bttn_width="27%"
+                    vr_bttn_width.mobile="50%"
+
+                    vr_bttn_maxwidth="350"
+                    vr_bttn_maxwidth.mobile="200"
+                    vr_bttn_minwidth="280"
+                    vr_bttn_minwidth.mobile="200"
                    
                     category_text="font-family: Montserrat-Light;
                                     text-transform: uppercase;
@@ -91,7 +94,7 @@
     />
     <events name="skin_events" keep="true"
         onresize="check_portrait_mode()"
-        onxmlcomplete="check_portrait_mode(); setinterval(time, 7.0, slide_panos());"
+        onxmlcomplete="check_portrait_mode(); setinterval(time, 10.0, slide_panos());"
         onloadcomplete=""
         webvr_onexitvr="trace ('out from vr_support.xml'); tween(layer[webvr_enterbutton].alpha,0,0);"
         onmousedown="close_if_open();"
@@ -105,6 +108,7 @@
         align="bottom"
         width="get:skin_settings.category_width"
         maxwidth="get:skin_settings.category_maxwidth"
+        minwidth="get:skin_settings.category_minwidth"
         height="137"
         height.mobile="70"
         y="100"
@@ -174,7 +178,6 @@
         bgcapture="true"
         zorder="61"
     />
-
     <layer name="logo_img" keep="true" type="image" align="topleft"
         url="logo_img.svg"
         height="40"
@@ -214,7 +217,7 @@
         />
         <layer name="virtual_price"
             style="price_text"
-            html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
+            html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot&amp;nbsp;"
             html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
         />
         <layer name="virtual_click"
