@@ -33,7 +33,7 @@
                     price_font_size.mobile="18"
                     underwater_price="1400"
                     aerial_price="1000"
-                    vtour_price="400"
+                    vtour_price="500"
                     currency_spot="usd&amp;nbsp;/&amp;nbsp;spot"
 
                     category_width="25%"
