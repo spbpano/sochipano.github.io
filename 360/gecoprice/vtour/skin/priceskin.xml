@@ -203,8 +203,7 @@
         style="category_hotspot"
         html="360&amp;deg; VIRTUAL TOUR [br /][b style='font-family: Montserrat-Bold;  letter-spacing: 2px; font-size:18px;']400[/b][br /]USD&amp;nbsp;/&amp;nbsp;SPOT"
         ath="150" atv="0"
-        linkedscene="scene_vtour_2"
-        onclick="loadscene(get(linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend)); switch(hotspot[virtual_category_vr].linkedscene, scene_vtour, scene_vtour_2);"
+        onclick="load_right_category_panos(vtour, scene_vtour);"
      />
     <layer name="virtual_category"
         style="categories_background"
@@ -222,8 +221,7 @@
         />
         <layer name="virtual_click"
             style="categories_click_style"
-            linkedscene="scene_vtour_2"
-            onclick="loadscene(get(linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend)); switch(layer[virtual_click].linkedscene, scene_vtour, scene_vtour_2);"
+            onclick="load_right_category_panos(vtour, scene_vtour);"
         />
     </layer>
 
@@ -232,8 +230,7 @@
         style="category_hotspot"
         html="360&amp;deg; UNDERWATER[br /][b style='font-family: Montserrat-Bold;  letter-spacing: 2px; font-size:18px;']1400[/b][br /]USD&amp;nbsp;/&amp;nbsp;SPOT"
         ath="210" atv="0"
-        linkedscene="scene_underwater_2"
-        onclick="loadscene(get(linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend)); switch(hotspot[underwater_category_vr].linkedscene, scene_underwater, scene_underwater_2);"
+        onclick="load_right_category_panos(underwater, scene_underwater);"
      />
     <layer name="underwater_category"
         style="categories_background"
@@ -250,8 +247,7 @@
         />
         <layer name="underwater_click"
             style="categories_click_style"
-            linkedscene="scene_underwater_2"
-            onclick="loadscene(get(linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend)); switch(layer[underwater_click].linkedscene, scene_underwater, scene_underwater_2);"
+            onclick="load_right_category_panos(underwater, scene_underwater);"
         />
     </layer>
 
@@ -261,8 +257,7 @@
         style="category_hotspot"
         html="360&amp;deg; AERIAL[br /][b style='font-family: Montserrat-Bold;  letter-spacing: 2px; font-size:18px;']1000[/b][br /]USD&amp;nbsp;/&amp;nbsp;SPOT"
         ath="180" atv="0"
-        linkedscene="scene_aerial_2"
-        onclick="loadscene(get(linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend)); switch(hotspot[aerial_category_vr].linkedscene, scene_aerial, scene_aerial_2);"
+        onclick="load_right_category_panos(aerial, scene_aerial);"
      />
     <layer name="aerial_category"
         style="categories_background"
@@ -280,8 +275,7 @@
        />
         <layer name="aerial_click"
             style="categories_click_style"
-            linkedscene="scene_aerial_2"
-            onclick="loadscene(get(linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend)); switch(layer[aerial_click].linkedscene, scene_aerial, scene_aerial_2);"
+            onclick="load_right_category_panos(aerial, scene_aerial);"
         />
     </layer>
 
@@ -400,6 +394,14 @@
         ,
             loadscene(get(scene[0].name), null, get(skin_settings.loadscene_flags_slide), get(skin_settings.loadscene_blend_slide));
             clearinterval(time);
+        );
+    </action>
+    <action name="load_right_category_panos" args="linked_category, to_linkedscene">
+        set(current_category, get(scene[get(xml.scene)].category));
+        if(current_category == linked_category,
+            loadscene(get(scene[get(xml.scene)].linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend));
+        ,
+            loadscene(get(to_linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend));
         );
     </action>
 
