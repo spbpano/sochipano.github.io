@@ -16,7 +16,7 @@
 
 
 
-  <scene name="scene_underwater" title="underwater" next_pano="scene_underwater_2" onstart="" thumburl="panos/underwater.tiles/thumb.jpg" linkedscene="scene_underwater_2" lat="" lng="" heading="">
+  <scene name="scene_underwater" title="underwater" next_pano="scene_underwater_2" onstart="" thumburl="panos/underwater.tiles/thumb.jpg" category="underwater" linkedscene="scene_underwater_2" lat="" lng="" heading="">
 
     <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -36,7 +36,7 @@
 
   </scene>
 
-  <scene name="scene_underwater_2" title="underwater_2" next_pano="scene_underwater" onstart="" thumburl="panos/underwater_2.tiles/thumb.jpg" linkedscene="scene_underwater" lat="" lng="" heading="">
+  <scene name="scene_underwater_2" title="underwater_2" next_pano="scene_underwater" onstart="" thumburl="panos/underwater_2.tiles/thumb.jpg" category="underwater" linkedscene="scene_underwater" lat="" lng="" heading="">
 
     <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -56,7 +56,7 @@
 
   </scene>
 
-  <scene name="scene_vtour" title="vtour" next_pano="scene_vtour_2" onstart="" thumburl="panos/vtour.tiles/thumb.jpg" linkedscene="scene_vtour_2" lat="" lng="" heading="">
+  <scene name="scene_vtour" title="vtour" next_pano="scene_vtour_2" onstart="" thumburl="panos/vtour.tiles/thumb.jpg" category="vtour" linkedscene="scene_vtour_2" lat="" lng="" heading="">
 
     <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -76,7 +76,7 @@
 
   </scene>
 
-  <scene name="scene_vtour_2" title="vtour_2" next_pano="scene_vtour" onstart="" thumburl="panos/vtour_2.tiles/thumb.jpg" linkedscene="scene_vtour" lat="" lng="" heading="">
+  <scene name="scene_vtour_2" title="vtour_2" next_pano="scene_vtour" onstart="" thumburl="panos/vtour_2.tiles/thumb.jpg" category="vtour" linkedscene="scene_vtour" lat="" lng="" heading="">
 
     <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -95,7 +95,7 @@
     </image>
 
   </scene>
-    <scene name="scene_aerial" title="aerial" next_pano="scene_aerial_2" onstart="" thumburl="panos/aerial.tiles/thumb.jpg" linkedscene="scene_aerial_2" lat="" lng="" heading="">
+    <scene name="scene_aerial" title="aerial" next_pano="scene_aerial_2" onstart="" thumburl="panos/aerial.tiles/thumb.jpg" category="aerial" linkedscene="scene_aerial_2" lat="" lng="" heading="">
 
     <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -115,7 +115,7 @@
 
   </scene>
 
-  <scene name="scene_aerial_2" title="aerial_2" next_pano="scene_aerial" onstart="" thumburl="panos/aerial_2.tiles/thumb.jpg" linkedscene="scene_aerial" lat="-8.37120722" lng="115.13743917" heading="0.0">
+  <scene name="scene_aerial_2" title="aerial_2" next_pano="scene_aerial" onstart="" thumburl="panos/aerial_2.tiles/thumb.jpg" category="aerial" linkedscene="scene_aerial" lat="-8.37120722" lng="115.13743917" heading="0.0">
 
     <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -135,15 +135,15 @@
 
   </scene>
 <!--
-    <scene name="scene_virtual" title="virtual" next_pano="" onstart="" thumburl="" linkedscene="" lat="" lng="" heading="">
+    <scene name="scene_virtual" title="virtual" next_pano="" onstart="" thumburl="" category="" linkedscene="" lat="" lng="" heading="">
         <preview type="grid(CUBE,32,32,512,0x494e52,0xB8860B,0x999999);" />
     </scene>
 
-    <scene name="scene_aerial" title="aerial" next_pano="" onstart="" thumburl="" linkedscene="" lat="" lng="" heading="">
+    <scene name="scene_aerial" title="aerial" next_pano="" onstart="" thumburl="" category="" linkedscene="" lat="" lng="" heading="">
         <preview type="grid(CUBE,32,32,512,0x494e52,0x191970,0x999999);" />
     </scene>
 
-    <scene name="scene_underwater" title="underwater" next_pano="" onstart="" thumburl="" linkedscene="" lat="" lng="" heading="">
+    <scene name="scene_underwater" title="underwater" next_pano="" onstart="" thumburl="" category="" linkedscene="" lat="" lng="" heading="">
         <preview type="grid(CUBE,32,32,512,0x494e52,0x2E8B57,0x999999);" />
     </scene>
 -->
