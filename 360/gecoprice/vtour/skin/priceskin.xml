@@ -26,6 +26,16 @@
                     loadscene_blend_slide="BLEND(0.5, linear)"
                     loadingtext="loading..."
 
+
+                    syle_price="style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;'"
+                    price_font_size="calc:2.7*16"
+                    syle_price.mobile="style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;'"
+                    price_font_size.mobile="18"
+                    underwater_price="1400"
+                    aerial_price="1000"
+                    vtour_price="400"
+                    currency_spot="usd&amp;nbsp;/&amp;nbsp;spot"
+
                     category_width="25%"
                     category_width.mobile="29%"
 
@@ -178,6 +188,22 @@
         bgcapture="true"
         zorder="61"
     />
+    <style name="vcenter_price_style"
+        type="container"
+        keep="true"
+        align="bottom"
+        width="95%"
+        height="calc:price_font_size * 1.17"
+        y="100"
+        y.mobile="60"
+        maskchildren="true"
+        visible="true"
+        bgroundedge="21"
+        bgroundedge.mobile="13"
+        bgcolor="0xffffff"
+        bgalpha="0.50"
+        bgcapture="false" zorder="1"
+    />    
     <layer name="logo_img" keep="true" type="image" align="topleft"
         url="logo_img.svg"
         height="40"
@@ -218,7 +244,9 @@
             style="price_text"
             html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot&amp;nbsp;"
             html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
+        w="calc:'[b'+syle_price']'+underwater_price+'[/b] '+currency_spot"
         />
+
         <layer name="virtual_click"
             style="categories_click_style"
             onclick="load_right_category_panos(vtour, scene_vtour);"
@@ -240,11 +268,12 @@
             style="categories_text"
             html="360&amp;deg; underwater"
         />
-        <layer name="underwater_price"
-            style="price_text"
-            html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']1400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
-            html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']1400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
-        />
+        <layer name="vcenter_price" style="vcenter_price_style">
+            <layer name="underwater_price"
+                style="price_text"
+                html="calc:'[b'+syle_price']'+underwater_price+'[/b] '+currency_spot"
+            />
+        </layer>
         <layer name="underwater_click"
             style="categories_click_style"
             onclick="load_right_category_panos(underwater, scene_underwater);"
