@@ -27,9 +27,9 @@
                     loadingtext="loading..."
 
 
-                    syle_price="style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;'"
-                    price_font_size="calc:2.7*16"
-                    syle_price.mobile="style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;'"
+                    style_price="style=&amp;quot;color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;&amp;quot;"
+                    price_numb_size="calc:2.7*16"
+                    sytle_price.mobile="style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;'"
                     price_font_size.mobile="18"
                     underwater_price="1400"
                     aerial_price="1000"
@@ -72,6 +72,7 @@
                                     font-size:0.80rem;
                                     color:#FFFFFF; 
                                     text-align: center;"
+                    price_text_size="calc:0.8*16"
                     price_text.mobile="font-family: Montserrat-Light;
                                     text-transform: uppercase;
                                     letter-spacing: 2px;
@@ -130,12 +131,13 @@
         bgcolor="0x000000"
         bgalpha="0.50"
         bgcapture="false" zorder="1"
+        bgborder="0"
     />
     <style name="categories_text"
         type="text"
         width="100%"
         wordwrap="true"
-        align="top" x="0" y="17%"
+        align="top" x="0" y="18"
         y.mobile="9"
         css="get:skin_settings.category_text"
         vcenter="false"
@@ -162,11 +164,10 @@
      />
     <style name="price_text"
         type="text"
-        align="bottom"
+        align="center"
+        vcenter="true"
         width="100%"
         wordwrap="true"
-        x="0" y="17%"
-        y.mobile="10"
         css="get:skin_settings.price_text"
         bg="false"
         zorder="55"
@@ -188,20 +189,23 @@
         bgcapture="true"
         zorder="61"
     />
+    <!--
+        height="calc:price_font_size * 1.17"
+    -->
     <style name="vcenter_price_style"
         type="container"
         keep="true"
         align="bottom"
         width="95%"
-        height="calc:price_font_size * 1.17"
-        y="100"
-        y.mobile="60"
+        height="calc:(skin_settings.price_text_size+skin_settings.price_numb_size)*1.2"
+        y="18"
+        y.mobile="11"
         maskchildren="true"
         visible="true"
         bgroundedge="21"
         bgroundedge.mobile="13"
         bgcolor="0xffffff"
-        bgalpha="0.50"
+        bgalpha="0.0"
         bgcapture="false" zorder="1"
     />    
     <layer name="logo_img" keep="true" type="image" align="topleft"
@@ -240,12 +244,14 @@
             style="categories_text"
             html="360&amp;deg; virtual tour"
         />
-        <layer name="virtual_price"
-            style="price_text"
-            html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot&amp;nbsp;"
-            html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
-        w="calc:'[b'+syle_price']'+underwater_price+'[/b] '+currency_spot"
-        />
+        <layer name="vcenter_price_v" style="vcenter_price_style">
+            <layer name="virtual_price"
+                style="price_text"
+                html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot&amp;nbsp;"
+                html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
+            w="calc:'[b'+syle_price']'+underwater_price+'[/b] '+currency_spot"
+            />
+        </layer>
 
         <layer name="virtual_click"
             style="categories_click_style"
@@ -268,10 +274,15 @@
             style="categories_text"
             html="360&amp;deg; underwater"
         />
-        <layer name="vcenter_price" style="vcenter_price_style">
+        <layer name="vcenter_price_u" style="vcenter_price_style">
+            <!--
+                [b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']1000[/b] usd&amp;nbsp;/&amp;nbsp;spot
+                html="calc:'[b'+skin_settings.syle_price']'+skin_settings.underwater_price+'[/b] '+skin_settings.currency_spot"
+            -->
             <layer name="underwater_price"
                 style="price_text"
-                html="calc:'[b'+syle_price']'+underwater_price+'[/b] '+currency_spot"
+                html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']1400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
+                html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']1400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
             />
         </layer>
         <layer name="underwater_click"
@@ -297,11 +308,13 @@
             style="categories_text"
             html="360&amp;deg; aerial"
         />
-       <layer name="aerial_price"
-            style="price_text"
-            html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']1000[/b] usd&amp;nbsp;/&amp;nbsp;spot"
-            html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']1000[/b] usd&amp;nbsp;/&amp;nbsp;spot"
-       />
+        <layer name="vcenter_price_a" style="vcenter_price_style">
+            <layer name="aerial_price"
+                style="price_text"
+                html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']1000[/b] usd&amp;nbsp;/&amp;nbsp;spot"
+                html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']1000[/b] usd&amp;nbsp;/&amp;nbsp;spot"
+            />
+        </layer>
         <layer name="aerial_click"
             style="categories_click_style"
             onclick="load_right_category_panos(aerial, scene_aerial);"
