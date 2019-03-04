@@ -188,7 +188,7 @@
         visible="true"
         bgroundedge="0"
         bgcolor="0xffffff"
-        bgalpha="0.30"
+        bgalpha="0.0"
         bgcapture="false" zorder="1"
     />    
     <layer name="logo_img" keep="true" type="image" align="topleft"
