@@ -4,18 +4,17 @@
     <plugin name="WebVR"
         url="%SWFPATH%/plugins/webvr.js"
         mobilevr_fake_support="true"
-        onentervr="trace('onentervr'); webvr_onentervr();
+        onentervr=" webvr_onentervr();
                     tween(hotspot[virtual_category_vr].alpha, 1,0);
                     tween(hotspot[underwater_category_vr].alpha, 1,0);
                     tween(hotspot[aerial_category_vr].alpha, 1,0);"
-        onexitvr="trace('onexitvr'); webvr_onexitvr();
-                    trace('onentervr');
+        onexitvr="  webvr_onexitvr();
                     tween(hotspot[virtual_category_vr].alpha, 0,0);
                     tween(hotspot[underwater_category_vr].alpha, 0,0);
                     tween(hotspot[aerial_category_vr].alpha, 0,0);"
         onavailable=""
     />  
-    <skin_settings gyro="true"
+    <skin_settings  gyro="true"
                     webvr="true"
                     webvr_gyro_keeplookingdirection="false"
                     webvr_prev_next_hotspots="true"
@@ -26,15 +25,9 @@
                     loadscene_blend_slide="BLEND(0.5, linear)"
                     loadingtext="loading..."
 
-
                     style_price="style=&amp;quot;color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;&amp;quot;"
-                    price_numb_size="calc:2.7*16"
                     sytle_price.mobile="style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;'"
-                    price_font_size.mobile="18"
-                    underwater_price="1400"
-                    aerial_price="1000"
-                    vtour_price="500"
-                    currency_spot="usd&amp;nbsp;/&amp;nbsp;spot"
+                        
 
                     category_width="25%"
                     category_width.mobile="29%"
@@ -47,8 +40,6 @@
 
                     vr_bttn_maxwidth="350"
                     vr_bttn_maxwidth.mobile="200"
-                    vr_bttn_minwidth="280"
-                    vr_bttn_minwidth.mobile="200"
                    
                     category_text="font-family: Montserrat-Light;
                                     text-transform: uppercase;
@@ -72,7 +63,6 @@
                                     font-size:0.80rem;
                                     color:#FFFFFF; 
                                     text-align: center;"
-                    price_text_size="calc:0.8*16"
                     price_text.mobile="font-family: Montserrat-Light;
                                     text-transform: uppercase;
                                     letter-spacing: 2px;
@@ -107,19 +97,15 @@
         onresize="check_portrait_mode()"
         onxmlcomplete="check_portrait_mode(); setinterval(time, 10.0, slide_panos());"
         onloadcomplete=""
-        webvr_onexitvr="trace ('out from vr_support.xml'); tween(layer[webvr_enterbutton].alpha,0,0);"
+        webvr_onexitvr="tween(layer[webvr_enterbutton].alpha,0,0);"
         onmousedown="close_if_open();"
     />
-    <!--
-        onnewscene="set_scene_title();"
-    -->
     <style name="categories_background"
         type="container"
         keep="true"
         align="bottom"
         width="get:skin_settings.category_width"
         maxwidth="get:skin_settings.category_maxwidth"
-        minwidth="get:skin_settings.category_minwidth"
         height="137"
         height.mobile="70"
         y="100"
@@ -189,21 +175,19 @@
         bgcapture="true"
         zorder="61"
     />
-    <!--
-        height="calc:price_font_size * 1.17"
-    -->
     <style name="vcenter_price_style"
         type="container"
         keep="true"
         align="bottom"
         width="95%"
-        height="calc:(skin_settings.price_text_size+skin_settings.price_numb_size)*1.2"
+        height="56"
+        height.mobile="30"
         y="18"
         y.mobile="11"
-        maskchildren="true"
+        maskchildren="false"
         visible="true"
-        bgroundedge="21"
-        bgroundedge.mobile="13"
+        bgroundedge="0"
+        bgroundedge.mobile="0"
         bgcolor="0xffffff"
         bgalpha="0.0"
         bgcapture="false" zorder="1"
@@ -247,8 +231,8 @@
         <layer name="vcenter_price_v" style="vcenter_price_style">
             <layer name="virtual_price"
                 style="price_text"
-                html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot&amp;nbsp;"
-                html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
+                html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']400 [/b] usd&amp;nbsp;/&amp;nbsp;spot&amp;nbsp;"
+                html.mobile="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 2px; font-size:18px;']400 [/b] usd&amp;nbsp;/&amp;nbsp;spot"
             w="calc:'[b'+syle_price']'+underwater_price+'[/b] '+currency_spot"
             />
         </layer>
@@ -275,10 +259,6 @@
             html="360&amp;deg; underwater"
         />
         <layer name="vcenter_price_u" style="vcenter_price_style">
-            <!--
-                [b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']1000[/b] usd&amp;nbsp;/&amp;nbsp;spot
-                html="calc:'[b'+skin_settings.syle_price']'+skin_settings.underwater_price+'[/b] '+skin_settings.currency_spot"
-            -->
             <layer name="underwater_price"
                 style="price_text"
                 html="[b style='color:ffffff; font-family: Montserrat-Bold; letter-spacing: 0px; font-size:2.70rem;']1400[/b] usd&amp;nbsp;/&amp;nbsp;spot"
@@ -411,7 +391,6 @@
         );
     </action>
     <action name="open_close_vr_info">
-        trace(%1);
         if(%1,
                 tween(layer[wrrap_to_vr].alpha, 0.0, 0.2, easeInCubic);
                 set(layer[wrrap_to_vr].open_state,false);
@@ -428,9 +407,6 @@
         set(newsceneindex, get(scene[get(xml.scene)].index));
         inc(newsceneindex);
         set(next_scene_name, get(scene[get(newsceneindex)].name));
-
-    trace('next_scene_name = ', next_scene_name);
-    
         if(newsceneindex GE 0 AND newsceneindex LT scene.count,
             loadscene(get(next_scene_name), null, get(skin_settings.loadscene_flags_slide), get(skin_settings.loadscene_blend_slide));
         ,
@@ -438,7 +414,7 @@
             clearinterval(time);
         );
     </action>
-    <action name="load_right_category_panos" args="linked_category, to_linkedscene">
+    <action name="load_right_category_panos"  scope="local" args="linked_category, to_linkedscene">
         set(current_category, get(scene[get(xml.scene)].category));
         if(current_category == linked_category,
             loadscene(get(scene[get(xml.scene)].linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend));
@@ -446,5 +422,15 @@
             loadscene(get(to_linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend));
         );
     </action>
+
+    <!--
+        calc:(skin_settings.price_text_size + skin_settings.price_numb_size) * 1.1
+        price_numb_size="calc:2.7*16"
+        price_numb_size.mobile="18" 
+        underwater_price="1400"
+        aerial_price="1000"
+        vtour_price="500"
+        currency_spot="usd&amp;nbsp;/&amp;nbsp;spot"
+    -->
 
 </krpano>
