@@ -187,9 +187,8 @@
         maskchildren="false"
         visible="true"
         bgroundedge="0"
-        bgroundedge.mobile="0"
         bgcolor="0xffffff"
-        bgalpha="0.0"
+        bgalpha="0.30"
         bgcapture="false" zorder="1"
     />    
     <layer name="logo_img" keep="true" type="image" align="topleft"
