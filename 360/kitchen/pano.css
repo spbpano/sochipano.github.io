@@ -1,0 +1,57 @@
+		html { height:100%; }
+		body { height:100%;  margin:0; /*padding:1.41em;*/ font-family:Trebuchet, Tahoma, sans-serif; font-size:16px; color: rgb(152,152,152); background-color:#FEFEFE;
+		 	text-align: center;
+		 }
+		#pano{
+			width:100%;
+			height:100%;
+			margin-left:auto;
+			margin-right:auto;
+			/*
+			margin-top:1.41em;
+			margin-bottom:1.41em;
+			box-shadow: 0 0 4px rgb(128,128,128);
+			*/
+		}
+
+		.logo {
+			text-decoration: none;
+		}
+
+		h2.heady, h3.heady{
+			 /*color:#808080;*/
+			 color:#6ab966;
+			 font-family: Arial, sans-serif;
+			 margin: 0;
+			 text-shadow: 1px 1px 1px #FFFFFF;
+		}
+		#how{
+			color: rgb(70,158,215);
+		}
+		i{
+			/*color:#7bba48;*/
+			color:#808080;
+		}
+		#mail-link{
+			text-decoration: none;
+			color:#808080;
+			font-family: Arial, sans-serif;
+			text-shadow: 1px 1px 1px #FFFFFF;
+		}
+		.gerb{
+			width: 37px;
+			vertical-align: middle;
+		}
+		.telephon{
+			height: 50px;
+			width: 720px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 1.7em;
+			padding-left: 447px;
+			text-align: left;
+		}
+		.town{
+			font-size: .80em;
+			padding-left: 1.7em;
+		}

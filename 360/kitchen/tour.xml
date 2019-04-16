@@ -1,0 +1,51 @@
+<krpano version="1.18">
+<!--  the skin  -->
+<include url="skin/defaultskin.xml"/>
+<!--  view settings  -->
+<view hlookat="0" vlookat="0" maxpixelzoom="1.0" fovmax="120" vlookatmax="-90" vlookatmin="75" limitview="range"/>
+<preview url="kitchen.tiles/preview.jpg"/>
+<image type="CUBE" multires="true" tilesize="512">
+<level tiledimagewidth="3820" tiledimageheight="3820">
+<cube url="kitchen.tiles/mres_%s/l4/%v/l4_%s_%v_%h.jpg"/>
+</level>
+<level tiledimagewidth="1910" tiledimageheight="1910">
+<cube url="kitchen.tiles/mres_%s/l3/%v/l3_%s_%v_%h.jpg"/>
+</level>
+<level tiledimagewidth="956" tiledimageheight="956">
+<cube url="kitchen.tiles/mres_%s/l2/%v/l2_%s_%v_%h.jpg"/>
+</level>
+<level tiledimagewidth="512" tiledimageheight="512">
+<cube url="kitchen.tiles/mres_%s/l1/%v/l1_%s_%v_%h.jpg"/>
+</level>
+<mobile>
+<cube url="kitchen.tiles/mobile_%s.jpg"/>
+</mobile>
+</image>
+
+<hotspot name="white" url="white_fh38y_43p_-7r_-10.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(38, 43, -7, -10);" keep="true" style="animation"/>
+<hotspot name="btn_white" rel="white" ath="-40.6199" atv="10.6101" style="animate_button"/>
+
+<hotspot name="small" url="small_fh25_y92_p-5_r58.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(25, 92, -5, 58);" keep="true" style="animation"/>
+<hotspot name="btn_small" rel="small" ath="-95.0925" atv="53.4056" style="animate_button"/>
+
+<hotspot name="frige" url="frige_fh43_y157_p-3_r2.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(43, 157, -3, 2);" keep="true" style="animation"/>
+<hotspot name="btn_frige" rel="frige" ath="-147.1502" atv="-0.8809" style="animate_button"/>
+
+<hotspot name="big" url="big_fh40_y-45_p51_r-36.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(40, -45, 51, -36);" keep="true" style="animation"/>
+<hotspot name="btn_big" rel="big" ath="21.1461" atv="50.3285" style="animate_button"/>
+
+<hotspot name="metall" url="metall_fh37_y93_p2_r-14.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(37, 93, 2, -14);" keep="true" style="animation"/>
+<hotspot name="btn_metall" rel="metall" ath="-95.2028" atv="9.8477" style="animate_button"/>
+
+<events name="hlookat_v" keep="true" devices="all" onkeyup="if(keycode == 86, copy(curH_hlookat,view.hlookat); mod(curH_hlookat,360); roundval(curH_hlookat,4); copy(curV_vlookat,view.vlookat); mod(curV_vlookat,360); roundval(curV_vlookat,4); txtadd(msg, get(curH_hlookat),' ', get(curV_vlookat)); trace('msg'); set(plugin[clipboard].text,get(msg)); )"/>
+<events name="m2s_m"
+	keep="true"
+	devices="all"
+	onkeyup="if(keycode == 77,
+		screentosphere(mouse.x,mouse.y,curM_hlookat,curM_vlookat);
+		mod(curM_hlookat,360); roundval(curM_hlookat,4);
+		roundval(curM_vlookat,4); copy(curM_fov,view.fov);
+		roundval(curM_fov,2); set(msg,); txtadd(msg,'ath=','&#34;',get(curM_hlookat),'&#34; ','atv=','&#34;',get(curM_vlookat),'&#34;');
+		trace(get(msg)); set(plugin[clipboard].text,get(msg));)"
+/>
+</krpano>
