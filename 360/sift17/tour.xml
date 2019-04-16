@@ -1,0 +1,2368 @@
+﻿<krpano version="1.19" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="true"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE|KEEPVIEW"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+ <include url="skin/vtourskin_design_ultra_light.xml" /> 
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[scene_054].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+	
+	<scene name="scene_048" name_old="scene_0_5_d_048_s97_sift2017_IMG_0304_p" title="0.5_d_048_s97_sift2017_IMG_0304_p" onstart="" thumburl="panos/0_5_d_048_s97_sift2017_IMG_0304_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0_5_d_048_s97_sift2017_IMG_0304_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0_5_d_048_s97_sift2017_IMG_0304_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0_5_d_048_s97_sift2017_IMG_0304_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0_5_d_048_s97_sift2017_IMG_0304_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_048_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_43" />
+		<hotspot name="scene_048_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_10" />
+<!--
+		<hotspot name="scene_048_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_048_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_slon" name_old="scene_0_5_f_078_slon_sift2017_IMG_0008_p" title="0.5_f_078_slon_sift2017_IMG_0008_p" onstart="" thumburl="panos/0_5_f_078_slon_sift2017_IMG_0008_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0_5_f_078_slon_sift2017_IMG_0008_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0_5_f_078_slon_sift2017_IMG_0008_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0_5_f_078_slon_sift2017_IMG_0008_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0_5_f_078_slon_sift2017_IMG_0008_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_slon_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_006" />
+		<hotspot name="scene_slon_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_001" />
+<!--
+		<hotspot name="scene_slon_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_slon_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_078__znanie" name_old="scene_0_5_f_078_znanie_sift2017_IMG_0002_p" title="0.5_f_078_znanie_sift2017_IMG_0002_p" onstart="" thumburl="panos/0_5_f_078_znanie_sift2017_IMG_0002_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0_5_f_078_znanie_sift2017_IMG_0002_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0_5_f_078_znanie_sift2017_IMG_0002_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0_5_f_078_znanie_sift2017_IMG_0002_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0_5_f_078_znanie_sift2017_IMG_0002_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_078_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_078_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_078_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_078_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_053" name_old="scene_0_7_c_053_s150_sift2017_IMG_0334_p" title="0.7_c_053_s150_sift2017_IMG_0334_p" onstart="" thumburl="panos/0_7_c_053_s150_sift2017_IMG_0334_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0_7_c_053_s150_sift2017_IMG_0334_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0_7_c_053_s150_sift2017_IMG_0334_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0_7_c_053_s150_sift2017_IMG_0334_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0_7_c_053_s150_sift2017_IMG_0334_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_053_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_039" />
+		<hotspot name="scene_053_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_052" />
+<!--
+		<hotspot name="scene_053_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_053_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_075" name_old="scene_00_d_075_scene_sift2017_IMG_0477_p" title="00_d_075_scene_sift2017_IMG_0477_p" onstart="" thumburl="panos/00_d_075_scene_sift2017_IMG_0477_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/00_d_075_scene_sift2017_IMG_0477_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/00_d_075_scene_sift2017_IMG_0477_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/00_d_075_scene_sift2017_IMG_0477_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/00_d_075_scene_sift2017_IMG_0477_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_075_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_075_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_075_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_075_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_002" name_old="scene_0__002_s104_sift2017_IMG_0021_p" title="0__002_s104_sift2017_IMG_0021_p" onstart="" thumburl="panos/0__002_s104_sift2017_IMG_0021_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0__002_s104_sift2017_IMG_0021_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0__002_s104_sift2017_IMG_0021_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0__002_s104_sift2017_IMG_0021_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0__002_s104_sift2017_IMG_0021_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_002_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_001" />
+		<hotspot name="scene_002_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_007" />
+<!--
+		<hotspot name="scene_002_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_002_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_007" name_old="scene_0__007_s102_sift2017_IMG_0052_p" title="0__007_s102_sift2017_IMG_0052_p" onstart="" thumburl="panos/0__007_s102_sift2017_IMG_0052_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0__007_s102_sift2017_IMG_0052_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0__007_s102_sift2017_IMG_0052_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0__007_s102_sift2017_IMG_0052_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0__007_s102_sift2017_IMG_0052_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_007_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_008" />
+		<hotspot name="scene_007_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_002" />
+<!--
+		<hotspot name="scene_007_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_007_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_008" name_old="scene_0__008_s101_sift2017_IMG_0059_p" title="0__008_s101_sift2017_IMG_0059_p" onstart="" thumburl="panos/0__008_s101_sift2017_IMG_0059_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0__008_s101_sift2017_IMG_0059_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0__008_s101_sift2017_IMG_0059_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0__008_s101_sift2017_IMG_0059_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0__008_s101_sift2017_IMG_0059_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		
+		<hotspot name="scene_008_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_003" />
+		<hotspot name="scene_008_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_007" />
+<!--
+		<hotspot name="scene_008_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_008_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_009" name_old="scene_0__009_s115_sift2017_IMG_0067_p" title="0__009_s115_sift2017_IMG_0067_p" onstart="" thumburl="panos/0__009_s115_sift2017_IMG_0067_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0__009_s115_sift2017_IMG_0067_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0__009_s115_sift2017_IMG_0067_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0__009_s115_sift2017_IMG_0067_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0__009_s115_sift2017_IMG_0067_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_009_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_010" />
+		<hotspot name="scene_009_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_003" />
+<!--
+		<hotspot name="scene_009_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_009_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_049" name_old="scene_0_cd_049_s148_sift2017_IMG_0310_p" title="0_cd_049_s148_sift2017_IMG_0310_p" onstart="" thumburl="panos/0_cd_049_s148_sift2017_IMG_0310_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0_cd_049_s148_sift2017_IMG_0310_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0_cd_049_s148_sift2017_IMG_0310_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0_cd_049_s148_sift2017_IMG_0310_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0_cd_049_s148_sift2017_IMG_0310_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_049_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_050" />
+		<hotspot name="scene_049_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_010" />
+<!--
+		<hotspot name="scene_049_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_049_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_050" name_old="scene_0_cd_050_s140_sift2017_IMG_0316_p" title="0_cd_050_s140_sift2017_IMG_0316_p" onstart="" thumburl="panos/0_cd_050_s140_sift2017_IMG_0316_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0_cd_050_s140_sift2017_IMG_0316_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0_cd_050_s140_sift2017_IMG_0316_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0_cd_050_s140_sift2017_IMG_0316_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0_cd_050_s140_sift2017_IMG_0316_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_050_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_041" />
+		<hotspot name="scene_050_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_052" />
+		<hotspot name="scene_050_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_049" />
+<!--
+		<hotspot name="scene_050_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_010" name_old="scene_0_d_010_s116_sift2017_IMG_0075_p" title="0_d_010_s116_sift2017_IMG_0075_p" onstart="" thumburl="panos/0_d_010_s116_sift2017_IMG_0075_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0_d_010_s116_sift2017_IMG_0075_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0_d_010_s116_sift2017_IMG_0075_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0_d_010_s116_sift2017_IMG_0075_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0_d_010_s116_sift2017_IMG_0075_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_010_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_048" />
+		<hotspot name="scene_010_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_075" />
+<!--
+		<hotspot name="scene_010_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_010_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_003" name_old="scene_0_e_003_s100_sift2017_IMG_0027_p" title="0_e_003_s100_sift2017_IMG_0027_p" onstart="" thumburl="panos/0_e_003_s100_sift2017_IMG_0027_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0_e_003_s100_sift2017_IMG_0027_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0_e_003_s100_sift2017_IMG_0027_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0_e_003_s100_sift2017_IMG_0027_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0_e_003_s100_sift2017_IMG_0027_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_003_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_009" />
+		<hotspot name="scene_003_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_008" />
+<!--
+		<hotspot name="scene_003_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_003_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_001" name_old="scene_0_f_001_s104_sift2017_IMG_0015_p" title="0_f_001_s104_sift2017_IMG_0015_p" onstart="" thumburl="panos/0_f_001_s104_sift2017_IMG_0015_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0_f_001_s104_sift2017_IMG_0015_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0_f_001_s104_sift2017_IMG_0015_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0_f_001_s104_sift2017_IMG_0015_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0_f_001_s104_sift2017_IMG_0015_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_001_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_slon" />
+		<hotspot name="scene_001_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_002" />
+<!--
+		<hotspot name="scene_001_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_001_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_052" name_old="scene_0____052_s142_sift2017_IMG_0328_p" title="0_с_052_s142_sift2017_IMG_0328_p" onstart="" thumburl="panos/0____052_s142_sift2017_IMG_0328_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/0____052_s142_sift2017_IMG_0328_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/0____052_s142_sift2017_IMG_0328_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/0____052_s142_sift2017_IMG_0328_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/0____052_s142_sift2017_IMG_0328_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_052_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_053" />
+		<hotspot name="scene_052_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_050" />
+<!--
+		<hotspot name="scene_052_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_052_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_045" name_old="scene_1_5_d_045_s170_sift2017_IMG_0286_p" title="1.5_d_045_s170_sift2017_IMG_0286_p" onstart="" thumburl="panos/1_5_d_045_s170_sift2017_IMG_0286_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_5_d_045_s170_sift2017_IMG_0286_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_5_d_045_s170_sift2017_IMG_0286_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_5_d_045_s170_sift2017_IMG_0286_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_5_d_045_s170_sift2017_IMG_0286_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_045_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_046" />
+		<hotspot name="scene_045_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_043" />
+<!--
+		<hotspot name="scene_045_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_045_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_005" name_old="scene_1__005_s106_sift2017_IMG_0039_p" title="1__005_s106_sift2017_IMG_0039_p" onstart="" thumburl="panos/1__005_s106_sift2017_IMG_0039_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1__005_s106_sift2017_IMG_0039_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1__005_s106_sift2017_IMG_0039_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1__005_s106_sift2017_IMG_0039_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1__005_s106_sift2017_IMG_0039_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_005_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_004" />
+		<hotspot name="scene_005_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_006" />
+<!--
+		<hotspot name="scene_005_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_005_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_039" name_old="scene_1_c_039_s135_sift2017_IMG_0250_p" title="1_c_039_s135_sift2017_IMG_0250_p" onstart="" thumburl="panos/1_c_039_s135_sift2017_IMG_0250_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_c_039_s135_sift2017_IMG_0250_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_c_039_s135_sift2017_IMG_0250_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_c_039_s135_sift2017_IMG_0250_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_c_039_s135_sift2017_IMG_0250_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_039_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_037" />
+		<hotspot name="scene_039_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene053_" />
+		<hotspot name="scene_039_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_040" />
+<!--
+		<hotspot name="scene_039_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_040" name_old="scene_1_cd_040_s175_sift2017_IMG_0256_p" title="1_cd_040_s175_sift2017_IMG_0256_p" onstart="" thumburl="panos/1_cd_040_s175_sift2017_IMG_0256_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_cd_040_s175_sift2017_IMG_0256_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_cd_040_s175_sift2017_IMG_0256_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_cd_040_s175_sift2017_IMG_0256_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_cd_040_s175_sift2017_IMG_0256_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_040_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_039" />
+		<hotspot name="scene_040_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_041" />
+<!--
+		<hotspot name="scene_040_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_040_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_041" name_old="scene_1_cd_041_s174_sift2017_IMG_0262_p" title="1_cd_041_s174_sift2017_IMG_0262_p" onstart="" thumburl="panos/1_cd_041_s174_sift2017_IMG_0262_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_cd_041_s174_sift2017_IMG_0262_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_cd_041_s174_sift2017_IMG_0262_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_cd_041_s174_sift2017_IMG_0262_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_cd_041_s174_sift2017_IMG_0262_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_041_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_040" />
+		<hotspot name="scene_041_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_042" />
+<!--
+		<hotspot name="scene_041_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_041_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_042" name_old="scene_1_cd_042_s170_sift2017_IMG_0268_p" title="1_cd_042_s170_sift2017_IMG_0268_p" onstart="" thumburl="panos/1_cd_042_s170_sift2017_IMG_0268_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_cd_042_s170_sift2017_IMG_0268_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_cd_042_s170_sift2017_IMG_0268_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_cd_042_s170_sift2017_IMG_0268_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_cd_042_s170_sift2017_IMG_0268_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_042_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_041" />
+		<hotspot name="scene_042_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_044" />
+<!--
+		<hotspot name="scene_042_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_042_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_044" name_old="scene_1_cd_044_s170_sift2017_IMG_0280_p" title="1_cd_044_s170_sift2017_IMG_0280_p" onstart="" thumburl="panos/1_cd_044_s170_sift2017_IMG_0280_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_cd_044_s170_sift2017_IMG_0280_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_cd_044_s170_sift2017_IMG_0280_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_cd_044_s170_sift2017_IMG_0280_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_cd_044_s170_sift2017_IMG_0280_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_044_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_042" />
+		<hotspot name="scene_044_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_043" />
+<!--
+		<hotspot name="scene_044_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_044_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_043" name_old="scene_1_d_043_s170_sift2017_IMG_0274_p" title="1_d_043_s170_sift2017_IMG_0274_p" onstart="" thumburl="panos/1_d_043_s170_sift2017_IMG_0274_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_d_043_s170_sift2017_IMG_0274_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_d_043_s170_sift2017_IMG_0274_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_d_043_s170_sift2017_IMG_0274_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_d_043_s170_sift2017_IMG_0274_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_043_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_044" />
+		<hotspot name="scene_043_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_048" />
+		<hotspot name="scene_043_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_047" />
+		<hotspot name="scene_043_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_045" />
+<!--
+-->
+
+	</scene>
+
+	<scene name="scene_047" name_old="scene_1_de_047_s89_sift2017_IMG_0298_p" title="1_de_047_s89_sift2017_IMG_0298_p" onstart="" thumburl="panos/1_de_047_s89_sift2017_IMG_0298_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_de_047_s89_sift2017_IMG_0298_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_de_047_s89_sift2017_IMG_0298_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_de_047_s89_sift2017_IMG_0298_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_de_047_s89_sift2017_IMG_0298_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_047_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_043" />
+		<hotspot name="scene_047_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_004" />
+<!--
+		<hotspot name="scene_047_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_047_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_004" name_old="scene_1_e_004_s93_sift2017_IMG_0033_p" title="1_e_004_s93_sift2017_IMG_0033_p" onstart="" thumburl="panos/1_e_004_s93_sift2017_IMG_0033_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_e_004_s93_sift2017_IMG_0033_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_e_004_s93_sift2017_IMG_0033_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_e_004_s93_sift2017_IMG_0033_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_e_004_s93_sift2017_IMG_0033_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_004_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_047" />
+		<hotspot name="scene_004_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_003" />
+		<hotspot name="scene_004_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_005" />
+<!--
+		<hotspot name="scene_004_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_006" name_old="scene_1_f_006_s83_sift2017_IMG_0046_p" title="1_f_006_s83_sift2017_IMG_0046_p" onstart="" thumburl="panos/1_f_006_s83_sift2017_IMG_0046_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/1_f_006_s83_sift2017_IMG_0046_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/1_f_006_s83_sift2017_IMG_0046_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/1_f_006_s83_sift2017_IMG_0046_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/1_f_006_s83_sift2017_IMG_0046_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_006_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_011" />
+		<hotspot name="scene_006_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_005" />
+		<hotspot name="scene_006_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_slon" />
+<!--
+		<hotspot name="scene_006_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_024" name_old="scene_2_3_d_024_s39_sift2017_IMG_0159_p" title="2.3_d_024_s39_sift2017_IMG_0159_p" onstart="" thumburl="panos/2_3_d_024_s39_sift2017_IMG_0159_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_3_d_024_s39_sift2017_IMG_0159_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_3_d_024_s39_sift2017_IMG_0159_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_3_d_024_s39_sift2017_IMG_0159_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_3_d_024_s39_sift2017_IMG_0159_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_024_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_024_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_024_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_024_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_031" name_old="scene_2_5_a_031_s59_sift2017_IMG_0201_p" title="2.5_a_031_s59_sift2017_IMG_0201_p" onstart="" thumburl="panos/2_5_a_031_s59_sift2017_IMG_0201_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_5_a_031_s59_sift2017_IMG_0201_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_5_a_031_s59_sift2017_IMG_0201_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_5_a_031_s59_sift2017_IMG_0201_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_5_a_031_s59_sift2017_IMG_0201_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_031_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_032" />
+		<hotspot name="scene_031_315" style="skin_hotspotstyle" ath="315" atv="0" linkedscene="scene_33" />
+<!--
+		<hotspot name="scene_031_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_031_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_032" name_old="scene_2_5_a_032_s59_sift2017_IMG_0207_p" title="2.5_a_032_s59_sift2017_IMG_0207_p" onstart="" thumburl="panos/2_5_a_032_s59_sift2017_IMG_0207_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_5_a_032_s59_sift2017_IMG_0207_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_5_a_032_s59_sift2017_IMG_0207_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_5_a_032_s59_sift2017_IMG_0207_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_5_a_032_s59_sift2017_IMG_0207_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_032_45" style="skin_hotspotstyle" ath="45" atv="0" linkedscene="scene_033" />
+		<hotspot name="scene_032_225" style="skin_hotspotstyle" ath="225" atv="0" linkedscene="scene_034" />
+<!--
+		<hotspot name="scene_032_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_032_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_014" name_old="scene_2_5_e_014_s17_sift2017_IMG_0099_p" title="2.5_e_014_s17_sift2017_IMG_0099_p" onstart="" thumburl="panos/2_5_e_014_s17_sift2017_IMG_0099_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_5_e_014_s17_sift2017_IMG_0099_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_5_e_014_s17_sift2017_IMG_0099_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_5_e_014_s17_sift2017_IMG_0099_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_5_e_014_s17_sift2017_IMG_0099_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_014_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_014_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_014_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_014_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_038" name_old="scene_2_7_c_038_s50_sift2017_IMG_0244_p" title="2.7_c_038_s50_sift2017_IMG_0244_p" onstart="" thumburl="panos/2_7_c_038_s50_sift2017_IMG_0244_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_7_c_038_s50_sift2017_IMG_0244_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_7_c_038_s50_sift2017_IMG_0244_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_7_c_038_s50_sift2017_IMG_0244_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_7_c_038_s50_sift2017_IMG_0244_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_038_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_038_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_038_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_038_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="47.182" atv="7.180" linkedscene="scene_088" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-53.140" atv="3.472" linkedscene="scene_028" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="27.061" atv="1.570" linkedscene="scene_063" />
+
+	</scene>
+
+	<scene name="scene_023" name_old="scene_2_7_d_023_s39_sift2017_IMG_0153_p" title="2.7_d_023_s39_sift2017_IMG_0153_p" onstart="" thumburl="panos/2_7_d_023_s39_sift2017_IMG_0153_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_7_d_023_s39_sift2017_IMG_0153_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_7_d_023_s39_sift2017_IMG_0153_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_7_d_023_s39_sift2017_IMG_0153_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_7_d_023_s39_sift2017_IMG_0153_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_023_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_023_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_023_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_023_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_019" name_old="scene_2_7_f_019_s18_sift2017_IMG_0129_p" title="2.7_f_019_s18_sift2017_IMG_0129_p" onstart="" thumburl="panos/2_7_f_019_s18_sift2017_IMG_0129_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_7_f_019_s18_sift2017_IMG_0129_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_7_f_019_s18_sift2017_IMG_0129_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_7_f_019_s18_sift2017_IMG_0129_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_7_f_019_s18_sift2017_IMG_0129_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_019_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_018" />
+		<hotspot name="scene_019_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_011" />
+		<hotspot name="scene_019_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_020" />
+<!--
+		<hotspot name="scene_019_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_020" name_old="scene_2_7_f_020_s22_sift2017_IMG_0135_p" title="2.7_f_020_s22_sift2017_IMG_0135_p" onstart="" thumburl="panos/2_7_f_020_s22_sift2017_IMG_0135_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_7_f_020_s22_sift2017_IMG_0135_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_7_f_020_s22_sift2017_IMG_0135_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_7_f_020_s22_sift2017_IMG_0135_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_7_f_020_s22_sift2017_IMG_0135_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_020_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_019" />
+<!--
+		<hotspot name="scene_020_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_020_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_020_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_012" name_old="scene_2__012_s19_sift2017_IMG_0087_p" title="2__012_s19_sift2017_IMG_0087_p" onstart="" thumburl="panos/2__012_s19_sift2017_IMG_0087_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2__012_s19_sift2017_IMG_0087_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2__012_s19_sift2017_IMG_0087_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2__012_s19_sift2017_IMG_0087_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2__012_s19_sift2017_IMG_0087_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_012_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_013" />
+		<hotspot name="scene_012_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_021" />
+<!--
+		<hotspot name="scene_012_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_012_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_034" name_old="scene_2_ab_034_s59_sift2017_IMG_0219_p" title="2_ab_034_s59_sift2017_IMG_0219_p" onstart="" thumburl="panos/2_ab_034_s59_sift2017_IMG_0219_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_ab_034_s59_sift2017_IMG_0219_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_ab_034_s59_sift2017_IMG_0219_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_ab_034_s59_sift2017_IMG_0219_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_ab_034_s59_sift2017_IMG_0219_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_034_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_035" />
+		<hotspot name="scene_034_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_032" />
+<!--
+		<hotspot name="scene_034_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_034_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_035" name_old="scene_2_b_035_s51_sift2017_IMG_0225_p" title="2_b_035_s51_sift2017_IMG_0225_p" onstart="" thumburl="panos/2_b_035_s51_sift2017_IMG_0225_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_b_035_s51_sift2017_IMG_0225_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_b_035_s51_sift2017_IMG_0225_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_b_035_s51_sift2017_IMG_0225_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_b_035_s51_sift2017_IMG_0225_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_035_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_065" />
+		<hotspot name="scene_035_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_034" />
+		<hotspot name="scene_035_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_036" />
+<!--
+		<hotspot name="scene_035_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_036" name_old="scene_2_bc_036_s32_sift2017_IMG_0232_p" title="2_bc_036_s32_sift2017_IMG_0232_p" onstart="" thumburl="panos/2_bc_036_s32_sift2017_IMG_0232_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_bc_036_s32_sift2017_IMG_0232_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_bc_036_s32_sift2017_IMG_0232_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_bc_036_s32_sift2017_IMG_0232_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_bc_036_s32_sift2017_IMG_0232_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_036_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_035" />
+		<hotspot name="scene_036_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_037" />
+<!--
+		<hotspot name="scene_036_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_036_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_037" name_old="scene_2_c_037_s49_sift2017_IMG_0238_p" title="2_c_037_s49_sift2017_IMG_0238_p" onstart="" thumburl="panos/2_c_037_s49_sift2017_IMG_0238_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_c_037_s49_sift2017_IMG_0238_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_c_037_s49_sift2017_IMG_0238_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_c_037_s49_sift2017_IMG_0238_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_c_037_s49_sift2017_IMG_0238_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_037_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_038" />
+		<hotspot name="scene_037_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_036" />
+		<hotspot name="scene_037_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_039" />
+		<hotspot name="scene_037_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_091" />
+<!--
+-->
+
+	</scene>
+
+	<scene name="scene_091" name_old="scene_2_cd_091_s31_sift2017_IMG_0098_p" title="2_cd_091_s31_sift2017_IMG_0098_p" onstart="" thumburl="panos/2_cd_091_s31_sift2017_IMG_0098_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_cd_091_s31_sift2017_IMG_0098_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_cd_091_s31_sift2017_IMG_0098_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_cd_091_s31_sift2017_IMG_0098_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_cd_091_s31_sift2017_IMG_0098_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_091_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_037" />
+		<hotspot name="scene_091_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_046" />
+<!--
+		<hotspot name="scene_091_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_091_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_046" name_old="scene_2_d_046_s26_sift2017_IMG_0292_p" title="2_d_046_s26_sift2017_IMG_0292_p" onstart="" thumburl="panos/2_d_046_s26_sift2017_IMG_0292_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_d_046_s26_sift2017_IMG_0292_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_d_046_s26_sift2017_IMG_0292_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_d_046_s26_sift2017_IMG_0292_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_d_046_s26_sift2017_IMG_0292_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_046_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_024" />
+		<hotspot name="scene_046_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_091" />
+		<hotspot name="scene_046_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_045" />
+		<hotspot name="scene_046_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_022" />
+<!--
+-->
+
+	</scene>
+
+	<scene name="scene_022" name_old="scene_2_de_022_s12_sift2017_IMG_0147_p" title="2_de_022_s12_sift2017_IMG_0147_p" onstart="" thumburl="panos/2_de_022_s12_sift2017_IMG_0147_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_de_022_s12_sift2017_IMG_0147_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_de_022_s12_sift2017_IMG_0147_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_de_022_s12_sift2017_IMG_0147_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_de_022_s12_sift2017_IMG_0147_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_022_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_046" />
+		<hotspot name="scene_022_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_022" />
+<!--
+		<hotspot name="scene_022_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_022_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_013" name_old="scene_2_e_013_s25_sift2017_IMG_0093_p" title="2_e_013_s25_sift2017_IMG_0093_p" onstart="" thumburl="panos/2_e_013_s25_sift2017_IMG_0093_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_e_013_s25_sift2017_IMG_0093_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_e_013_s25_sift2017_IMG_0093_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_e_013_s25_sift2017_IMG_0093_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_e_013_s25_sift2017_IMG_0093_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_013_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_014" />
+		<hotspot name="scene_013_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_022" />
+		<hotspot name="scene_013_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_012" />
+<!--
+		<hotspot name="scene_013_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_021" name_old="scene_2_ef_021_s19_sift2017_IMG_0141_p" title="2_ef_021_s19_sift2017_IMG_0141_p" onstart="" thumburl="panos/2_ef_021_s19_sift2017_IMG_0141_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_ef_021_s19_sift2017_IMG_0141_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_ef_021_s19_sift2017_IMG_0141_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_ef_021_s19_sift2017_IMG_0141_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_ef_021_s19_sift2017_IMG_0141_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_021_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_012" />
+		<hotspot name="scene_021_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_011" />
+<!--
+		<hotspot name="scene_021_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_021_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_011" name_old="scene_2_f_011_s20_sift2017_IMG_0081_p" title="2_f_011_s20_sift2017_IMG_0081_p" onstart="" thumburl="panos/2_f_011_s20_sift2017_IMG_0081_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/2_f_011_s20_sift2017_IMG_0081_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/2_f_011_s20_sift2017_IMG_0081_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/2_f_011_s20_sift2017_IMG_0081_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/2_f_011_s20_sift2017_IMG_0081_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_011_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_019" />
+		<hotspot name="scene_011_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_021" />
+		<hotspot name="scene_011_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_006" />
+<!--
+		<hotspot name="scene_011_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_062" name_old="scene_3_5_a_062_s54_sift2017_IMG_0391_p" title="3.5_a_062_s54_sift2017_IMG_0391_p" onstart="" thumburl="panos/3_5_a_062_s54_sift2017_IMG_0391_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_5_a_062_s54_sift2017_IMG_0391_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_5_a_062_s54_sift2017_IMG_0391_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_5_a_062_s54_sift2017_IMG_0391_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_5_a_062_s54_sift2017_IMG_0391_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_062_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_032" />
+		<hotspot name="scene_062_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_061" />
+<!--
+		<hotspot name="scene_062_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_062_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_061" name_old="scene_3_5_b_061_s54_sift2017_IMG_0385_p" title="3.5_b_061_s54_sift2017_IMG_0385_p" onstart="" thumburl="panos/3_5_b_061_s54_sift2017_IMG_0385_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_5_b_061_s54_sift2017_IMG_0385_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_5_b_061_s54_sift2017_IMG_0385_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_5_b_061_s54_sift2017_IMG_0385_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_5_b_061_s54_sift2017_IMG_0385_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_061_0" style="skin_hotspotstyle" ath="9.414" atv="3.040" linkedscene="scene_060" />
+		<hotspot name="scene_061_90" style="skin_hotspotstyle" ath="90.000" atv="0.000" linkedscene="scene_062" />
+		<hotspot name="scene_061_180" style="skin_hotspotstyle" ath="180.000" atv="0.000" linkedscene="scene_064" />
+		<hotspot name="scene_061_270" style="skin_hotspotstyle" ath="270.000" atv="0.000" linkedscene="scene_063" />
+<!--
+-->
+
+	</scene>
+
+	<scene name="scene_064" name_old="scene_3_5_b_064_s53_sift2017_IMG_0403_p" title="3.5_b_064_s53_sift2017_IMG_0403_p" onstart="" thumburl="panos/3_5_b_064_s53_sift2017_IMG_0403_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_5_b_064_s53_sift2017_IMG_0403_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_5_b_064_s53_sift2017_IMG_0403_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_5_b_064_s53_sift2017_IMG_0403_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_5_b_064_s53_sift2017_IMG_0403_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_064_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_061" />
+		<hotspot name="scene_064_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_065" />
+<!--
+		<hotspot name="scene_064_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_064_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_063" name_old="scene_3_5_bc_063_s62_sift2017_IMG_0397_p" title="3.5_bc_063_s62_sift2017_IMG_0397_p" onstart="" thumburl="panos/3_5_bc_063_s62_sift2017_IMG_0397_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_5_bc_063_s62_sift2017_IMG_0397_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_5_bc_063_s62_sift2017_IMG_0397_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_5_bc_063_s62_sift2017_IMG_0397_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_5_bc_063_s62_sift2017_IMG_0397_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_063_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_061" />
+<!--
+		<hotspot name="scene_063_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_063_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_063_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_077" name_old="scene_3_5_d_077_s10_sift2017_IMG_0489_p" title="3.5_d_077_s10_sift2017_IMG_0489_p" onstart="" thumburl="panos/3_5_d_077_s10_sift2017_IMG_0489_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_5_d_077_s10_sift2017_IMG_0489_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_5_d_077_s10_sift2017_IMG_0489_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_5_d_077_s10_sift2017_IMG_0489_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_5_d_077_s10_sift2017_IMG_0489_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_077_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_017" />
+		<hotspot name="scene_077_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_018" />
+<!--
+		<hotspot name="scene_077_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_077_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_085" name_old="scene_3_5_d_085_s1_sift2017_IMG_0061_p" title="3.5_d_085_s1_sift2017_IMG_0061_p" onstart="" thumburl="panos/3_5_d_085_s1_sift2017_IMG_0061_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_5_d_085_s1_sift2017_IMG_0061_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_5_d_085_s1_sift2017_IMG_0061_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_5_d_085_s1_sift2017_IMG_0061_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_5_d_085_s1_sift2017_IMG_0061_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_085_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_085" />
+		<hotspot name="scene_085_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_025" />
+		<hotspot name="scene_085_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_086" />
+<!--
+		<hotspot name="scene_085_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_086" name_old="scene_3_5_de_086_s7_sift2017_IMG_0067_p" title="3.5_de_086_s7_sift2017_IMG_0067_p" onstart="" thumburl="panos/3_5_de_086_s7_sift2017_IMG_0067_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_5_de_086_s7_sift2017_IMG_0067_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_5_de_086_s7_sift2017_IMG_0067_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_5_de_086_s7_sift2017_IMG_0067_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_5_de_086_s7_sift2017_IMG_0067_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_086_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_085" />
+		<hotspot name="scene_086_225" style="skin_hotspotstyle" ath="225" atv="0" linkedscene="scene_077" />
+<!--
+		<hotspot name="scene_086_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_086_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_017" name_old="scene_3_5_f_017_s14_sift2017_IMG_0117_p" title="3.5_f_017_s14_sift2017_IMG_0117_p" onstart="" thumburl="panos/3_5_f_017_s14_sift2017_IMG_0117_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_5_f_017_s14_sift2017_IMG_0117_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_5_f_017_s14_sift2017_IMG_0117_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_5_f_017_s14_sift2017_IMG_0117_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_5_f_017_s14_sift2017_IMG_0117_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_017_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_017_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_077" />
+<!--
+		<hotspot name="scene_017_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_017_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_018" name_old="scene_3_5_f_018_s10_sift2017_IMG_0123_p" title="3.5_f_018_s10_sift2017_IMG_0123_p" onstart="" thumburl="panos/3_5_f_018_s10_sift2017_IMG_0123_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_5_f_018_s10_sift2017_IMG_0123_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_5_f_018_s10_sift2017_IMG_0123_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_5_f_018_s10_sift2017_IMG_0123_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_5_f_018_s10_sift2017_IMG_0123_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_018_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_077" />
+		<hotspot name="scene_018_135" style="skin_hotspotstyle" ath="135" atv="0" linkedscene="scene_015" />
+		<hotspot name="scene_018_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_019" />
+<!--
+		<hotspot name="scene_018_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_033" name_old="scene_3_a_033_sac_sift2017_IMG_0213_p" title="3_a_033_sac_sift2017_IMG_0213_p" onstart="" thumburl="panos/3_a_033_sac_sift2017_IMG_0213_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_a_033_sac_sift2017_IMG_0213_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_a_033_sac_sift2017_IMG_0213_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_a_033_sac_sift2017_IMG_0213_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_a_033_sac_sift2017_IMG_0213_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_033_135" style="skin_hotspotstyle" ath="135" atv="0" linkedscene="scene_031" />
+		<hotspot name="scene_033_225" style="skin_hotspotstyle" ath="225" atv="0" linkedscene="scene_032" />
+<!--
+		<hotspot name="scene_033_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_033_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_030" name_old="scene_3_b_030_s53_sift2017_IMG_0195_p" title="3_b_030_s53_sift2017_IMG_0195_p" onstart="" thumburl="panos/3_b_030_s53_sift2017_IMG_0195_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_b_030_s53_sift2017_IMG_0195_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_b_030_s53_sift2017_IMG_0195_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_b_030_s53_sift2017_IMG_0195_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_b_030_s53_sift2017_IMG_0195_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_030_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_030_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_030_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_030_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_065" name_old="scene_3_b_065_s53_sift2017_IMG_0410_p" title="3_b_065_s53_sift2017_IMG_0410_p" onstart="" thumburl="panos/3_b_065_s53_sift2017_IMG_0410_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_b_065_s53_sift2017_IMG_0410_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_b_065_s53_sift2017_IMG_0410_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_b_065_s53_sift2017_IMG_0410_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_b_065_s53_sift2017_IMG_0410_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_065_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_064" />
+		<hotspot name="scene_065_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_033" />
+		<hotspot name="scene_065_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_035" />
+		<hotspot name="scene_065_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_088" />
+<!--
+-->
+
+	</scene>
+
+	<scene name="scene_029" name_old="scene_3_bc_029_s52_sift2017_IMG_0189_p" title="3_bc_029_s52_sift2017_IMG_0189_p" onstart="" thumburl="panos/3_bc_029_s52_sift2017_IMG_0189_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_bc_029_s52_sift2017_IMG_0189_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_bc_029_s52_sift2017_IMG_0189_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_bc_029_s52_sift2017_IMG_0189_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_bc_029_s52_sift2017_IMG_0189_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_029_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_029_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_029_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_029_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_088" name_old="scene_3_bc_088_s052_sift2017_IMG_0079_p" title="3_bc_088_s052_sift2017_IMG_0079_p" onstart="" thumburl="panos/3_bc_088_s052_sift2017_IMG_0079_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_bc_088_s052_sift2017_IMG_0079_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_bc_088_s052_sift2017_IMG_0079_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_bc_088_s052_sift2017_IMG_0079_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_bc_088_s052_sift2017_IMG_0079_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_088_90" style="skin_hotspotstyle" ath="90.000" atv="0.000" linkedscene="scene_065" />
+		<hotspot name="scene_088_270" style="skin_hotspotstyle" ath="270.000" atv="0.000" linkedscene="scene_028" />
+<!--
+		<hotspot name="scene_088_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_088_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="57.941" atv="2.801" linkedscene="scene_038" />
+
+	</scene>
+
+	<scene name="scene_026" name_old="scene_3_cd_026_s46_sift2017_IMG_0171_p" title="3_cd_026_s46_sift2017_IMG_0171_p" onstart="" thumburl="panos/3_cd_026_s46_sift2017_IMG_0171_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_cd_026_s46_sift2017_IMG_0171_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_cd_026_s46_sift2017_IMG_0171_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_cd_026_s46_sift2017_IMG_0171_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_cd_026_s46_sift2017_IMG_0171_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_026_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_027" />
+		<hotspot name="scene_026_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_087" />
+<!--
+		<hotspot name="scene_026_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_026_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_027" name_old="scene_3_cd_027_s45_sift2017_IMG_0177_p" title="3_cd_027_s45_sift2017_IMG_0177_p" onstart="" thumburl="panos/3_cd_027_s45_sift2017_IMG_0177_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_cd_027_s45_sift2017_IMG_0177_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_cd_027_s45_sift2017_IMG_0177_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_cd_027_s45_sift2017_IMG_0177_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_cd_027_s45_sift2017_IMG_0177_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_027_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_028" />
+		<hotspot name="scene_027_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_026" />
+<!--
+		<hotspot name="scene_027_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_027_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_028" name_old="scene_3_cd_028_s43_sift2017_IMG_0183_p" title="3_cd_028_s43_sift2017_IMG_0183_p" onstart="" thumburl="panos/3_cd_028_s43_sift2017_IMG_0183_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_cd_028_s43_sift2017_IMG_0183_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_cd_028_s43_sift2017_IMG_0183_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_cd_028_s43_sift2017_IMG_0183_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_cd_028_s43_sift2017_IMG_0183_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_028_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_088" />
+		<hotspot name="scene_028_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_027" />
+<!--
+		<hotspot name="scene_028_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_028_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_087" name_old="scene_3_cd_087_s39_sift2017_IMG_0073_p" title="3_cd_087_s39_sift2017_IMG_0073_p" onstart="" thumburl="panos/3_cd_087_s39_sift2017_IMG_0073_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_cd_087_s39_sift2017_IMG_0073_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_cd_087_s39_sift2017_IMG_0073_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_cd_087_s39_sift2017_IMG_0073_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_cd_087_s39_sift2017_IMG_0073_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_087_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_026" />
+		<hotspot name="scene_087_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_025" />
+<!--
+		<hotspot name="scene_087_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_087_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_025" name_old="scene_3_d_025_s15_sift2017_IMG_0165_p" title="3_d_025_s15_sift2017_IMG_0165_p" onstart="" thumburl="panos/3_d_025_s15_sift2017_IMG_0165_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_d_025_s15_sift2017_IMG_0165_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_d_025_s15_sift2017_IMG_0165_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_d_025_s15_sift2017_IMG_0165_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_d_025_s15_sift2017_IMG_0165_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_025_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_085" />
+		<hotspot name="scene_025_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_023" />
+		<hotspot name="scene_025_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_016" />
+<!--
+		<hotspot name="scene_025_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_087" />
+-->
+
+	</scene>
+
+	<scene name="scene_016" name_old="scene_3_de_016_s7_sift2017_IMG_0111_p" title="3_de_016_s7_sift2017_IMG_0111_p" onstart="" thumburl="panos/3_de_016_s7_sift2017_IMG_0111_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_de_016_s7_sift2017_IMG_0111_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_de_016_s7_sift2017_IMG_0111_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_de_016_s7_sift2017_IMG_0111_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_de_016_s7_sift2017_IMG_0111_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_016_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_025" />
+		<hotspot name="scene_016_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_015" />
+<!--
+		<hotspot name="scene_016_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_016_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_015" name_old="scene_3_e_015_s17_sift2017_IMG_0105_p" title="3_e_015_s17_sift2017_IMG_0105_p" onstart="" thumburl="panos/3_e_015_s17_sift2017_IMG_0105_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/3_e_015_s17_sift2017_IMG_0105_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/3_e_015_s17_sift2017_IMG_0105_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/3_e_015_s17_sift2017_IMG_0105_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/3_e_015_s17_sift2017_IMG_0105_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+		<hotspot name="scene_015_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_086" />
+		<hotspot name="scene_015_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_016" />
+		<hotspot name="scene_015_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_014" />
+		<hotspot name="scene_015_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_020" />
+<!--
+-->
+
+	</scene>
+
+	<scene name="scene_071" name_old="scene_4_5_071_enter_sift2017_IMG_0449_p" title="4.5_071_enter_sift2017_IMG_0449_p" onstart="" thumburl="panos/4_5_071_enter_sift2017_IMG_0449_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_5_071_enter_sift2017_IMG_0449_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_5_071_enter_sift2017_IMG_0449_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_5_071_enter_sift2017_IMG_0449_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_5_071_enter_sift2017_IMG_0449_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_071_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_071_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_071_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_071_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="21.203" atv="4.555" linkedscene="scene_069" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="68.408" atv="2.834" linkedscene="scene_055" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="122.629" atv="1.108" linkedscene="scene_056" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-141.746" atv="2.621" linkedscene="scene_072" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="-114.831" atv="0.782" linkedscene="scene_073" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="13.656" atv="-66.358" linkedscene="scene_070" />
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="154.013" atv="4.293" linkedscene="scene_054" />
+
+	</scene>
+
+	<scene name="scene_054" name_old="scene_4_054_enter_sift2017_IMG_0340_p" title="4_054_enter_sift2017_IMG_0340_p" onstart="" thumburl="panos/4_054_enter_sift2017_IMG_0340_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="208.638" vlookat="7.619" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_054_enter_sift2017_IMG_0340_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_054_enter_sift2017_IMG_0340_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_054_enter_sift2017_IMG_0340_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_054_enter_sift2017_IMG_0340_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_054_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_054_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_054_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_054_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="48.552" atv="7.503" linkedscene="scene_055" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-24.589" atv="3.168" linkedscene="scene_071" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-52.565" atv="-39.646" linkedscene="scene_070" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-48.410" atv="5.476" linkedscene="scene_071" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="-128.106" atv="3.765" linkedscene="scene_072" />
+		<hotspot name="spot6" style="skin_hotspotstyle" ath="122.427" atv="2.231" linkedscene="scene_056" />
+		<hotspot name="spot7" style="skin_hotspotstyle" ath="-89.589" atv="-0.407" linkedscene="scene_074" />
+		<hotspot name="spot8" style="skin_hotspotstyle" ath="159.318" atv="-0.002" linkedscene="scene_067" />
+
+	</scene>
+
+	<scene name="scene_055" name_old="scene_4_055_sirius_sift2017_IMG_0346_p" title="4_055_sirius_sift2017_IMG_0346_p" onstart="" thumburl="panos/4_055_sirius_sift2017_IMG_0346_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_055_sirius_sift2017_IMG_0346_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_055_sirius_sift2017_IMG_0346_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_055_sirius_sift2017_IMG_0346_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_055_sirius_sift2017_IMG_0346_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_055_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_055_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_055_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_055_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_056" name_old="scene_4_056_futbol_sift2017_IMG_0352_p" title="4_056_futbol_sift2017_IMG_0352_p" onstart="" thumburl="panos/4_056_futbol_sift2017_IMG_0352_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_056_futbol_sift2017_IMG_0352_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_056_futbol_sift2017_IMG_0352_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_056_futbol_sift2017_IMG_0352_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_056_futbol_sift2017_IMG_0352_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_056_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_056_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_056_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_056_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-113.046" atv="0.196" linkedscene="scene_054" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="77.940" atv="1.714" linkedscene="scene_058" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="139.347" atv="1.205" linkedscene="scene_086" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="161.264" atv="0.058" linkedscene="scene_017" />
+
+	</scene>
+
+	<scene name="scene_057" name_old="scene_4_057_theate_sift2017_IMG_0358_p" title="4_057_theate_sift2017_IMG_0358_p" onstart="" thumburl="panos/4_057_theate_sift2017_IMG_0358_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_057_theate_sift2017_IMG_0358_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_057_theate_sift2017_IMG_0358_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_057_theate_sift2017_IMG_0358_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_057_theate_sift2017_IMG_0358_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_057_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_057_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_057_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_057_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+
+	</scene>
+
+	<scene name="scene_058" name_old="scene_4_058_art_sift2017_IMG_0364_p" title="4_058_art_sift2017_IMG_0364_p" onstart="" thumburl="panos/4_058_art_sift2017_IMG_0364_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_058_art_sift2017_IMG_0364_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_058_art_sift2017_IMG_0364_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_058_art_sift2017_IMG_0364_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_058_art_sift2017_IMG_0364_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_058_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_058_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_058_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_058_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="121.404" atv="1.410" linkedscene="scene_067" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-84.886" atv="3.329" linkedscene="scene_056" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="168.917" atv="4.505" linkedscene="scene_057" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="83.388" atv="0.407" linkedscene="scene_066" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="92.799" atv="1.774" linkedscene="scene_059" />
+
+	</scene>
+
+	<scene name="scene_059" name_old="scene_4_059_art_sift2017_IMG_0372_p" title="4_059_art_sift2017_IMG_0372_p" onstart="" thumburl="panos/4_059_art_sift2017_IMG_0372_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_059_art_sift2017_IMG_0372_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_059_art_sift2017_IMG_0372_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_059_art_sift2017_IMG_0372_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_059_art_sift2017_IMG_0372_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_059_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_059_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_059_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_059_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="102.041" atv="3.996" linkedscene="scene_060" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-80.788" atv="2.181" linkedscene="scene_058" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-108.918" atv="0.933" linkedscene="scene_067" />
+
+	</scene>
+
+	<scene name="scene_060" name_old="scene_4_b_060_door_sift2017_IMG_0379_p" title="4_b_060_door_sift2017_IMG_0379_p" onstart="" thumburl="panos/4_b_060_door_sift2017_IMG_0379_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_b_060_door_sift2017_IMG_0379_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_b_060_door_sift2017_IMG_0379_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_b_060_door_sift2017_IMG_0379_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_b_060_door_sift2017_IMG_0379_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_060_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_060_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_060_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_060_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-83.825" atv="4.937" linkedscene="scene_059" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-179.084" atv="2.395" linkedscene="scene_061" />
+
+	</scene>
+
+	<scene name="scene_066" name_old="scene_4_bc_066_bufet_sift2017_IMG_0416_p" title="4_bc_066_bufet_sift2017_IMG_0416_p" onstart="" thumburl="panos/4_bc_066_bufet_sift2017_IMG_0416_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_bc_066_bufet_sift2017_IMG_0416_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_bc_066_bufet_sift2017_IMG_0416_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_bc_066_bufet_sift2017_IMG_0416_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_bc_066_bufet_sift2017_IMG_0416_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_066_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_066_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_066_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_066_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-121.159" atv="2.752" linkedscene="scene_067" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="119.834" atv="1.840" linkedscene="scene_060" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-78.604" atv="1.602" linkedscene="scene_056" />
+
+	</scene>
+
+	<scene name="scene_067" name_old="scene_4_d_067_door_sift2017_IMG_0423_p" title="4_d_067_door_sift2017_IMG_0423_p" onstart="" thumburl="panos/4_d_067_door_sift2017_IMG_0423_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_d_067_door_sift2017_IMG_0423_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_d_067_door_sift2017_IMG_0423_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_d_067_door_sift2017_IMG_0423_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_d_067_door_sift2017_IMG_0423_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_067_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_067_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_067_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_067_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-57.677" atv="1.907" linkedscene="scene_058" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-167.417" atv="5.036" linkedscene="scene_085" />
+
+	</scene>
+
+	<scene name="scene_072" name_old="scene_4_g_072_photo__IMG_0455_p" title="4_g_072_photo__IMG_0455_p" onstart="" thumburl="panos/4_g_072_photo__IMG_0455_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_g_072_photo__IMG_0455_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_g_072_photo__IMG_0455_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_g_072_photo__IMG_0455_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_g_072_photo__IMG_0455_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_072_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_072_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_072_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />scene_072
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-115.302" atv="3.034" linkedscene="scene_073" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="1.161" atv="4.534" linkedscene="scene_071" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="70.676" atv="2.840" linkedscene="scene_056" />
+
+	</scene>
+
+	<scene name="scene_073" name_old="scene_4_g_073_info_sift2017_IMG_0462_p" title="4_g_073_info_sift2017_IMG_0462_p" onstart="" thumburl="panos/4_g_073_info_sift2017_IMG_0462_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_g_073_info_sift2017_IMG_0462_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_g_073_info_sift2017_IMG_0462_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_g_073_info_sift2017_IMG_0462_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_g_073_info_sift2017_IMG_0462_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_073_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_073_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_073_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_073_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-38.477" atv="2.515" linkedscene="scene_071" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-3.503" atv="1.255" linkedscene="scene_072" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-164.554" atv="6.385" linkedscene="scene_074" />
+
+	</scene>
+
+	<scene name="scene_074" name_old="scene_4_g_074_art_sift2017_IMG_0468_p" title="4_g_074_art_sift2017_IMG_0468_p" onstart="" thumburl="panos/4_g_074_art_sift2017_IMG_0468_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/4_g_074_art_sift2017_IMG_0468_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/4_g_074_art_sift2017_IMG_0468_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/4_g_074_art_sift2017_IMG_0468_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/4_g_074_art_sift2017_IMG_0468_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_074_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_074_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_074_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_074_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-148.640" atv="-1.493" linkedscene="scene_089" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-156.102" atv="-1.318" linkedscene="scene_090" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="85.521" atv="3.281" linkedscene="scene_073" />
+
+	</scene>
+
+	<scene name="scene_069" name_old="scene_5_069_enter_sift2017_IMG_0435_p" title="5_069_enter_sift2017_IMG_0435_p" onstart="" thumburl="panos/5_069_enter_sift2017_IMG_0435_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="478.499" vlookat="5.494" fovtype="MFOV" fov="120.000" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/5_069_enter_sift2017_IMG_0435_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/5_069_enter_sift2017_IMG_0435_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/5_069_enter_sift2017_IMG_0435_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/5_069_enter_sift2017_IMG_0435_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_069_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_069_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_069_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_069_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="124.811" atv="2.706" linkedscene="scene_071" />
+
+	</scene>
+
+	<scene name="scene_070" name_old="scene_5_070_girls_sift2017_IMG_0441_p" title="5_070_girls_sift2017_IMG_0441_p" onstart="" thumburl="panos/5_070_girls_sift2017_IMG_0441_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/5_070_girls_sift2017_IMG_0441_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/5_070_girls_sift2017_IMG_0441_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/5_070_girls_sift2017_IMG_0441_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/5_070_girls_sift2017_IMG_0441_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_070_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_070_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_070_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_070_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-39.615" atv="18.401" linkedscene="scene_069" />
+
+	</scene>
+
+	<scene name="scene_scene" name_old="scene___IMG_0099_p" title="__IMG_0099_p" onstart="" thumburl="panos/__IMG_0099_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/__IMG_0099_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/__IMG_0099_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/__IMG_0099_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/__IMG_0099_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_sce_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_sce_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_sce_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />scene_sce
+-->
+
+	</scene>
+
+	<scene name="scene_scene" name_old="scene__sift2017_IMG_0429_p" title="_sift2017_IMG_0429_p" onstart="" thumburl="panos/_sift2017_IMG_0429_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/_sift2017_IMG_0429_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/_sift2017_IMG_0429_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/_sift2017_IMG_0429_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/_sift2017_IMG_0429_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_sce_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_sce_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_sce_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />scene_sce
+-->
+
+	</scene>
+
+	<scene name="scene_scene" name_old="scene__sift2017_IMG_0483_p" title="_sift2017_IMG_0483_p" onstart="" thumburl="panos/_sift2017_IMG_0483_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/_sift2017_IMG_0483_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2304" tiledimageheight="2304">
+				<cube url="panos/_sift2017_IMG_0483_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1152" tiledimageheight="1152">
+				<cube url="panos/_sift2017_IMG_0483_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="640" tiledimageheight="640">
+				<cube url="panos/_sift2017_IMG_0483_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_sce_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_sce_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_sce_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />scene_sce
+-->
+
+	</scene>
+
+	<scene name="scene_089" name_old="scene_z_089_gastro_sift2017_IMG_0085_p" title="z_089_gastro_sift2017_IMG_0085_p" onstart="" thumburl="panos/z_089_gastro_sift2017_IMG_0085_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/z_089_gastro_sift2017_IMG_0085_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/z_089_gastro_sift2017_IMG_0085_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/z_089_gastro_sift2017_IMG_0085_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/z_089_gastro_sift2017_IMG_0085_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_089_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_089_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_089_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_089_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="157.052" atv="3.336" linkedscene="scene_074" />
+
+	</scene>
+
+	<scene name="scene_090" name_old="scene_z_090_annet_sift2017_IMG_0091_p" title="z_090_annet_sift2017_IMG_0091_p" onstart="" thumburl="panos/z_090_annet_sift2017_IMG_0091_p.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="1114.199" vlookat="6.676" fovtype="MFOV" fov="109.669" maxpixelzoom="1.0" fovmax="130" vlookatmin="72.0" vlookatmax="-90.0" limitview="range" />
+
+		<preview url="panos/z_090_annet_sift2017_IMG_0091_p.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3584" tiledimageheight="3584">
+				<cube url="panos/z_090_annet_sift2017_IMG_0091_p.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1792" tiledimageheight="1792">
+				<cube url="panos/z_090_annet_sift2017_IMG_0091_p.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/z_090_annet_sift2017_IMG_0091_p.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+<!--
+		<hotspot name="scene_090_0" style="skin_hotspotstyle" ath="0" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_090_90" style="skin_hotspotstyle" ath="90" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_090_180" style="skin_hotspotstyle" ath="180" atv="0" linkedscene="scene_" />
+		<hotspot name="scene_090_270" style="skin_hotspotstyle" ath="270" atv="0" linkedscene="scene_" />
+-->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-99.206" atv="5.844" linkedscene="scene_074" />
+
+	</scene>
+
+
+</krpano>
