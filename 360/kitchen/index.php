@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php
-		include 'head.php';
-	?>
+	<title>animation in pano 360&#176; &#169; /title>
+	<script type="text/javascript" src="tour.js"></script>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta name="author" content="Aleksey Zabelin">
+	<link rel="stylesheet" type="text/css" href="pano.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-97620847-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-97620847-1');
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+   ym(42948509, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/42948509" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </head>
 <body>
 	<!--<img src="logo.png">-->
@@ -12,7 +37,7 @@
 	<script>
 		embedpano({swf:"tour.swf", xml:"tour.xml", target:"pano", html5:"auto", passQueryParameters:true, bgcolor:"#FEFEFE"});
 	</script>
-<?php
+<!--
 	//<script>
 	//	var viewer = createPanoViewer({swf:"[SWF]", xml:"[XML]", id:"pano_js", target:"pano", html5:"[HTML5]", passQueryParameters:true, bgcolor:"#FFFFFF"});
 	//	var url = String(window.location);
@@ -21,10 +46,7 @@
 	//	viewer.addVariable("startscene", scene_name);
 	//	viewer.embed("pano");
 	//</script>
-ECHO <<<EMB
-	<!-- index -->
-EMB;
-?>
+-->
 </div><!-- END pano-->
 
 </html>
