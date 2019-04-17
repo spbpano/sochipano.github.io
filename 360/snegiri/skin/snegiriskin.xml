@@ -13,7 +13,7 @@
 						<layer name="sauna" x="-44.5" style="thumb_areas" url="%SWFPATH%/panos/par_banya_snegiri.tiles/thumb.jpg" onclick="loadscene(scene_par_banya_snegiri);" />/>
 							<layer name="sauna_text" style="area_text" html="Баня" align="top" x="-44.5"  />
 					<!--04-->
-						<layer name="night" x="135" style="thumb_areas" url="%SWFPATH%/panos/__01_9_bldng_snegiri.tiles/thumb.jpg" onclick="loadscene(scene___06_3_bldng_snegiri);" />/>
+						<layer name="night" x="135" style="thumb_areas" url="%SWFPATH%/skin/thumb_night.jpg" onclick="loadscene(scene___06_3_bldng_snegiri);" />/>
 							<layer name="night_text" style="area_text" html="Вечером" align="top" x="135"  />
 
 						<layer name="area_btn_hide"   visible="true" keep="true" url="%SWFPATH%/skin/vtourskin_light.png" crop="64|448|64|64"  align="top"  y="101" x="0" scale="0.5" onclick="area_hide()" />
