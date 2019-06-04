@@ -1,0 +1,657 @@
+<krpano version="1.19-pr16" debugmode="true">
+
+    <include url="%SWFPATH%/plugins/webvr.xml" />
+
+    <skin_settings
+            hight_of_buttons="30"
+            between_buttons="5"
+            bgroundedge_of_buttons="calc: skin_settings.hight_of_buttons / 2"
+            font-size_of_buttons="12px"
+            line-height_of_buttons="12px"
+            text-transform_of_buttons="uppercase"
+            padding-left_of_buttons="12px"
+            padding-right_of_buttons="12px"
+            css_of_buttons="font-family: SFProText, -apple-system, BlinkMacSystemFont, Helvetica Neue, Lucida Grande, Segoe UI, Helvetica, sans-serif; font-size: 12px; line-height: 12px; text-align: center; color:#FFFFFF; text-transform: uppercase; padding-left: 12px; padding-right: 12px;"
+            onclick_of_button="close_if_open(); skin_loadscene_light(get(linkedscene));"
+    />
+
+    <control    mouse="moveto"
+                touch="drag"
+    />
+
+    <plugin name="WebVR"
+            url="%SWFPATH%/plugins/webvr.js"
+            mobilevr_fake_support="true"
+            onentervr="webvr_onentervr();"
+            onexitvr="webvr_onexitvr(); removelayer(webvr_enterbutton);"
+            onavailable=""
+    />  
+    <events name="title_of_scene" keep="true"
+        onnewscene="set_scene_title(); show_left_menu();"
+        onxmlcomplete="set_scene_title();"
+        onmousedown="close_if_open();"
+        onresize="check_portrait_mode"
+        onremovepano=" set(prev_scene_sub_cat, get(scene[get(xml.scene)].sub_category));"
+    />
+
+    <action name="show_left_menu">
+        calc(sub_cat_of_scene, prev_scene_sub_cat + '_wrap');
+        set(layer[get(sub_cat_of_scene)].alpha, 0);
+        calc(sub_cat_of_scene, scene[get(xml.scene)].sub_category + '_wrap');
+        set(layer[get(sub_cat_of_scene)].alpha, 1);
+        trace(get(prev_scene));
+    </action>
+    <action name="set_scene_title">
+        set(scene_title, get(scene[get(xml.scene)].title));
+        set(layer[name_of_scene].html, get(scene[get(xml.scene)].title));
+    </action>
+
+    <style name="skin_hotspotstyle" url="hs.png" edge="top" distorted="false"
+        type="image" keep="false"
+        children="true"
+        tooltip=""
+        linkedscene=""
+        linkedscene_lookat=""
+        onclick="skin_hotspotstyle_click();"
+        scale="0.75"
+        onover="tween(scale,0.8);"
+        onout="tween(scale,0.75);"
+        onloaded="if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+    />
+    <action name="skin_hotspotstyle_click" scope="local">
+        if(caller.linkedscene,
+            copy(hs_linkedscene, caller.linkedscene);
+            if(caller.linkedscene_lookat, txtsplit(caller.linkedscene_lookat, ',', hs_lookat_h, hs_lookat_v, hs_lookat_fov); );
+            set(caller.enabled, false);
+            skin_hidetooltips();
+            tween(caller.depth|caller.alpha|caller.oy|caller.rx, 4000|0.0|-50|-60, 0.5, default,
+                skin_loadscene_light(get(hs_linkedscene), get(skin_settings.loadscene_blend));
+                if(hs_lookat_h !== null, skin_lookat(get(hs_lookat_h), get(hs_lookat_v), get(hs_lookat_fov)); );
+                skin_updatescroll();
+            );
+        );
+    </action>
+    <layer name="book_now_background" type="container" keep="true" align="top"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="0 0 10 10"
+            x="0" y="0"
+            autoalpha="true"
+            width="57" height="32">
+        <layer name="book_now_img" type="image" keep="true"
+                url="./book_now.png"
+                align="center"
+                width="27"
+                height="prop"
+                x="0" y="0"
+                onclick=" openurl('https://www.transresortbali.com/accomodation',_blank );"
+                autoalpha="true"
+
+        />
+    </layer>
+
+    <layer name="name_of_scene"
+        keep="true"
+        type="text"
+        height="24"
+        autoalpha="true"
+        align="bottom" x="0" y="0"
+        html=""
+        css="font-family: SFProText, -apple-system, BlinkMacSystemFont, Helvetica Neue, Lucida Grande, Segoe UI, Helvetica, sans-serif; text-align: center; font-size: 9px; color:#FFFFFF; text-transform: uppercase; padding-left: 16px; padding-right: 16px;"
+        vcenter="true"
+        padding=""
+        wordwrap="true"
+        bg="true"
+        bgcolor="0x000000"
+        bgalpha="0.50"
+        bgborder="0"
+        bgroundedge="7 7 0 0"
+        mergedalpha="true"
+        interactivecontent="false"
+       />
+
+       <layer name="social_media_background" open_state="false" type="container" keep="true" align="lefttop"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="0 102 102 0"
+            x="0" y="49"
+            autoalpha="true"
+            width="52" height="46">
+
+            <layer name="social_media_img" type="image" keep="true"
+                    url="./media.png"
+                    align="right"
+                    width="16"
+                    height="prop"
+                    x="19" y="-1"
+                    onclick=" open_media_container();"
+                    autoalpha="true"
+
+            />
+            <layer name="fb_media_img"
+                    onclick="close_media_container(); openurl('https://#',_self);"
+                    style="sm_style"
+                    align="right"
+                    height="23"
+                    width="prop"
+                    url="./fb_media_28.png"
+                    x="45"
+            />
+            <layer name="tw_media_img"
+                    onclick="close_media_container(); openurl('https://#',_self);"
+                    style="sm_style"
+                    align="right"
+                    height="23"
+                    width="prop"
+                    url="./tw_media_28.png"
+                    x="70"
+            />
+            <layer name="ig_media_img"
+                    onclick="close_media_container(); openurl('https://#',_self);"
+                    style="sm_style"
+                    align="right"
+                    height="23"
+                    width="prop"
+                    url="./ig_media_28.png"
+                    x="115"
+            />
+            <layer name="ta_media_img"
+                    onclick="close_media_container(); openurl('https://#',_self);"
+                    style="sm_style"
+                    align="right"
+                    url="./ta_m.svg"
+                    height="21"
+                    width="prop"
+                    x="150"
+            />
+            <layer name="close_media_img"
+                    onclick="close_media_container();"
+                    url="./sm_close.png"
+                    width="16"
+                    height="prop"
+                    rotate="180"
+                    x="28" y="-1"
+                    align="right"
+                    alpha="0"
+                    autoalpha="true"
+        />
+        </layer>
+
+    <layer name="share_background" open_state="false" type="container" keep="true" align="righttop"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="102 0 0 102"
+            x="0" y="49"
+            autoalpha="true"
+            width="52" height="46">
+
+        <layer name="share_img" type="image" keep="true"
+                url="./share_n.png"
+                align="left"
+                width="16"
+                height="prop"
+                x="19" y="0"
+                onclick=" open_share_container();"
+                autoalpha="true"
+
+        />
+        <layer name="fb_img"
+                onclick="close_share_container();social.share(facebook,get(browser.location))"
+                style="sm_style"
+                url="./fb_w_28.png"
+                x="39"
+        />
+        <layer name="tw_img"
+                onclick="close_share_container();social.share(twitter,get(browser.location))"
+                style="sm_style"
+                url="./tw_w_28.png"
+                x="76"
+        />
+        <layer name="ig_img"
+                onclick="close_share_container();social.share(instagram,get(browser.location))"
+                style="sm_style"
+                url="./in_w_28.png"
+                x="113"
+        />
+        <layer name="wa_img"
+                onclick="close_share_container();social.share(youtube,get(browser.location))"
+                style="sm_style"
+                url="./wa_w_28.png"
+                x="150"
+        />
+        <layer name="close_img"
+                onclick="close_share_container();"
+                url="./sm_close.png"
+                width="16"
+                height="prop"
+                x="12" y="-1"
+                align="left"
+                alpha="0"
+                autoalpha="true"
+        />
+
+    </layer>
+
+    <social share="txtadd(urltext,get(social.%1),%2);openurl(get(urltext),_blank);"
+        facebook="https://facebook.com/share.php?u="
+        twitter="https://twitter.com/intent/tweet?status="
+        linkedin="https://linkedin.com/shareArticle?url="
+      />
+
+    <style name="sm_style"
+        type="image" keep="true"
+        width="28"
+        height="prop"
+        onclick=""
+        align="left"
+        alpha="0"
+        autoalpha="true"
+    />
+<!--END SMM BUTTONS-->
+    <action name="open_share_container">
+      tween(layer[share_background].width, 190, 0.4, easeOutSine);
+      tween(layer[share_img].alpha, 0, 0.15, easeOutSine);
+      tween(layer[fb_img].alpha, 1, 0.1, easeOutSine,
+        tween(layer[tw_img].alpha, 1, 0.1, easeOutSine,
+            tween(layer[ig_img].alpha, 1, 0.1, easeOutSine,
+                tween(layer[wa_img].alpha, 1, 0.1, easeOutSine,
+                    tween(layer[close_img].alpha, 1, 0.1, easeOutSine,
+                    );
+                );
+            );
+        );
+    ); 
+      set(layer[share_background].open_state, true);
+    </action>
+
+    <action name="close_share_container">
+        tween(layer[share_background].width, 52, 0.4, easeOutSine);
+        tween(layer[close_img].alpha, 0, 0.1, easeOutSine,
+            tween(layer[wa_img].alpha, 1, 0.1, easeOutSine,
+                tween(layer[ig_img].alpha, 0, 0.1, easeOutSine,
+                    tween(layer[tw_img].alpha, 0, 0.1, easeOutSine,
+                        tween(layer[fb_img].alpha, 0, 0.1, easeOutSine,
+                        );
+                    );
+                );
+            );
+        ); 
+      tween(layer[share_img].alpha, 1, 0.2, easeOutSine);
+      set(layer[share_background].open_state, false);
+    </action>
+
+    <action name="open_media_container">
+      tween(layer[social_media_background].width, 200, 0.4, easeOutSine);
+      tween(layer[social_media_img].alpha, 0, 0.15, easeOutSine);
+      tween(layer[fb_media_img].alpha, 1, 0.1, easeOutSine,
+        tween(layer[tw_media_img].alpha, 1, 0.1, easeOutSine,
+            tween(layer[ig_media_img].alpha, 1, 0.1, easeOutSine,
+                tween(layer[ta_media_img].alpha, 1, 0.1, easeOutSine,
+                    tween(layer[close_media_img].alpha, 1, 0.1, easeOutSine,
+                    );
+                );
+            );
+        );
+    ); 
+      set(layer[social_media_background].open_state, true);
+    </action>
+
+    <action name="close_media_container">
+        tween(layer[social_media_background].width, 52, 0.4, easeOutSine);
+        tween(layer[ta_media_img].alpha, 0, 0.1, easeOutSine,
+            tween(layer[close_media_img].alpha, 0, 0.1, easeOutSine,
+                tween(layer[ig_media_img].alpha, 0, 0.1, easeOutSine,
+                    tween(layer[tw_media_img].alpha, 0, 0.1, easeOutSine,
+                        tween(layer[fb_media_img].alpha, 0, 0.1, easeOutSine,
+                           
+                        );
+                    );
+                );
+            ); 
+        );
+      tween(layer[social_media_img].alpha, 1, 0.2, easeOutSine);
+      set(layer[social_media_background].open_state, false);
+    </action>
+
+
+<!--LOGO-->
+    <layer name="logo_background" type="container" keep="true" align="leftbottom"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="0 100 100 0"
+            x="0" y="16"
+            width="124" height="60">
+        <layer name="logo_img" type="image" keep="true"
+                url="./logo.png"
+                width="61"
+                height="prop"
+                align="leftbottom"
+                x="30" y="8"
+        />
+    </layer><!--logo_background-->
+<!--END LOGO-->
+
+<!--VR BUTTON-->
+    <layer name="vr_background" type="container" keep="true" align="rightbottom"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="25 25 25 25"
+            x="60" y="31"
+            width="40" height="40"
+            >
+        <layer name="vr_img" type="image" keep="true"
+                x="0"
+                width="27" height="prop"
+                url="./vr.png"
+                align="center"
+                onclick="webvr.enterVR();"
+        />
+    </layer><!--vr_background-->
+<!--END VR BUTTON-->
+
+<!--FULLSCREEN BUTTON-->
+    <layer name="fullscreen_button" type="container" keep="true" align="rightbottom"
+            bgcolor="0x000000" bgalpha="0.5" bgborder="0" bgroundedge="25 25 25 25"
+            x="14" y="31"
+            width="40" height="40">
+        <layer name="fs_in" type="image" keep="true"
+                alpha="1"
+                autoalpha="true"
+                x="0"
+                width="32" height="prop"
+                url="./fs_in.png"
+                align="center"
+                onclick=" toggle(layer[fs_in].alpha); toggle(layer[fs_out].alpha); toggle(fullscreen);"
+        />
+        <layer name="fs_out" type="image" keep="true"
+                alpha="0"
+                autoalpha="true"
+                x="0"
+                width="32" height="prop"
+                url="./fs_out.png"
+                align="center"
+                onclick=" toggle(layer[fs_out].alpha); toggle(layer[fs_in].alpha); toggle(fullscreen);"
+        />
+    </layer><!--fullscreen_button-->
+<!--END FULLSCREEN BUTTON-->
+
+<!--GO TO VR-->
+    <layer name="wrrap_to_vr" type="container" keep="true" align="center" open_state="false"
+            alpha="" autoalpha=""
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="20 20 20 20"
+            x="0" y="-20"
+            width="450" height="450">
+        <layer name="st_text" keep="true" type="text" y="20" align="top" css=" text-align: center; font-family: SFProText, -apple-system, BlinkMacSystemFont, Helvetica Neue, Lucida Grande, Segoe UI, Helvetica, sans-serif; font-size: 1.1rem; line-height: 1.0rem; text-align: center; color:#FFFFFF; padding: 0 1.3125rem 0 1.3125rem;" bg="false" html="Explore with Virtual Reality"/>
+
+        <layer name="nd_text" keep="true" type="text" y="65" align="top" css=" text-align: center; font-family: SFProText, -apple-system, BlinkMacSystemFont, Helvetica Neue, Lucida Grande, Segoe UI, Helvetica, sans-serif; font-size: 0.9rem; line-height: 1.0rem; text-align: center; color:#FFFFFF; padding: 0 1.3125rem 0 1.3125rem;" bg="false" html="1. SCAN THE FOLLOWING QR CODE ON YOUR SMARTPHONE"/>
+
+        <layer name="qr_code" keep="true" type="image" url="qr.png" width="200" height="prop" align="top" y="90"/>
+
+        <layer name="rd_text" keep="true" type="text" y="300" align="top" css=" text-align: center; font-family: SFProText, -apple-system, BlinkMacSystemFont, Helvetica Neue, Lucida Grande, Segoe UI, Helvetica, sans-serif; font-size: 0.9rem; line-height: 1.0rem; text-align: center; color:#FFFFFF; padding: 0 1.3125rem 0 1.3125rem;" bg="false" html="2. ATTACH YOUR SMARTPHONE TO A VR HEADSET"/>
+        <layer name="vr_glass" keep="true" type="image" url="headset.png" width="120" height="prop" align="top" y="310"/>
+    </layer>
+<!--END GO TO VR-->
+
+<!--CATEGORIES-->
+    <!--AERIAL-->
+    <!--Main Areas-->
+    <!--Acomodation-->
+    <!--Dining-->
+    <!--Facilities-->
+
+<!--WITHOUT AERIAL-->
+    <layer name="center_wrap" keep="true" type="container"
+        autoalpha="true"
+        align="bottom" x="0" y="33"
+        width="417"
+        height="30"
+    >
+        <layer name="main_areas" category="main_areas" open_state="false" count_of_sub_cat="0" style="style_areas"
+            x="0" y="0"
+            html="Main Areas" onclick="if(open_state, , close_if_open();); open_close_sub_cat_list(get(name));"/>
+
+        <layer name="acomodation" category="acomodation" open_state="false" count_of_sub_cat="0" style="style_areas"
+            x="112" y="0"
+            html="Acomodation" onclick="if(open_state, , close_if_open();); open_close_sub_cat_list(get(name));"/>
+
+        <layer name="dining" category="dining" open_state="false" count_of_sub_cat="0" style="style_areas"
+            x="243" y="0"
+            html="Dining" onclick="if(open_state, , close_if_open();); open_close_sub_cat_list(get(name));"/>
+
+        <layer name="facilities" category="facilities" open_state="false" count_of_sub_cat="0" style="style_areas"
+            x="326" y="0"
+            html="Facilities" onclick="if(open_state, , close_if_open();); open_close_sub_cat_list(get(name));"/>
+
+    </layer><!--center_wrap-->
+<!--WITHOUT AERIAL-->
+
+
+    <action name="show_hide_left_menu">
+            if(get(layer[left_center_wrap].open_state),
+                set(alpha_dest, 0);
+                set(layer[left_center_wrap].open_state, false);
+            ,
+                set(alpha_dest, 1);
+                set(layer[left_center_wrap].open_state, true);
+            );
+            tween(layer[left_center_wrap].alpha, get(alpha_dest), 0.2, linear);
+    </action>
+<!--END WITH AERIAL-->
+
+    <style  name="style_sub_categories" 
+            keep="true"
+            type="text"
+            alpha="0"
+            align="leftbottom"
+            vcenter="true"
+            height="get:skin_settings.hight_of_buttons"
+            onclick="skin_loadscene_light(get(linkedscene));"
+            css="get:skin_settings.css_of_buttons"
+            autoalpha="true"
+            wordwrap="true"
+            bg="true"
+            bgcolor="0x000000"
+            bgalpha="0.50"
+            bgborder="0"
+            bgroundedge="get:skin_settings.bgroundedge_of_buttons"
+    />
+    <style  name="style_areas" 
+            parent="center_wrap"
+            keep="true"
+            type="text"
+            align="leftbottom"
+            vcenter="true"
+            height="get:skin_settings.hight_of_buttons"
+            onclick="skin_loadscene_light(get(linkedscene));"
+            css="get:skin_settings.css_of_buttons"
+            autoalpha="true"
+            wordwrap="true"
+            bg="true"
+            bgcolor="0x000000"
+            bgalpha="0.50"
+            bgborder="0"
+            bgroundedge="get:skin_settings.bgroundedge_of_buttons"
+    />
+    <style  name="style_left_areas" 
+            keep="true"
+            type="text"
+            align="left"
+            vcenter="true"
+            height="get:skin_settings.hight_of_buttons"
+            onclick="skin_loadscene_light(get(linkedscene));"
+            css="get:skin_settings.css_of_buttons"
+            autoalpha="true"
+            wordwrap="true"
+            bg="true"
+            bgcolor="0x000000"
+            bgalpha="0.50"
+            bgborder="0"
+            bgroundedge="get:skin_settings.bgroundedge_of_buttons"
+    />
+    <action name="open_close_sub_cat_list">
+        set(count_of_sub_cat, get(layer[%1].count_of_sub_cat));
+            if(get(layer[%1].open_state),
+                set(alpha_dest, 0);
+                set(layer[%1].open_state, false);
+            ,
+                set(alpha_dest, 1);
+                set(layer[%1].open_state, true);
+            );
+            for(set(i, get(count_of_sub_cat)), i != 0, dec(i),
+                txtadd(sub_cat_button, %1, '_sub_cat_0', get(i));
+                    if(get(layer[%1].open_state),
+                        set(dest_y, get(layer[get(sub_cat_button)].open_y));
+                    ,
+                        set(dest_y, get(layer[get(sub_cat_button)].close_y));
+                    );
+                tween(layer[get(sub_cat_button)].alpha, get(alpha_dest), 0.2, linear);
+                tween(layer[get(sub_cat_button)].y, get(dest_y), 0.2, linear);
+            );
+    </action>
+    <action name="close_sub_cat_list">
+        set(count_of_sub_cat, get(layer[%1].count_of_sub_cat));
+        set(alpha_dest, 0);
+            for(set(i, get(count_of_sub_cat)), i != 0, dec(i),
+                txtadd(sub_cat_button, %1, '_sub_cat_0', get(i));
+                set(dest_y, get(layer[get(sub_cat_button)].close_y));
+                tween(layer[get(sub_cat_button)].alpha, get(alpha_dest), 0.2, linear);
+                tween(layer[get(sub_cat_button)].y, get(dest_y), 0.2, linear);
+            );
+        set(layer[%1].open_state, false);
+    </action>
+    <layer name="arra" area_01="aerial" area_02="main_areas" area_03="dining" area_04="acomodation" area_05="facilities"/>
+        
+    <action name="close_if_open">
+        if(layer[aerial].open_state, close_sub_cat_list(aerial));
+        if(layer[main_areas].open_state, close_sub_cat_list(main_areas));
+        if(layer[dining].open_state, close_sub_cat_list(dining));
+        if(layer[acomodation].open_state, close_sub_cat_list(acomodation));
+        if(layer[facilities].open_state, close_sub_cat_list(facilities));
+        if(layer[share_background].open_state, close_share_container());
+        if(layer[social_media_background].open_state, close_media_container());
+        if(layer[wrrap_to_vr].open_state, open_close_vr_info(get(layer[wrrap_to_vr].open_state)));
+    </action>
+
+    <action name="open_close_vr_info">
+        trace(%1);
+        if(%1,
+                tween(layer[wrrap_to_vr].alpha, 0.0, 0.2, easeInCubic);
+                set(layer[wrrap_to_vr].open_state,false);
+            ,
+                close_if_open();
+                tween(layer[wrrap_to_vr].alpha, 1.0, 0.2, easeInCubic);
+                set(layer[wrrap_to_vr].open_state,true);
+        );
+    </action>
+
+    <action name="create_subcategories_lists">
+        set(subcategories_count, 0);
+        for(set(i,0), i LT scene.count, inc(i),
+            set(title_of_scene, get(scene[get(i)].title));
+            set(category_of_scene, get(scene[get(i)].category));
+            set(sub_cat_of_scene, get(scene[get(i)].sub_category));
+            set(sub_cat_fst_scene, get(scene[get(i)].sub_cat_fst_scene));
+            set(prev_count_of_sub_cat, get(layer[get(category_of_scene)].count_of_sub_cat));
+            calc(wrap_to_left_list, sub_cat_of_scene + '_wrap');
+            if(sub_cat_fst_scene,
+                set(layer[get(category_of_scene)].count_of_sub_cat, calc(prev_count_of_sub_cat + 1));
+                set(count_of_sub_cat, get(layer[get(category_of_scene)].count_of_sub_cat));
+                set(close_y_calc, calc((prev_count_of_sub_cat * skin_settings.hight_of_buttons) + (skin_settings.between_buttons * prev_count_of_sub_cat)));
+                set(open_y_calc, calc((count_of_sub_cat * skin_settings.hight_of_buttons) + (skin_settings.between_buttons * count_of_sub_cat)));
+                calc(bttn_to_sub_cat_list, category_of_scene + '_sub_cat_0' + layer[get(category_of_scene)].count_of_sub_cat);
+                addlayer(get(bttn_to_sub_cat_list));
+                set(layer[get(bttn_to_sub_cat_list)],
+                    x='0',
+                    y=get(close_y_calc),
+                    close_y=get(close_y_calc),
+                    open_y=get(open_y_calc),
+                    alpha='0.0',
+                    html=get(title_of_scene),
+                    linkedscene=get(scene[get(i)].name),
+                    keep='true',
+                    parent=get(category_of_scene),
+                    type='text',
+                    align='leftbottom',
+                    vcenter='true',
+                    height=get(skin_settings.hight_of_buttons),
+                    onclick=get(skin_settings.onclick_of_button),
+                    css=get(skin_settings.css_of_buttons),
+                    autoalpha='true',
+                    wordwrap='true',
+                    visible='true',
+                    bg='true',
+                    bgcolor='0x000000',
+                    bgalpha='0.50',
+                    bgborder='0',
+                    bgroundedge=get(skin_settings.bgroundedge_of_buttons),
+                );
+            );
+
+            if(layer[get(wrap_to_left_list)] === null,
+                addlayer(get(wrap_to_left_list));
+                    set(layer[get(wrap_to_left_list)],
+                        keep='true',
+                        type='container',
+                        open_state='true',
+                        autoalpha='true',
+                        alpha='0',
+                        align='left',
+                        x='12',
+                        y='0',
+                        height='0',
+                        count_of_scene='1',
+                        maskchildren='true',
+                    );
+            ,
+                set(layer[get(wrap_to_left_list)],
+                    prev_count_of_scene=get(layer[get(wrap_to_left_list)].count_of_scene),
+                    count_of_scene=calc(layer[get(wrap_to_left_list)].count_of_scene + 1),
+                    height=calc(layer[get(wrap_to_left_list)].count_of_scene * skin_settings.hight_of_buttons + layer[get(wrap_to_left_list)].prev_count_of_scene * skin_settings.between_buttons),
+                    maskchildren='false',
+                    
+                );
+            );
+
+            calc(bttn_to_left_list, sub_cat_of_scene + '_0' + layer[get(wrap_to_left_list)].count_of_scene);
+            addlayer(get(bttn_to_left_list));
+                set(layer[get(bttn_to_left_list)],
+                    x='0',
+                    y=calc(layer[get(wrap_to_left_list)].prev_count_of_scene * skin_settings.hight_of_buttons + layer[get(wrap_to_left_list)].prev_count_of_scene * skin_settings.between_buttons),
+                    alpha='1.0',
+                    html=get(scene[get(i)].title),
+                    linkedscene=get(scene[get(i)].name),
+                    keep='true',
+                    parent=get(wrap_to_left_list),
+                    type='text',
+                    align='lefttop',
+                    vcenter='true',
+                    height=get(skin_settings.hight_of_buttons),
+                    onclick=get(skin_settings.onclick_of_button),
+                    css=get(skin_settings.css_of_buttons),
+                    autoalpha='true',
+                    wordwrap='true',
+                    visible='true',
+                    keep='true',
+                    bg='true',
+                    bgcolor='0x000000',
+                    bgalpha='0.50',
+                    bgborder='0',
+                    bgroundedge=get(skin_settings.bgroundedge_of_buttons),
+                );
+                    
+        );
+    </action>
+
+    <action name="skin_loadscene_light">
+        close_if_open();
+        trace('skin_loadscene_light', %1);
+        loadscene(%1, null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend));
+    </action>
+
+
+    <action name="check_portrait_mode">
+        div(aspect, stagewidth, stageheight);
+        if(aspect != lastmobileaspect,
+            copy(lastmobileaspect, aspect);
+            if(stagewidth GT stageheight,
+                tween(layer[center_wrap].alpha, 1.0, 0.2, easeInCubic);
+                tween(layer[name_of_scene].alpha, 1.0, 0.2, easeInCubic);
+                
+              ,
+                tween(layer[center_wrap].alpha,0.0, 0.2, easeInCubic);
+                tween(layer[name_of_scene].alpha,0.0, 0.2, easeInCubic);
+                
+            );
+        );
+    </action>
+</krpano>

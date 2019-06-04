@@ -1,0 +1,79 @@
+﻿<krpano>
+
+	<!-- krpano 1.19.pr13 - Virtual Tour Skin -->
+						
+					<layer name="area_thumbs_container" type="container" align="top" width="100%" height="100%" visible="true" keep="true">
+					<!--01-->
+						<layer name="cottege" x="-135" style="thumb_areas" url="%SWFPATH%/panos/ktchn_7bldg_snegiri.tiles/thumb.jpg" onclick="loadscene(scene_ktchn_7bldg_snegiri);" />
+							<layer name="cottege_text" style="area_text" html="Коттеджи" align="top" x="-135"  />
+					<!--02-->
+						<layer name="street" x="44.5" style="thumb_areas" url="%SWFPATH%/panos/go_str_1bldng_snegiri.tiles/thumb.jpg" onclick="loadscene(scene_go_str_1bldng_snegiri);" />/>
+							<layer name="street_text" style="area_text" html="Територия"  x="44.5"  />
+					<!--03-->
+						<layer name="sauna" x="-44.5" style="thumb_areas" url="%SWFPATH%/panos/par_banya_snegiri.tiles/thumb.jpg" onclick="loadscene(scene_par_banya_snegiri);" />/>
+							<layer name="sauna_text" style="area_text" html="Баня" align="top" x="-44.5"  />
+					<!--04-->
+						<layer name="night" x="135" style="thumb_areas" url="%SWFPATH%/panos/__01_9_bldng_snegiri.tiles/thumb.jpg" onclick="loadscene(scene___06_3_bldng_snegiri);" />/>
+							<layer name="night_text" style="area_text" html="Вечером" align="top" x="135"  />
+
+						<layer name="area_btn_hide"   visible="true" keep="true" url="%SWFPATH%/skin/vtourskin_light.png" crop="64|448|64|64"  align="top"  y="101" x="0" scale="0.5" onclick="area_hide()" />
+					</layer>
+						<layer name="area_btn_show" alpha="0.0"  visible="false" keep="true" url="%SWFPATH%/skin/vtourskin_light.png" crop="0|448|64|64"  align="top"  y="7" x="0" scale="0.5" onclick="area_show()"
+							onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();"/>
+
+							
+						
+						<!--
+						<layer name="skin_thumbs_scrollindicator" type="container" bgcolor="0xFFFFFF" bgalpha="0.25" align="lefttop" width="0" y="100" height="2" visible="false" enabled="false" />
+						<layer name="skin_thumbs" state="closed" url.flash="%SWFPATH%/plugins/scrollarea.swf" url.html5="%SWFPATH%/plugins/scrollarea.js" direction="h" align="top" width="100%" height="100" zorder="1" onloaded="skin_updatescroll();" onscroll="skin_updatethumbscroll();" />
+
+			width="240" height="240"
+					-->
+
+
+
+
+		<style name="thumb_areas"
+			align="top"
+			visible="true"
+			keep="true"
+			y="15"
+			scale="0.33"
+	       />
+       <style name="area_text"
+       		type="text"
+			keep="true"
+	       visible="true"
+	       enabled="true"
+	       alpa="0"
+	       onhover=""
+	       background="false" border="false"
+	       align="top"
+	       y="75"
+	       css="calc:skin_settings.design_text_css + ' text-align:left; font-style:italic; font-size:12px;'"
+	       textshadow="get:skin_settings.design_text_shadow"
+		/>
+		<action name="area_hide">
+			set(hidetime, calc('%1' == 'instant' ? 0.0 : 0.5));
+			tween(layer[area_thumbs_container].y,   -111, get(hidetime));
+			tween(layer[area_thumbs_container].alpha,   0.0, get(hidetime));
+
+			set(layer[area_btn_show].visible, true);
+
+			delayedcall(get(hidetime), tween(layer[area_btn_show].alpha, 0.5, get(hidetime)); trace('done'); );
+
+		</action>
+		
+		<action name="area_show">
+			set(hidetime, calc('%1' == 'instant' ? 0.0 : 0.5));
+			tween(layer[area_thumbs_container].y,   0, get(hidetime));
+			tween(layer[area_thumbs_container].alpha,   1.0, get(hidetime));
+
+			tween(layer[area_btn_show].alpha, 0.0, get(hidetime));
+			set(layer[area_btn_show].visible, false);
+
+		</action>
+		<!--			
+
+	   -->
+</krpano>

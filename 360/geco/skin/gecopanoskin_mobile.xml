@@ -1,0 +1,325 @@
+<krpano version="1.19-pr16" debugmode="true">
+
+    <include url="%SWFPATH%/plugins/webvr.xml" />
+
+    <plugin name="WebVR"
+            url="%SWFPATH%/plugins/webvr.js"
+            mobilevr_fake_support="true"
+            onentervr="webvr_onentervr();"
+            onexitvr="webvr_onexitvr();"
+            onavailable=""
+    />  
+
+    <events name="title_of_scene" keep="true"
+        onnewscene="set_scene_title();"
+        onxmlcomplete="set_scene_title();"
+        onmousedown="close_if_open();"
+        onresize="check_portrait_mode"
+        onexitvr="trace ('out from vr_support.xml'); tween(layer[webvr_enterbutton].alpha,0,0);"
+        webvr_onexitvr="trace ('out from vr_support.xml'); tween(layer[webvr_enterbutton].alpha,0,0);"
+    />
+
+    <action name="set_scene_title">
+        set(scene_title, get(scene[get(xml.scene)].title));
+        set(layer[name_of_scene].html, get(scene[get(xml.scene)].title));
+    </action>
+
+    <style name="skin_hotspotstyle" url="logo.png" edge="top" distorted="false"
+        type="image" keep="false"
+        children="true"
+        tooltip=""
+        linkedscene=""
+        linkedscene_lookat=""
+        onclick="skin_hotspotstyle_click();"
+        onover="tween(scale,0.55);"
+        onout="tween(scale,0.5);"
+        onloaded="if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+    />
+    <action name="skin_hotspotstyle_click" scope="local">
+        if(caller.linkedscene,
+            copy(hs_linkedscene, caller.linkedscene);
+            if(caller.linkedscene_lookat, txtsplit(caller.linkedscene_lookat, ',', hs_lookat_h, hs_lookat_v, hs_lookat_fov); );
+            set(caller.enabled, false);
+            skin_hidetooltips();
+            tween(caller.depth|caller.alpha|caller.oy|caller.rx, 4000|0.0|-50|-60, 0.5, default,
+                skin_loadscene_light(get(hs_linkedscene), get(skin_settings.loadscene_blend));
+                if(hs_lookat_h !== null, skin_lookat(get(hs_lookat_h), get(hs_lookat_v), get(hs_lookat_fov)); );
+                skin_updatescroll();
+            );
+        );
+    </action>
+    <layer name="book_now_background" type="container" keep="true" align="ttop"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="0 0 10 10"
+            x="0" y="0"
+            autoalpha="true"
+            width="152" height="45">
+            <layer/>
+            <layer/>
+            <layer/>
+    </layer>
+    <layer name="name_of_scene"
+        keep="true"
+        type="text"
+        height="30"
+        autoalpha="true"
+        align="bottom" x="0" y="0"
+        html=""
+        css="font-family: SFProText, -apple-system, BlinkMacSystemFont, Helvetica Neue, Lucida Grande, Segoe UI, Helvetica, sans-serif; text-align: center; font-size: 10px; color:#FFFFFF; text-transform: uppercase; padding-left: 25px; padding-right: 25px;"
+        vcenter="true"
+        padding=""
+        wordwrap="true"
+        bg="true"
+        bgcolor="0x000000"
+        bgalpha="0.50"
+        bgborder="0"
+        bgroundedge="10 10 0 0"
+        mergedalpha="true"
+        interactivecontent="false"
+       />
+
+    <layer name="share_background" open_state="false" type="container" keep="true" align="righttop"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="58 0 0 58"
+            x="0" y="20"
+            autoalpha="true"
+            width="67" height="58">
+
+        <layer name="share_img" type="image" keep="true"
+                url="./share.png" url.mob="./share@2x.png"
+                align="left"
+                x="28" y="-1"
+                onclick="close_if_open(); open_share_container();"
+                autoalpha="true"
+
+        />
+        <layer name="fb_img"
+                onclick="close_share_container();social.share(facebook,get(browser.location))"
+                style="sm_style"
+                url="./fb.png" url.mob="./fb@2x.png"
+                x="28" y="-1"
+        />
+        <layer name="tw_img"
+                onclick="close_share_container();social.share(twitter,get(browser.location))"
+                style="sm_style"
+                url="./tw.png" url.mob="./tw@2x.png"
+                x="67" y="-1"
+        />
+        <layer name="tr_img"
+                onclick="close_share_container();social.share(linkedin,get(browser.location))"
+                style="sm_style"
+                url="./in.png" url.mob="./tr@2x.png"
+                x="106" y="-1"
+        />
+        <layer name="close_img"
+                onclick="close_share_container();"
+                style="sm_style"
+                url="./ic_navigate@2x.png" url.mob="./ic_navigate@2x.png"
+                x="155" y="-1"
+        />
+    </layer><!--share_background-->
+
+    <!--SMM BUTTONS
+        googleplus="https://plus.google.com/share?url="
+        telegram="https://telegram.me/share/url?url="
+        vkontakte="https://vkontakte.ru/share.php?url="
+        linkedin="https://linkedin.com/shareArticle?mini=true&url="
+    -->
+
+    <social share="txtadd(urltext,get(social.%1),%2);openurl(get(urltext),_blank);"
+        facebook="https://facebook.com/share.php?u="
+        twitter="https://twitter.com/intent/tweet?status="
+        linkedin="https://linkedin.com/shareArticle?url="
+      />
+
+    <style name="sm_style"
+        type="image" keep="true"
+        onclick=""
+        align="left"
+        alpha="0"
+        autoalpha="true"
+    />
+<!--END SMM BUTTONS-->
+
+    <action name="open_share_container">
+      tween(layer[share_background].width, 183, 0.7, easeOutSine);
+      tween(layer[share_img].alpha, 0, 0.15, easeOutSine);
+      tween(layer[fb_img].alpha, 1, 0.2, easeOutSine, tween(layer[tw_img].alpha, 1, 0.2, easeOutSine, tween(layer[tr_img].alpha, 1, 0.2, easeOutSine, tween(layer[close_img].alpha, 1, 0.2););););
+      set(layer[share_background].open_state, true);
+    </action>
+
+    <action name="close_share_container">
+      tween(layer[share_background].width, 67, 0.60, easeOutSine);
+      tween(layer[close_img].alpha, 0, 0.13, easeOutSine, tween(layer[tr_img].alpha, 0, 0.13, easeOutSine, tween(layer[tw_img].alpha, 0, 0.13, easeOutSine, tween(layer[fb_img].alpha, 0, 0.13););););
+      tween(layer[share_img].alpha, 1, 0.2, easeOutSine);
+      set(layer[share_background].open_state, false);
+    </action>
+
+<!--LOGO-->
+    <layer name="logo_background" type="container" keep="true" align="lefttop"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="0 100 100 0"
+            x="0" y="20"
+            width="125" height="58">
+        <layer name="logo_img" type="image" keep="true"
+                url="./logo.png" url.mob="./logo@2x.png"
+                align="center"
+                x="-5" y="-1"
+        />
+    </layer><!--logo_background-->
+<!--END LOGO-->
+<!--VR BUTTON-->
+    <layer name="vr_background" type="container" keep="true" align="leftbottom"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="40 40 40 40"
+            x="16" y="16"
+            width="40" height="40"
+            >
+        <!--just for hiding standart button-->
+        <layer name="webvr_enterbutton" type="image" keep="true"/>
+
+        <layer name="vr_img" type="image" keep="true"
+                url="./vr.png" url.mob="./vr@2x.png"
+                align="center"
+                onclick="trace('befrore'); webvr.enterVR(); trace('after');"
+        />
+    </layer><!--vr_background-->
+<!--END VR BUTTON-->
+<!--BOOKING BUTTON-->
+    <layer name="booking_button" type="container" keep="true" align="rightbottom"
+            bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="40 40 40 40"
+            x="16" y="16"
+            width="40" height="40">
+        <layer name="key_img" type="image" keep="true"
+                url="./key.png" url.mob="./key@2x.png"
+                align="center"
+                onclick="close_if_open();"
+        />
+    </layer><!--booking_button-->
+<!--END BOOKING BUTTON-->
+
+<!--WITH AERIAL-->
+    <layer name="center_wrap" keep="true" type="container"
+        autoalpha="true"
+        align="bottom" x="0" y="17"
+        width="530"
+        height="30"
+    >
+        <layer name="aerial" category="aerial" open_state="false" count_of_child="0" style="style_areas" y="0" x="0" width="100" html="[strong]Aerial[/strong]" onclick="close_if_open(); open_close_areas_list(get(name));"/>
+        <layer name="main_areas" category="main_areas" open_state="false" count_of_child="0" style="style_areas" y="0" x="110" width="100" html="[strong]Main Areas[/strong]" onclick="close_if_open(); open_close_areas_list(get(name));"/>
+        <layer name="acomodation" category="acomodation" open_state="false" count_of_child="0" style="style_areas" y="0" x="220" width="110" html="[strong]Acomodation[/strong]" onclick="close_if_open(); open_close_areas_list(get(name));"/>
+        <layer name="dining" category="dining" open_state="false" count_of_child="0" style="style_areas" y="0" x="340" width="90" html="[strong]Dining[/strong]" onclick="close_if_open(); open_close_areas_list(get(name));"/>
+        <layer name="facilities" category="facilities" open_state="false" count_of_child="0" style="style_areas" y="0" x="440" width="90" html="[strong]Facilities[/strong]" onclick="close_if_open(); open_close_areas_list(get(name));"/>
+    </layer><!--center_wrap-->
+<!--END WITH AERIAL-->
+
+    <action name="open_close_areas_list">
+        set(count_of_child, get(layer[%1].count_of_child));
+            if(get(layer[%1].open_state),
+                set(alpha_dest, 0);
+                set(layer[%1].open_state, false);
+            ,
+                set(alpha_dest, 1);
+                set(layer[%1].open_state, true);
+            );
+            for(set(i, get(count_of_child)), i != 0, dec(i),
+                txtadd(button_name, %1, '_', get(i));
+                    if(get(layer[%1].open_state),
+                        set(dest_y, get(layer[get(button_name)].open_y));
+                    ,
+                        set(dest_y, get(layer[get(button_name)].close_y));
+                    );
+                tween(layer[get(button_name)].alpha, get(alpha_dest), 0.2, linear);
+                tween(layer[get(button_name)].y, get(dest_y), 0.2, linear);
+            );
+    </action>
+
+    <layer name="arra" area_01="aerial" area_02="main_areas" area_03="dining" area_04="acomodation" area_05="facilities"/>
+        
+    <action name="close_if_open">
+        if(layer[aerial].open_state, open_close_areas_list(aerial));
+        if(layer[main_areas].open_state, open_close_areas_list(main_areas));
+        if(layer[dining].open_state, open_close_areas_list(dining));
+        if(layer[acomodation].open_state, open_close_areas_list(acomodation));
+        if(layer[facilities].open_state, open_close_areas_list(facilities));
+        if(layer[share_background].open_state, close_share_container());
+    </action>
+
+    <action name="create_areas_lists">
+        set(areas_count, 0);
+        for(set(i,0), i LT scene.count, inc(i),
+            txtadd(title_of_scene, '[strong]', get(scene[get(i)].title), '[/strong]');
+            set(category_of_scene, get(scene[get(i)].category));
+            set(prev_areas_count, get(layer[get(category_of_scene)].count_of_child));
+            set(areas_count, calc(prev_areas_count + 1));
+            set(layer[get(category_of_scene)].count_of_child, get(areas_count));
+            set(close_y_calc, calc(0 + (prev_areas_count * 30) + (5 * prev_areas_count)));
+            set(open_y_calc, calc(0 + (areas_count * 30) + (5 * areas_count)));
+            calc(areas_scene, category_of_scene + '_' + areas_count);
+            addlayer(get(areas_scene));
+            set(layer[get(areas_scene)],
+                style='style_areas',
+                x=get(layer[get(category_of_scene)].x),
+                y=get(close_y_calc),
+                close_y=get(close_y_calc),
+                open_y=get(open_y_calc),
+                width=get(layer[get(category_of_scene)].width),
+                alpha='0.0',
+                html=get(title_of_scene),
+                linkedscene=get(scene[get(i)].name),
+                keep='true',
+                parent='center_wrap',
+                type='text',
+                align='leftbottom',
+                vcenter='true',
+                height='30',
+                onclick='skin_loadscene_light(get(linkedscene));',
+                css=' text-align: center; font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif; font-size: 0.618rem; color:#FFFFFF; line-height: 0.618rem; padding: 0 1.3125rem 0 1.3125rem;',
+                autoalpha='true',
+                wordwrap='true',
+                visible='true',
+                keep='true',
+                bg='true',
+                bgcolor='0x000000',
+                bgalpha='0.50',
+                bgborder='0',
+                bgroundedge='30 30 30 30'
+            );
+        );
+    </action>
+
+    <action name="skin_loadscene_light">
+        close_if_open();
+        trace('skin_loadscene_light', %1);
+        loadscene(%1, null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend));
+    </action>
+
+    <style  name="style_areas" 
+            parent="center_wrap"
+            keep="true"
+            type="text"
+            align="leftbottom"
+            vcenter="true"
+            height="30"
+            onclick="skin_loadscene_light(get(linkedscene));"
+            css=" text-align: center; font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif; font-size: 0.618rem; color:#FFFFFF; line-height: 0.618rem; padding: 0 1.3125rem 0 1.3125rem;"
+            autoalpha="true"
+            wordwrap="true"
+            bg="true"
+            bgcolor="0x000000"
+            bgalpha="0.50"
+            bgborder="0"
+            bgroundedge="30 30 30 30"
+    />
+
+    <action name="check_portrait_mode">
+        div(aspect, stagewidth, stageheight);
+        if(aspect != lastmobileaspect,
+            copy(lastmobileaspect, aspect);
+            if(stagewidth GT stageheight,
+                tween(layer[center_wrap].alpha, 1.0, 0.2, easeInCubic);
+                tween(layer[name_of_scene].alpha, 1.0, 0.2, easeInCubic);
+              ,
+                tween(layer[center_wrap].alpha,0.0, 0.2, easeInCubic);
+                tween(layer[name_of_scene].alpha, 0.0, 0.2, easeInCubic);
+            );
+        );
+    </action>
+
+</krpano>
