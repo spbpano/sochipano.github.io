@@ -3,7 +3,7 @@
 	<!-- Ultra Light Design -->
 
 	<!-- modify the <skin_settings> values -->
-	<skin_settings title="false"
+	<skin_settings title="true"
 	               layout_width="100%"
 	               layout_maxwidth="814"
 	               controlbar_width="-24"

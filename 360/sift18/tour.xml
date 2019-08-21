@@ -1,1639 +1,2261 @@
 ﻿<krpano version="1.19" title="Virtual Tour">
 
-	<include url="skin/vtourskin.xml" />
-
-	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
-	<skin_settings maps="false"
-	               maps_type="google"
-	               maps_bing_api_key=""
-	               maps_google_api_key=""
-	               maps_zoombuttons="false"
-	               gyro="true"
-	               webvr="true"
-	               webvr_gyro_keeplookingdirection="false"
-	               webvr_prev_next_hotspots="true"
-	               littleplanetintro="false"
-	               title="true"
-	               thumbs="true"
-	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
-	               thumbs_opened="false"
-	               thumbs_text="false"
-	               thumbs_dragging="true"
-	               thumbs_onhoverscrolling="false"
-	               thumbs_scrollbuttons="false"
-	               thumbs_scrollindicator="false"
-	               thumbs_loop="false"
-	               tooltips_buttons="false"
-	               tooltips_thumbs="false"
-	               tooltips_hotspots="false"
-	               tooltips_mapspots="false"
-	               deeplinking="false"
-	               loadscene_flags="MERGE"
-	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
-	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
-	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
-	               loadingtext="loading..."
-	               layout_width="100%"
-	               layout_maxwidth="814"
-	               controlbar_width="-24"
-	               controlbar_height="40"
-	               controlbar_offset="20"
-	               controlbar_offset_closed="-40"
-	               controlbar_overlap.no-fractionalscaling="10"
-	               controlbar_overlap.fractionalscaling="0"
-	               design_skin_images="vtourskin.png"
-	               design_bgcolor="0x2D3E50"
-	               design_bgalpha="0.8"
-	               design_bgborder="0"
-	               design_bgroundedge="1"
-	               design_bgshadow="0 4 10 0x000000 0.3"
-	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
-	               design_thumbborder_padding="2"
-	               design_thumbborder_bgroundedge="0"
-	               design_text_css="color:#FFFFFF; font-family:Arial;"
-	               design_text_shadow="1"
-	               />
-
-	<!--
-	    For an alternative skin design either change the <skin_settings> values 
-	    from above or optionally include one of the predefined designs from below.
-	-->
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
-	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
-
-
-	<!-- startup action - load the first scene -->
-	<action name="startup" autorun="onstart">
-		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
-		loadscene(get(startscene), null, MERGE);
-		if(startactions !== null, startactions() );
-	</action>
-
-
-	
-	<scene name="scene_001_0001_sift18_pano_done" title="001_0001_sift18_pano_done" onstart="" thumburl="panos/001_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/001_0001_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/001_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/001_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/001_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_002_0007_sift18_pano_done" title="002_0007_sift18_pano_done" onstart="" thumburl="panos/002_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/002_0007_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/002_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/002_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/002_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_003_0013_sift18_pano_done" title="003_0013_sift18_pano_done" onstart="" thumburl="panos/003_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/003_0013_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/003_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/003_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/003_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_004_0019_sift18_pano_done" title="004_0019_sift18_pano_done" onstart="" thumburl="panos/004_0019_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/004_0019_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/004_0019_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/004_0019_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/004_0019_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_005_0025_sift18_pano_done" title="005_0025_sift18_pano_done" onstart="" thumburl="panos/005_0025_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/005_0025_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/005_0025_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/005_0025_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/005_0025_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_006_0031_sift18_pano_done" title="006_0031_sift18_pano_done" onstart="" thumburl="panos/006_0031_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/006_0031_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/006_0031_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/006_0031_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/006_0031_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_007_0037_sift18_pano_done" title="007_0037_sift18_pano_done" onstart="" thumburl="panos/007_0037_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/007_0037_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/007_0037_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/007_0037_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/007_0037_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_008_0043_sift18_pano_done" title="008_0043_sift18_pano_done" onstart="" thumburl="panos/008_0043_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/008_0043_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/008_0043_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/008_0043_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/008_0043_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_009_0049_sift18_pano_done" title="009_0049_sift18_pano_done" onstart="" thumburl="panos/009_0049_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/009_0049_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/009_0049_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/009_0049_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/009_0049_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_010_0055_sift18_pano_done" title="010_0055_sift18_pano_done" onstart="" thumburl="panos/010_0055_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/010_0055_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/010_0055_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/010_0055_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/010_0055_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_011_0062_sift18_pano_done" title="011_0062_sift18_pano_done" onstart="" thumburl="panos/011_0062_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/011_0062_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/011_0062_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/011_0062_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/011_0062_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_012_0068_sift18_pano_done" title="012_0068_sift18_pano_done" onstart="" thumburl="panos/012_0068_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/012_0068_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/012_0068_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/012_0068_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/012_0068_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_013_0074_sift18_pano_done" title="013_0074_sift18_pano_done" onstart="" thumburl="panos/013_0074_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/013_0074_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/013_0074_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/013_0074_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/013_0074_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_014_0080_sift18_pano_done" title="014_0080_sift18_pano_done" onstart="" thumburl="panos/014_0080_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/014_0080_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/014_0080_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/014_0080_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/014_0080_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_015_0086_sift18_pano_done" title="015_0086_sift18_pano_done" onstart="" thumburl="panos/015_0086_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/015_0086_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/015_0086_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/015_0086_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/015_0086_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_016_0092_sift18_pano_done" title="016_0092_sift18_pano_done" onstart="" thumburl="panos/016_0092_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/016_0092_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/016_0092_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/016_0092_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/016_0092_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_017_0098_sift18_pano_done" title="017_0098_sift18_pano_done" onstart="" thumburl="panos/017_0098_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/017_0098_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/017_0098_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/017_0098_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/017_0098_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_018_0104_sift18_pano_done" title="018_0104_sift18_pano_done" onstart="" thumburl="panos/018_0104_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/018_0104_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/018_0104_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/018_0104_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/018_0104_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_019_0110_sift18_pano_done" title="019_0110_sift18_pano_done" onstart="" thumburl="panos/019_0110_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/019_0110_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/019_0110_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/019_0110_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/019_0110_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_020_0116_sift18_pano_done" title="020_0116_sift18_pano_done" onstart="" thumburl="panos/020_0116_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/020_0116_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/020_0116_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/020_0116_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/020_0116_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_021_0122_sift18_pano_done" title="021_0122_sift18_pano_done" onstart="" thumburl="panos/021_0122_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/021_0122_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/021_0122_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/021_0122_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/021_0122_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_022_0001_sift18_pano_done" title="022_0001_sift18_pano_done" onstart="" thumburl="panos/022_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/022_0001_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/022_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/022_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/022_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_023_0007_sift18_pano_done" title="023_0007_sift18_pano_done" onstart="" thumburl="panos/023_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/023_0007_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/023_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/023_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/023_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_024_0013_sift18_pano_done" title="024_0013_sift18_pano_done" onstart="" thumburl="panos/024_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/024_0013_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/024_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/024_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/024_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_025_0019_sift18_pano_done" title="025_0019_sift18_pano_done" onstart="" thumburl="panos/025_0019_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/025_0019_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/025_0019_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/025_0019_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/025_0019_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_026_0025_sift18_pano_done" title="026_0025_sift18_pano_done" onstart="" thumburl="panos/026_0025_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/026_0025_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/026_0025_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/026_0025_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/026_0025_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_027_0031_sift18_pano_done" title="027_0031_sift18_pano_done" onstart="" thumburl="panos/027_0031_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/027_0031_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/027_0031_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/027_0031_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/027_0031_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_028_0038_sift18_pano_done" title="028_0038_sift18_pano_done" onstart="" thumburl="panos/028_0038_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/028_0038_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/028_0038_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/028_0038_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/028_0038_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_029_0044_sift18_pano_done" title="029_0044_sift18_pano_done" onstart="" thumburl="panos/029_0044_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/029_0044_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/029_0044_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/029_0044_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/029_0044_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_030_0050_sift18_pano_done" title="030_0050_sift18_pano_done" onstart="" thumburl="panos/030_0050_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/030_0050_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/030_0050_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/030_0050_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/030_0050_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_031_0056_sift18_pano_done" title="031_0056_sift18_pano_done" onstart="" thumburl="panos/031_0056_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/031_0056_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/031_0056_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/031_0056_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/031_0056_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_032_0001_sift18_pano_done" title="032_0001_sift18_pano_done" onstart="" thumburl="panos/032_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/032_0001_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/032_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/032_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/032_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_033_0007_sift18_pano_done" title="033_0007_sift18_pano_done" onstart="" thumburl="panos/033_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/033_0007_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/033_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/033_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/033_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_034_0014_sift18_pano_done" title="034_0014_sift18_pano_done" onstart="" thumburl="panos/034_0014_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/034_0014_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/034_0014_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/034_0014_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/034_0014_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_035_0020_sift18_pano_done" title="035_0020_sift18_pano_done" onstart="" thumburl="panos/035_0020_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/035_0020_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/035_0020_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/035_0020_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/035_0020_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_036_0026_sift18_pano_done" title="036_0026_sift18_pano_done" onstart="" thumburl="panos/036_0026_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/036_0026_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/036_0026_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/036_0026_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/036_0026_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_037_0010_sift18_pano_done" title="037_0010_sift18_pano_done" onstart="" thumburl="panos/037_0010_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/037_0010_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/037_0010_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/037_0010_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/037_0010_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_038_0037_sift18_pano_done" title="038_0037_sift18_pano_done" onstart="" thumburl="panos/038_0037_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/038_0037_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/038_0037_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/038_0037_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/038_0037_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_039_0043_sift18_pano_done" title="039_0043_sift18_pano_done" onstart="" thumburl="panos/039_0043_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/039_0043_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/039_0043_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/039_0043_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/039_0043_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_040_0049_sift18_pano_done" title="040_0049_sift18_pano_done" onstart="" thumburl="panos/040_0049_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/040_0049_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/040_0049_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/040_0049_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/040_0049_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_041_0055_sift18_pano_done" title="041_0055_sift18_pano_done" onstart="" thumburl="panos/041_0055_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/041_0055_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/041_0055_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/041_0055_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/041_0055_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_042_0061_sift18_pano_done" title="042_0061_sift18_pano_done" onstart="" thumburl="panos/042_0061_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/042_0061_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/042_0061_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/042_0061_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/042_0061_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_043_0067_sift18_pano_done" title="043_0067_sift18_pano_done" onstart="" thumburl="panos/043_0067_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/043_0067_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/043_0067_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/043_0067_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/043_0067_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_044_0001_sift18_pano_done" title="044_0001_sift18_pano_done" onstart="" thumburl="panos/044_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/044_0001_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/044_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/044_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/044_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_045_0007_sift18_pano_done" title="045_0007_sift18_pano_done" onstart="" thumburl="panos/045_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/045_0007_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/045_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/045_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/045_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_046_0013_sift18_pano_done" title="046_0013_sift18_pano_done" onstart="" thumburl="panos/046_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/046_0013_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/046_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/046_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/046_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_047_0019_sift18_pano_done" title="047_0019_sift18_pano_done" onstart="" thumburl="panos/047_0019_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/047_0019_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/047_0019_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/047_0019_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/047_0019_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_048_0025_sift18_pano_done" title="048_0025_sift18_pano_done" onstart="" thumburl="panos/048_0025_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/048_0025_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/048_0025_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/048_0025_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/048_0025_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_049_0031_sift18_pano_done" title="049_0031_sift18_pano_done" onstart="" thumburl="panos/049_0031_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/049_0031_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/049_0031_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/049_0031_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/049_0031_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_050_0037_sift18_pano_done" title="050_0037_sift18_pano_done" onstart="" thumburl="panos/050_0037_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/050_0037_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/050_0037_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/050_0037_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/050_0037_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_051_0043_sift18_pano_done" title="051_0043_sift18_pano_done" onstart="" thumburl="panos/051_0043_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/051_0043_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/051_0043_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/051_0043_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/051_0043_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_052_0049_sift18_pano_done" title="052_0049_sift18_pano_done" onstart="" thumburl="panos/052_0049_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/052_0049_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/052_0049_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/052_0049_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/052_0049_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_053_0055_sift18_pano_done" title="053_0055_sift18_pano_done" onstart="" thumburl="panos/053_0055_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/053_0055_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/053_0055_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/053_0055_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/053_0055_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_054_0061_sift18_pano_done" title="054_0061_sift18_pano_done" onstart="" thumburl="panos/054_0061_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/054_0061_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/054_0061_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/054_0061_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/054_0061_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_055_0067_sift18_pano_done" title="055_0067_sift18_pano_done" onstart="" thumburl="panos/055_0067_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/055_0067_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/055_0067_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/055_0067_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/055_0067_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_056_0001_sift18_pano_done" title="056_0001_sift18_pano_done" onstart="" thumburl="panos/056_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/056_0001_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/056_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/056_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/056_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_057_0007_sift18_pano_done" title="057_0007_sift18_pano_done" onstart="" thumburl="panos/057_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/057_0007_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/057_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/057_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/057_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_058_0013_sift18_pano_done" title="058_0013_sift18_pano_done" onstart="" thumburl="panos/058_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/058_0013_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/058_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/058_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/058_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_059_0019_sift18_pano_done" title="059_0019_sift18_pano_done" onstart="" thumburl="panos/059_0019_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/059_0019_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/059_0019_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/059_0019_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/059_0019_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_060_0025_sift18_pano_done" title="060_0025_sift18_pano_done" onstart="" thumburl="panos/060_0025_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/060_0025_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/060_0025_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/060_0025_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/060_0025_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_061_0031_sift18_pano_done" title="061_0031_sift18_pano_done" onstart="" thumburl="panos/061_0031_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/061_0031_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/061_0031_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/061_0031_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/061_0031_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_062_0037_sift18_pano_done" title="062_0037_sift18_pano_done" onstart="" thumburl="panos/062_0037_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/062_0037_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/062_0037_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/062_0037_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/062_0037_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_063_0043_sift18_pano_done" title="063_0043_sift18_pano_done" onstart="" thumburl="panos/063_0043_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/063_0043_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/063_0043_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/063_0043_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/063_0043_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_064_0049_sift18_pano_done" title="064_0049_sift18_pano_done" onstart="" thumburl="panos/064_0049_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/064_0049_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/064_0049_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/064_0049_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/064_0049_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_065_0055_sift18_pano_done" title="065_0055_sift18_pano_done" onstart="" thumburl="panos/065_0055_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/065_0055_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/065_0055_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/065_0055_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/065_0055_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_066_0061_sift18_pano_done" title="066_0061_sift18_pano_done" onstart="" thumburl="panos/066_0061_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/066_0061_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/066_0061_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/066_0061_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/066_0061_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_067_0067_sift18_pano_done" title="067_0067_sift18_pano_done" onstart="" thumburl="panos/067_0067_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/067_0067_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/067_0067_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/067_0067_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/067_0067_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_068_0073_sift18_pano_done" title="068_0073_sift18_pano_done" onstart="" thumburl="panos/068_0073_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/068_0073_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/068_0073_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/068_0073_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/068_0073_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_069_0079_sift18_pano_done" title="069_0079_sift18_pano_done" onstart="" thumburl="panos/069_0079_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/069_0079_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/069_0079_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/069_0079_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/069_0079_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_070_0085_sift18_pano_done" title="070_0085_sift18_pano_done" onstart="" thumburl="panos/070_0085_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/070_0085_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/070_0085_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/070_0085_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/070_0085_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_071_0001_sift18_pano_done" title="071_0001_sift18_pano_done" onstart="" thumburl="panos/071_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/071_0001_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/071_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/071_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/071_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_072_0001_sift18_pano_done" title="072_0001_sift18_pano_done" onstart="" thumburl="panos/072_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/072_0001_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/072_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/072_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/072_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_073_0007_sift18_pano_done" title="073_0007_sift18_pano_done" onstart="" thumburl="panos/073_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/073_0007_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/073_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/073_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/073_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_074_0013_sift18_pano_done" title="074_0013_sift18_pano_done" onstart="" thumburl="panos/074_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/074_0013_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/074_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/074_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/074_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_075_0020_sift18_pano_done" title="075_0020_sift18_pano_done" onstart="" thumburl="panos/075_0020_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/075_0020_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/075_0020_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/075_0020_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/075_0020_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_076_0026_sift18_pano_done" title="076_0026_sift18_pano_done" onstart="" thumburl="panos/076_0026_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/076_0026_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/076_0026_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/076_0026_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/076_0026_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_077_0032_sift18_pano_done" title="077_0032_sift18_pano_done" onstart="" thumburl="panos/077_0032_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/077_0032_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/077_0032_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/077_0032_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/077_0032_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
-
-	<scene name="scene_078_0038_sift18_pano_done" title="078_0038_sift18_pano_done" onstart="" thumburl="panos/078_0038_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
-
-		<preview url="panos/078_0038_sift18_pano_done.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1024" tiledimageheight="1024">
-				<cube url="panos/078_0038_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="2048" tiledimageheight="2048">
-				<cube url="panos/078_0038_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="3072" tiledimageheight="3072">
-				<cube url="panos/078_0038_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-		</image>
-
-	</scene>
+    <include url="skin/vtourskin.xml" />
+
+    <!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+    <skin_settings maps="false"
+                   maps_type="google"
+                   maps_bing_api_key=""
+                   maps_google_api_key=""
+                   maps_zoombuttons="false"
+                   gyro="true"
+                   webvr="true"
+                   webvr_gyro_keeplookingdirection="false"
+                   webvr_prev_next_hotspots="true"
+                   littleplanetintro="false"
+                   title="true"
+                   thumbs="true"
+                   thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+                   thumbs_opened="false"
+                   thumbs_text="false"
+                   thumbs_dragging="true"
+                   thumbs_onhoverscrolling="false"
+                   thumbs_scrollbuttons="false"
+                   thumbs_scrollindicator="false"
+                   thumbs_loop="false"
+                   tooltips_buttons="false"
+                   tooltips_thumbs="false"
+                   tooltips_hotspots="false"
+                   tooltips_mapspots="false"
+                   deeplinking="false"
+                   loadscene_flags="MERGE"
+                   loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+                   loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+                   loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+                   loadingtext="loading..."
+                   layout_width="100%"
+                   layout_maxwidth="814"
+                   controlbar_width="-24"
+                   controlbar_height="40"
+                   controlbar_offset="20"
+                   controlbar_offset_closed="-40"
+                   controlbar_overlap.no-fractionalscaling="10"
+                   controlbar_overlap.fractionalscaling="0"
+                   design_skin_images="vtourskin.png"
+                   design_bgcolor="0x2D3E50"
+                   design_bgalpha="0.8"
+                   design_bgborder="0"
+                   design_bgroundedge="1"
+                   design_bgshadow="0 4 10 0x000000 0.3"
+                   design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+                   design_thumbborder_padding="2"
+                   design_thumbborder_bgroundedge="0"
+                   design_text_css="color:#FFFFFF; font-family:Arial;"
+                   design_text_shadow="1"
+                   />
+
+    <include url="skin/vtourskin_design_ultra_light.xml" />
+    <!--
+        For an alternative skin design either change the <skin_settings> values 
+        from above or optionally include one of the predefined designs from below.
+    -->
+    <!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+    <!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+    <!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+    <!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+    <!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+    <!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+    <!-- startup action - load the first scene -->
+    <action name="startup" autorun="onstart">
+        if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[77].name); );
+        loadscene(get(startscene), null, MERGE);
+        if(startactions !== null, startactions() );
+    </action>
+
+
+    
+    <scene name="scene_001" title="001" onstart="" thumburl="panos/001_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/001_0001_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/001_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/001_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/001_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="24"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_002,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="345"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_021,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot3" style="skin_hotspotstyle" zoom="false"
+                ath="297"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_022,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+    </scene>
+
+    <scene name="scene_002" title="002" onstart="" thumburl="panos/002_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/002_0007_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/002_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/002_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/002_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="5"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_003,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="222"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_001,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_003" title="003" onstart="" thumburl="panos/003_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/003_0013_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/003_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/003_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/003_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_004,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_002,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_004" title="004" onstart="" thumburl="panos/004_0019_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/004_0019_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/004_0019_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/004_0019_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/004_0019_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_005,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_003,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_005" title="005" onstart="" thumburl="panos/005_0025_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/005_0025_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/005_0025_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/005_0025_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/005_0025_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_006,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_004,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_006" title="006" onstart="" thumburl="panos/006_0031_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/006_0031_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/006_0031_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/006_0031_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/006_0031_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_007,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_005,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_007" title="007" onstart="" thumburl="panos/007_0037_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/007_0037_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/007_0037_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/007_0037_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/007_0037_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_008,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_006,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_008" title="008" onstart="" thumburl="panos/008_0043_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/008_0043_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/008_0043_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/008_0043_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/008_0043_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_009,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_007,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_009" title="009" onstart="" thumburl="panos/009_0049_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/009_0049_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/009_0049_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/009_0049_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/009_0049_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_010,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_008,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_010" title="010" onstart="" thumburl="panos/010_0055_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/010_0055_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/010_0055_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/010_0055_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/010_0055_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="270"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_011,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="175"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_009,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_011" title="011" onstart="" thumburl="panos/011_0062_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/011_0062_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/011_0062_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/011_0062_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/011_0062_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="190"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_012,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="90"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_010,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="270"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_031,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        
+    </scene>
+
+    <scene name="scene_012" title="012" onstart="" thumburl="panos/012_0068_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/012_0068_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/012_0068_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/012_0068_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/012_0068_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_013,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="10"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_011,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_013" title="013" onstart="" thumburl="panos/013_0074_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/013_0074_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/013_0074_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/013_0074_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/013_0074_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_014,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_012,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_014" title="014" onstart="" thumburl="panos/014_0080_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/014_0080_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/014_0080_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/014_0080_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/014_0080_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_015,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_013,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_015" title="015" onstart="" thumburl="panos/015_0086_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/015_0086_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/015_0086_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/015_0086_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/015_0086_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_016,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_014,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_016" title="016" onstart="" thumburl="panos/016_0092_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/016_0092_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/016_0092_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/016_0092_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/016_0092_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_017,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_015,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_017" title="017" onstart="" thumburl="panos/017_0098_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/017_0098_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/017_0098_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/017_0098_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/017_0098_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_018,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_016,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_018" title="018" onstart="" thumburl="panos/018_0104_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/018_0104_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/018_0104_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/018_0104_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/018_0104_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_019,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_017,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_019" title="019" onstart="" thumburl="panos/019_0110_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/019_0110_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/019_0110_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/019_0110_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/019_0110_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_020,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_018,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_020" title="020" onstart="" thumburl="panos/020_0116_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/020_0116_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/020_0116_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/020_0116_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/020_0116_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_021,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_019,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_021" title="021" onstart="" thumburl="panos/021_0122_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/021_0122_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/021_0122_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/021_0122_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/021_0122_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="210"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_022,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_020,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_022" title="022" onstart="" thumburl="panos/022_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/022_0001_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/022_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/022_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/022_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="275"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_023,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="33.5"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_021,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_023" title="023" onstart="" thumburl="panos/023_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/023_0007_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/023_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/023_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/023_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_024,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_022,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_024" title="024" onstart="" thumburl="panos/024_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/024_0013_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/024_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/024_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/024_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_025,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_023,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_025" title="025" onstart="" thumburl="panos/025_0019_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/025_0019_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/025_0019_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/025_0019_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/025_0019_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_026,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_024,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_026" title="026" onstart="" thumburl="panos/026_0025_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/026_0025_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/026_0025_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/026_0025_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/026_0025_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_027,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_025,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_027" title="027" onstart="" thumburl="panos/027_0031_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/027_0031_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/027_0031_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/027_0031_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/027_0031_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_028,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_026,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_028" title="028" onstart="" thumburl="panos/028_0038_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/028_0038_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/028_0038_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/028_0038_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/028_0038_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_029,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_027,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_029" title="029" onstart="" thumburl="panos/029_0044_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/029_0044_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/029_0044_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/029_0044_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/029_0044_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_030,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_028,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_030" title="030" onstart="" thumburl="panos/030_0050_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/030_0050_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/030_0050_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/030_0050_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/030_0050_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_031,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_029,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_031" title="031" onstart="" thumburl="panos/031_0056_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/031_0056_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/031_0056_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/031_0056_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/031_0056_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="90"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_011,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_030,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot3" style="skin_hotspotstyle" zoom="false"
+                ath="200"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_034,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_032" title="032" onstart="" thumburl="panos/032_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/032_0001_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/032_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/032_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/032_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_033" title="033" onstart="" thumburl="panos/033_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/033_0007_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/033_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/033_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/033_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_034,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_032,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_034" title="034" onstart="" thumburl="panos/034_0014_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/034_0014_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/034_0014_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/034_0014_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/034_0014_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_035,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_033,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_035" title="035" onstart="" thumburl="panos/035_0020_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/035_0020_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/035_0020_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/035_0020_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/035_0020_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_036,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_034,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_036" title="036" onstart="" thumburl="panos/036_0026_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/036_0026_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/036_0026_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/036_0026_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/036_0026_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_037,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_035,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_037" title="037" onstart="" thumburl="panos/037_0010_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/037_0010_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/037_0010_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/037_0010_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/037_0010_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_038,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_036,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_038" title="038" onstart="" thumburl="panos/038_0037_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/038_0037_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/038_0037_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/038_0037_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/038_0037_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_039,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_037,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_039" title="039" onstart="" thumburl="panos/039_0043_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/039_0043_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/039_0043_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/039_0043_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/039_0043_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_040,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_038,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_040" title="040" onstart="" thumburl="panos/040_0049_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/040_0049_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/040_0049_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/040_0049_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/040_0049_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_041,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_039,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_041" title="041" onstart="" thumburl="panos/041_0055_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/041_0055_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/041_0055_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/041_0055_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/041_0055_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_042,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_040,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_042" title="042" onstart="" thumburl="panos/042_0061_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/042_0061_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/042_0061_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/042_0061_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/042_0061_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_043,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_041,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_043" title="043" onstart="" thumburl="panos/043_0067_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/043_0067_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/043_0067_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/043_0067_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/043_0067_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_044,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_042,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_044" title="044" onstart="" thumburl="panos/044_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/044_0001_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/044_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/044_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/044_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_045,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_043,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_045" title="045" onstart="" thumburl="panos/045_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/045_0007_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/045_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/045_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/045_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_046,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_044,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_046" title="046" onstart="" thumburl="panos/046_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/046_0013_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/046_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/046_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/046_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_047,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_045,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_047" title="047" onstart="" thumburl="panos/047_0019_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/047_0019_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/047_0019_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/047_0019_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/047_0019_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_048,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_046,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_048" title="048" onstart="" thumburl="panos/048_0025_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/048_0025_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/048_0025_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/048_0025_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/048_0025_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_049,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_047,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_049" title="049" onstart="" thumburl="panos/049_0031_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/049_0031_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/049_0031_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/049_0031_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/049_0031_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_050,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_048,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_050" title="050" onstart="" thumburl="panos/050_0037_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/050_0037_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/050_0037_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/050_0037_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/050_0037_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_051,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_050,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_051" title="051" onstart="" thumburl="panos/051_0043_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/051_0043_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/051_0043_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/051_0043_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/051_0043_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_052,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_050,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_052" title="052" onstart="" thumburl="panos/052_0049_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/052_0049_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/052_0049_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/052_0049_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/052_0049_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_053,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_051,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_053" title="053" onstart="" thumburl="panos/053_0055_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/053_0055_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/053_0055_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/053_0055_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/053_0055_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_054,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_052,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_054" title="054" onstart="" thumburl="panos/054_0061_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/054_0061_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/054_0061_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/054_0061_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/054_0061_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_055,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_053,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_055" title="055" onstart="" thumburl="panos/055_0067_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/055_0067_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/055_0067_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/055_0067_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/055_0067_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="180"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_051,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="0"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_054,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_056" title="056" onstart="" thumburl="panos/056_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/056_0001_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/056_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/056_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/056_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_057" title="057" onstart="" thumburl="panos/057_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/057_0007_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/057_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/057_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/057_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_058" title="058" onstart="" thumburl="panos/058_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/058_0013_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/058_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/058_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/058_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_059" title="059" onstart="" thumburl="panos/059_0019_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/059_0019_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/059_0019_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/059_0019_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/059_0019_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_060" title="060" onstart="" thumburl="panos/060_0025_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/060_0025_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/060_0025_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/060_0025_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/060_0025_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_061" title="061" onstart="" thumburl="panos/061_0031_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/061_0031_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/061_0031_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/061_0031_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/061_0031_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_062" title="062" onstart="" thumburl="panos/062_0037_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/062_0037_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/062_0037_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/062_0037_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/062_0037_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_063" title="063" onstart="" thumburl="panos/063_0043_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/063_0043_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/063_0043_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/063_0043_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/063_0043_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_064" title="064" onstart="" thumburl="panos/064_0049_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/064_0049_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/064_0049_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/064_0049_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/064_0049_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_065" title="065" onstart="" thumburl="panos/065_0055_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/065_0055_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/065_0055_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/065_0055_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/065_0055_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_066" title="066" onstart="" thumburl="panos/066_0061_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/066_0061_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/066_0061_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/066_0061_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/066_0061_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_067" title="067" onstart="" thumburl="panos/067_0067_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/067_0067_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/067_0067_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/067_0067_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/067_0067_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_068" title="068" onstart="" thumburl="panos/068_0073_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/068_0073_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/068_0073_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/068_0073_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/068_0073_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_069" title="069" onstart="" thumburl="panos/069_0079_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/069_0079_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/069_0079_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/069_0079_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/069_0079_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_070" title="070" onstart="" thumburl="panos/070_0085_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/070_0085_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/070_0085_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/070_0085_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/070_0085_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_071" title="071" onstart="" thumburl="panos/071_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/071_0001_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/071_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/071_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/071_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+
+    </scene>
+
+    <scene name="scene_072" title="072" onstart="" thumburl="panos/072_0001_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/072_0001_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/072_0001_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/072_0001_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/072_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="95"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_073,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="245"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_075,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_073" title="073" onstart="" thumburl="panos/073_0007_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/073_0007_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/073_0007_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/073_0007_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/073_0007_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="90"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_074,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="270"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_072,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+    
+
+    <scene name="scene_074" title="074" onstart="" thumburl="panos/074_0013_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/074_0013_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/074_0013_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/074_0013_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/074_0013_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="270"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_073,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        
+    </scene>
+
+    <scene name="scene_075" title="075" onstart="" thumburl="panos/075_0020_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/075_0020_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/075_0020_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/075_0020_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/075_0020_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="255"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_076,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="90"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_072,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_076" title="076" onstart="" thumburl="panos/076_0026_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/076_0026_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/076_0026_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/076_0026_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/076_0026_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="75"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_075,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="275"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_077,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_077" title="077" onstart="" thumburl="panos/077_0032_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/077_0032_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/077_0032_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/077_0032_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/077_0032_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="358"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_001,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="90"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_076,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot3" style="skin_hotspotstyle" zoom="false"
+                ath="268"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_078,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+
+    </scene>
+
+    <scene name="scene_078" title="078" onstart="" thumburl="panos/078_0038_sift18_pano_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+        <view hlookat="0.0" vlookat="0.0" fovtype="HFOV" fov="90" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+        <preview url="panos/078_0038_sift18_pano_done.tiles/preview.jpg" />
+
+        <image type="CUBE" multires="true" tilesize="512">
+            <level tiledimagewidth="1024" tiledimageheight="1024">
+                <cube url="panos/078_0038_sift18_pano_done.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="2048" tiledimageheight="2048">
+                <cube url="panos/078_0038_sift18_pano_done.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+            </level>
+            <level tiledimagewidth="3072" tiledimageheight="3072">
+                <cube url="panos/078_0038_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+            </level>
+        </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="80"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_077,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        
+
+    </scene>
 
 
 </krpano>
