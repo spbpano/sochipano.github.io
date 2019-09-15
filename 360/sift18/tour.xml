@@ -1,6 +1,6 @@
 ﻿<krpano version="1.19" title="Virtual Tour">
-
     <include url="skin/vtourskin.xml" />
+    <include url="hotspot_debug.xml" />
 
     <!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
     <skin_settings maps="false"
@@ -69,7 +69,7 @@
 
     <!-- startup action - load the first scene -->
     <action name="startup" autorun="onstart">
-        if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[77].name); );
+        if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[55].name); );
         loadscene(get(startscene), null, MERGE);
         if(startactions !== null, startactions() );
     </action>
@@ -681,6 +681,11 @@
                 ath="0"
                 atv="5"
                 onclick="lookto(get(ath),0); loadscene(scene_019,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot3" style="skin_hotspotstyle" zoom="false"
+                ath="77"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_056,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
         />
 
     </scene>
@@ -1747,6 +1752,21 @@
                 <cube url="panos/056_0001_sift18_pano_done.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
             </level>
         </image>
+        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="265"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_020,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot2" style="skin_hotspotstyle" zoom="false"
+                ath="118"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_003,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+        <hotspot name="spot3" style="skin_hotspotstyle" zoom="false"
+                ath="215"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_021,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
 
     </scene>
 

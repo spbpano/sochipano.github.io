@@ -1,0 +1,463 @@
+<krpano>
+    <include url="%SWFPATH%/plugins/webvr.xml" />
+
+    <plugin name="WebVR"
+        url="%SWFPATH%/plugins/webvr.js"
+        mobilevr_fake_support="true"
+        onentervr=" webvr_onentervr();
+                    tween(hotspot[virtual_category_vr].alpha, 1,0);
+                    tween(hotspot[underwater_category_vr].alpha, 1,0);
+                    tween(hotspot[aerial_category_vr].alpha, 1,0);"
+        onexitvr="  webvr_onexitvr();
+                    tween(hotspot[virtual_category_vr].alpha, 0,0);
+                    tween(hotspot[underwater_category_vr].alpha, 0,0);
+                    tween(hotspot[aerial_category_vr].alpha, 0,0);"
+        onavailable=""
+    />  
+    <skin_settings  gyro="true"
+                    webvr="true"
+                    webvr_gyro_keeplookingdirection="false"
+                    webvr_prev_next_hotspots="true"
+                    loadscene_flags="MERGE|KEEPMOVING"
+                    loadscene_flags_slide="KEEPMOVING|MERGE"
+                    loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+                    loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+                    loadscene_blend_slide="BLEND(0.5, linear)"
+                    loadingtext="loading..."
+
+                    style_price="style=&amp;quot;color:ffffff; font-family: Helvetica, sans-serif; letter-spacing: 0px; font-size:2.70rem;&amp;quot;"
+                    sytle_price.mobile="style='color:ffffff; font-family: Helvetica, sans-serif; letter-spacing: 2px; font-size:18px;'"
+                        
+
+                    category_width="25%"
+                    category_width.mobile="29%"
+
+                    category_maxwidth="300"
+                    category_maxwidth.mobile="170"
+
+                    vr_bttn_width="27%"
+                    vr_bttn_width.mobile="50%"
+
+                    vr_bttn_maxwidth="350"
+                    vr_bttn_maxwidth.mobile="200"
+                   
+                    category_text="font-family: Helvetica, sans-serif;
+                                    text-transform: uppercase;
+                                    letter-spacing: 2px;
+                                    font-size:0.80rem;
+                                    color:#FFFFFF; 
+                                    text-align: center;"
+                    category_text.mobile="font-family: Helvetica, sans-serif;
+                                    text-transform: uppercase;
+                                    font-size:9px;
+                                    letter-spacing: 0.5px;
+                                    color:#FFFFFF;
+                                    text-align: center;"
+                    categories_text_vr="font-family: Helvetica, sans-serif;
+                                    font-size:11px;
+                                    color:#FFFFFF;
+                                    text-align: center;"
+                    price_text="    text-transform: uppercase;
+                                    letter-spacing: 2px;
+                                    font-size:0.80rem;
+                                    color:#FFFFFF; 
+                                    text-align: center;"
+                    price_text.mobile="font-family: Helvetica, sans-serif;
+                                    text-transform: uppercase;
+                                    letter-spacing: 2px;
+                                    font-size:9px;
+                                    color:#FFFFFF; 
+                                    text-align: center;"
+                    vr_text_css="font-family: Helvetica, sans-serif;
+                                    text-transform: uppercase;
+                                    text-decoration:underline;
+                                    letter-spacing: 2px;
+                                    font-size:0.80rem;
+                                    color:#FFFFFF;"
+                    vr_text_css.mobile="font-family: Helvetica, sans-serif;
+                                    text-transform: uppercase;
+                                    text-decoration:underline;
+                                    font-size:9px;
+                                    color:#FFFFFF;"
+                    />
+    <autorotate enabled="true"
+        waittime="1.5"
+        speed="3.0"
+    />
+    <control
+        mouse="moveto"
+        touch="drag"
+        movetorelative="true"
+        movetoaccelerate="0.90"
+        movetospeed="8.0"
+        movetofriction="0.7"
+    />
+    <events name="skin_events" keep="true"
+        onresize="check_portrait_mode()"
+        onxmlcomplete="check_portrait_mode(); setinterval(time, 15.0, slide_panos());"
+        onloadcomplete=""
+        webvr_onexitvr="tween(layer[webvr_enterbutton].alpha,0,0);"
+        onmousedown="close_if_open();"
+    />
+    <style name="categories_background"
+        type="container"
+        keep="true"
+        align="bottom"
+        width="get:skin_settings.category_width"
+        maxwidth="get:skin_settings.category_maxwidth"
+        height="137"
+        height.mobile="70"
+        y="100"
+        y.mobile="60"
+        maskchildren="true"
+        visible="true"
+        bgroundedge="21"
+        bgroundedge.mobile="13"
+        bgcolor="0x000000"
+        bgalpha="0.50"
+        bgcapture="false" zorder="1"
+        bgborder="0"
+    />
+    <style name="categories_text"
+        type="text"
+        width="100%"
+        wordwrap="true"
+        align="top" x="0" y="18"
+        y.mobile="9"
+        css="get:skin_settings.category_text"
+        vcenter="false"
+        bg="false"
+        zorder="55"
+        enabled="true"
+        capture="false"
+    />
+    <style name="category_hotspot"
+        type="text"
+        keep="true"
+        visible="true"
+        alpha="0.0"
+        autoalpha="true"
+        css="get:skin_settings.categories_text_vr"
+        edge="center" distorted="false" renderer="webgl"
+        vcenter="true"
+        padding="17"
+        wordwrap="false"
+        bg="true"
+        bgcolor="0x000000"
+        bgalpha="0.50"
+        bgroundedge="13"
+     />
+    <style name="price_text"
+        type="text"
+        align="center"
+        vcenter="true"
+        width="100%"
+        wordwrap="true"
+        css="get:skin_settings.price_text"
+        bg="false"
+        zorder="55"
+        enabled="true"
+        capture="false"
+    />
+    <style name="categories_click_style"
+        keep="true"
+        type="text"
+        align="center"
+        width="100%"
+        height="100%"
+        maskchildren="true"
+        visible="true"
+        enabled="true"
+        bgroundedge="21"
+        bgcolor="0x000000"
+        bgalpha="0.0001"
+        bgcapture="true"
+        zorder="61"
+    />
+    <style name="vcenter_price_style"
+        type="container"
+        keep="true"
+        align="bottom"
+        width="95%"
+        height="56"
+        height.mobile="30"
+        y="18"
+        y.mobile="11"
+        maskchildren="false"
+        visible="true"
+        bgroundedge="0"
+        bgcolor="0xffffff"
+        bgalpha="0.0"
+        bgcapture="false" zorder="1"
+    />    
+    <!--
+    <layer name="logo_img" keep="true" type="image" align="topleft"
+        url="logo_img.svg"
+        height="40"
+        height.mobile="24"
+        width="prop"
+        visible.mobile="true"
+        visible="true"
+        x="16" y="16"
+        alpha="1"
+    />
+    <layer name="logo_text" keep="true" type="image" align="topleft"
+        url="logo_text.svg"
+        height="40"
+        height.mobile="24"
+        width="prop"
+        visible="true"
+        x="16" y="16"
+        alpha="1"
+    />
+    -->
+
+<!--GOOGLE DEMO-->
+<!--
+    <hotspot name="virtual_category_vr"
+        style="category_hotspot"
+        html="Панорама 360&amp;deg; [br /][b style='font-family: Helvetica, sans-serif;  letter-spacing: 2px; font-size:18px;']400[/b][br /]USD&amp;nbsp;/&amp;nbsp;SPOT"
+        ath="150" atv="0"
+        onclick="load_right_category_panos(vtour, scene_vtour);"
+     />
+ -->
+    <layer name="google_category"
+        style="categories_background"
+        x="-27%"
+        x.mobile="-32%"
+    >
+        <layer name="google_text"
+            style="categories_text"
+            html="[b class='pano_type']360&amp;deg; стандарт Google[/b]
+            [br /][span class='pano_type_note']съемка панорамной камерой[/span]"
+        />
+        <layer name="vcenter_price_v" style="vcenter_price_style">
+            <layer name="google_price"
+                style="price_text"
+                html="[b  class='cash']750&amp;nbsp;[span class='ruble']&#8381;[/span][/b]
+                [br /][span class='price_for']одна&amp;nbsp;панорама[/span]"
+                html.mobile="[b  class='cash']750&amp;nbsp;[span class='ruble']&#8381;[/span][/b]
+                [br /][span class='price_for']одна&amp;nbsp;панорама[/span]"
+            />
+            <!--
+                w="calc:'[b'+syle_price']'+underwater_price+'[/b] '+currency_spot"
+                [span style='font-size:2.0rem;'][/span]
+            -->
+            <!--[i style='font-size:2.0rem;][/i]-->
+        </layer>
+
+        <layer name="virtual_click"
+            style="categories_click_style"
+            onclick="load_right_category_panos(google, scene_DSCN3746-HDR);"
+        />
+    </layer>
+
+<!--YANDEX DEMO-->
+<!--
+    <hotspot name="underwater_category_vr"
+        style="category_hotspot"
+        html="стандарт Яндекс[br /][b style='font-family: Helvetica, sans-serif;  letter-spacing: 2px; font-size:18px;']1400[/b][br /]USD&amp;nbsp;/&amp;nbsp;одна панорама"
+        ath="210" atv="0"
+        onclick="load_right_category_panos(underwater, scene_underwater);"
+     />
+ -->
+    <layer name="yandex_category"
+        style="categories_background"
+        x="0"
+    >
+        <layer name="yandex_text"
+            style="categories_text"
+            html="[b class='pano_type']360&amp;deg; стандарт Яндекс[/b]
+            [br /][span class='pano_type_note']съемка зеркальной камерой[/span]"
+        />
+        <layer name="vcenter_price_u" style="vcenter_price_style">
+            <layer name="yandex_price"
+                style="price_text"
+                html="[b  class='cash']1750&amp;nbsp;[span class='ruble']&#8381;[/span][/b]
+                [br /][span class='price_for']одна&amp;nbsp;панорама[/span]"
+                html.mobile="[b  class='cash']1750&amp;nbsp;[span class='ruble']&#8381;[/span][/b]
+                [br /][span class='price_for']одна&amp;nbsp;панорама[/span]"
+            />
+        </layer>
+        <layer name="yandex_click"
+            style="categories_click_style"
+            onclick="load_right_category_panos(yandex, scene_mag_music);"
+        />
+    </layer>
+
+<!--SOCHIPANO DEMO-->
+<!--
+    <hotspot name="aerial_category_vr"
+        style="category_hotspot"
+        html="360&amp;deg; AERIAL[br /][b style='font-family: Helvetica, sans-serif;  letter-spacing: 2px; font-size:18px;']1000[/b][br /]USD&amp;nbsp;/&amp;nbsp;SPOT"
+        ath="180" atv="0"
+        onclick="load_right_category_panos(aerial, scene_aerial);"
+     />
+ -->
+    <layer name="sochipano_category"
+        style="categories_background"
+        x="27%"
+        x.mobile="32%"
+    >
+        <layer name="sochipano_text" type="text"
+            style="categories_text"
+            html="[b class='pano_type']360&amp;deg; стандарт SochiPano[/b]
+            [br /][span class='pano_type_note']ретушь штатива[/span]"
+        />
+        <layer name="vcenter_price_a" style="vcenter_price_style">
+            <layer name="sochipano_price"
+                style="price_text"
+                html="[b  class='cash']3500&amp;nbsp;[span class='ruble']&#8381;[/span][/b]
+                [br /][span class='price_for']одна&amp;nbsp;панорама[/span]"
+                html.mobile="[b style='color:ffffff; font-family: Helvetica, sans-serif; letter-spacing: 2px; font-size:18px;']1000[/b] usd&amp;nbsp;/&amp;nbsp;spot"
+            />
+        </layer>
+        <layer name="aerial_click"
+            style="categories_click_style"
+            onclick="load_right_category_panos(sochipano, scene_bedroom01_snegiri);"
+        />
+    </layer>
+
+<!--VR BUTTON-->
+<!--
+
+    <layer name="vr_button" keep="true" type="container" align="bottom"
+        width="get:skin_settings.vr_bttn_width"
+        maxwidth="get:skin_settings.vr_bttn_maxwidth"
+        height="40" maskchildren="true" visible="true"
+        height.mobile="30"
+        y="32" x="0"
+        y.mobile="16"
+        bgroundedge="11"
+        bgroundedge.mobile="7"
+        bgcolor="0x000000"
+        bgalpha="0.50"
+        bgcapture="false" zorder="1"
+        onclick="trace('vr');"
+        >
+        <layer name="vr_click" keep="true" type="text" align="center"
+            width="100%"
+            height="100%"
+            maskchildren="true" visible="true"
+            enabled="true"
+            bgroundedge="21"
+            bgcolor="0xffffff"
+            bgalpha="0.0001"
+            bgcapture="true"
+            zorder="65"
+            onclick="open_close_vr_info(get(layer[wrrap_to_vr].open_state));"
+            onclick.mobile="webvr.enterVR();"
+        />
+        -->
+        <!--vr_click-->
+        <!--
+        <layer name="vr_wrap" keep="true" type="text" align="center"
+            width="230"
+            width.mobile="80%"
+            height="100%"
+            maskchildren="true" visible="true"
+            enabled="true"
+            bgroundedge="21"
+            bgcolor="0x000000"
+            bgalpha="0.00001"
+            bgcapture="true"
+            zorder="61">
+            <layer name="vr_img" keep="true" type="image" align="left"
+                url="vr.svg"
+                height="18"
+                height.mobile="16"
+                width="prop"
+                visible="true"
+                x="0" y="0"
+            />
+            <layer name="vr_text" type="text"
+                align="right"
+                x="0"
+                y="-2"
+                y.mobile="0"
+                html="EXPLORE IN VR MODE"
+                css="get:skin_settings.vr_text_css"
+                bg="false"
+            />
+        </layer>
+        -->
+        <!--vr_wrap-->
+        <!--
+    </layer>
+    -->
+<!--END VR BUTTON-->
+
+<!--GO TO VR-->
+<!--
+    <layer name="wrrap_to_vr" type="container" keep="true" align="center" open_state="false"
+        visible.mobile="false"
+        alpha="" autoalpha="true"
+        bgcolor="0x000000" bgalpha="0.50" bgborder="0" bgroundedge="20 20 20 20"
+        x="0" y="-100"
+        width="470" height="350">
+        <layer name="st_text" keep="true" type="text" y="20" align="top" style="price_text" bg="false" html="[b]EXPLORE WITH VIRTUAL REALITY[/b]"/>
+        <layer name="nd_text" keep="true" type="text" y="55" align="top" style="categories_text" bg="false" html="1. SCAN THE FOLLOWING QR CODE ON YOUR SMARTPHONE"/>
+        <layer name="qr_code" keep="true" type="image" url="qr.svg" width="100" height="prop" align="top" y="107"/>
+        <layer name="rd_text" keep="true" type="text" y="233" align="top" style="categories_text" bg="false" html="2. ATTACH YOUR SMARTPHONE TO A VR HEADSET"/>
+        <layer name="vr_glass" keep="true" type="image" url="vr.svg" width="90" height="prop" align="top" y="266"/>
+    </layer>
+    -->
+<!--END GO TO VR-->
+
+    <action name="check_portrait_mode">
+        div(aspect, stagewidth, stageheight);
+        if(aspect != lastmobileaspect,
+            copy(lastmobileaspect, aspect);
+            if(stagewidth GT stageheight,
+                tween(layer[logo_img].alpha, 0.0, 0.1, easeInCubic);
+                tween(layer[logo_text].alpha, 1.0, 0.1, easeInCubic);
+              ,
+                tween(layer[logo_img].alpha, 1.0, 0.1, easeInCubic);
+                tween(layer[logo_text].alpha, 0.0, 0.1, easeInCubic);
+            );
+        );
+    </action>
+    <action name="open_close_vr_info">
+        if(%1,
+                tween(layer[wrrap_to_vr].alpha, 0.0, 0.2, easeInCubic);
+                set(layer[wrrap_to_vr].open_state,false);
+            ,
+                close_if_open();
+                tween(layer[wrrap_to_vr].alpha, 1.0, 0.2, easeInCubic);
+                set(layer[wrrap_to_vr].open_state,true);
+        );
+    </action>
+    <action name="close_if_open">
+        if(layer[wrrap_to_vr].open_state, open_close_vr_info(get(layer[wrrap_to_vr].open_state)));
+    </action>
+    <action name="slide_panos">
+        set(newsceneindex, get(scene[get(xml.scene)].index));
+        inc(newsceneindex);
+        set(next_scene_name, get(scene[get(newsceneindex)].name));
+        if(newsceneindex GE 0 AND newsceneindex LT scene.count,
+            loadscene(get(next_scene_name), null, get(skin_settings.loadscene_flags_slide), get(skin_settings.loadscene_blend_slide));
+        ,
+            loadscene(get(scene[0].name), null, get(skin_settings.loadscene_flags_slide), get(skin_settings.loadscene_blend_slide));
+            clearinterval(time);
+        );
+    </action>
+    <action name="load_right_category_panos"  scope="local" args="linked_category, to_linkedscene">
+        set(current_category, get(scene[get(xml.scene)].category));
+        if(current_category == linked_category,
+            loadscene(get(scene[get(xml.scene)].linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend));
+        ,
+            loadscene(get(to_linkedscene), null, get(skin_settings.loadscene_flags), get(skin_settings.loadscene_blend));
+        );
+    </action>
+
+    <!--
+        calc:(skin_settings.price_text_size + skin_settings.price_numb_size) * 1.1
+        price_numb_size="calc:2.7*16"
+        price_numb_size.mobile="18" 
+        underwater_price="1400"
+        aerial_price="1000"
+        vtour_price="500"
+        currency_spot="usd&amp;nbsp;/&amp;nbsp;spot"
+    -->
+
+</krpano>

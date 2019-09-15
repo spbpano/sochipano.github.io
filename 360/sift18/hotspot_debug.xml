@@ -1,0 +1,23 @@
+<krpano version="1.19" title="Virtual Tour">
+
+	<events onkeydown="showlog(); hotspot_coord(keycode)"  />
+
+	<action name="hotspot_coord">
+		if((keycode == 77),
+			screentosphere(mouse.x, mouse.y, toh, tov);
+			roundval(toh, 2);
+			roundval(tov, 2);
+
+			if((toh LT 0),
+				set(toh, 360 - get(toh);
+				trace('toh = ',toh);
+			);
+
+			trace('toh = ',toh);
+			trace('tov = ',tov);
+
+  		);
+
+	</action>
+
+</krpano>
