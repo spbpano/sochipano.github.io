@@ -1,22 +1,47 @@
 <krpano version="1.19" title="Virtual Tour">
 
-	<events onkeydown="showlog(); hotspot_coord(keycode)"  />
+	<events onkeydown=" hotspot_coord(keycode)"  />
 
 	<action name="hotspot_coord">
-		if((keycode == 77),
+
+		if(keycode == 77,
+			showlog();
 			screentosphere(mouse.x, mouse.y, toh, tov);
 			roundval(toh, 2);
 			roundval(tov, 2);
-
-			if((toh LT 0),
-				set(toh, 360 - get(toh);
-				trace('toh = ',toh);
+			mod(toh,toh,360);
+			if(toh LT 0,
+				add(toh,360.00,toh)
 			);
+			set(toh_int, get(toh));
+			roundval(toh_int,0);
 
-			trace('toh = ',toh);
-			trace('tov = ',tov);
+			trace('&#13;
+				&#60;hotspot name=&quot;spot_',toh_int,'&quot; style=&quot;skin_hotspotstyle&quot; zoom=&quot;false&quot;&#13;
+				&#09;&#09;ath=&quot;',toh,'&quot;&#13;
+				&#09;&#09;atv=&quot;5&quot;	&#13;
+				&#09;&#09;onclick=&quot;lookto(get(ath),0); loadscene(scene_0,null,KEEPVIEW|KEEPMOVING|MERGE,BLEND(0.5));&quot;&#13;
+			&#47;&#62;');
+
+
 
   		);
+  		<!--
+			&lt; hotspot name="spot315" style="skin_hotspotstyle" zoom="false"
+ath="315"
+atv="5"
+onclick="lookto(get(ath),0); loadscene(scene_0,null,KEEPVIEW|KEEPMOVING|MERGE,BLEND(0.5));
+/&gt;
+
+				set(toh, 360.00 - get(toh);
+			trace('keycode = ',keycode);
+
+  			        <hotspot name="spot1" style="skin_hotspotstyle" zoom="false"
+                ath="24"
+                atv="5"
+                onclick="lookto(get(ath),0); loadscene(scene_002,null,KEEPVIEW|KEEPMOVING|MERGE ,BLEND(0.5));"
+        />
+    -->
 
 	</action>
 
