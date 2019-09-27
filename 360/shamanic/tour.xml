@@ -94,7 +94,7 @@
 -->
 	<scene name="scene_shamanic_shop_main_IMG_0132-HDR(7)_Natural_Panorama" title="shamanic_shop_main_IMG_0132-HDR(7)_Natural Panorama" onstart="" thumburl="panos/shamanic_shop_main_IMG_0132-HDR(7)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmax="140" vlookatmin="-90" vlookatmax="75" limitview="range" />
 
 		<preview url="panos/shamanic_shop_main_IMG_0132-HDR(7)_Natural_Panorama.tiles/preview.jpg" />
 
