@@ -1,0 +1,248 @@
+﻿<krpano version="1.20" title="Virtual Tour">
+       <!--
+        <include url="skin/vtourskin.xml" />
+
+		-->
+    <include url="skin/priceskin.xml" />
+
+    <!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+    
+
+    <!-- startup action - load the first scene -->
+    <action name="startup" autorun="onstart">
+        if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+        loadscene(get(startscene), null, MERGE);
+        if(startactions !== null, startactions() );
+    </action>
+
+	<scene name="scene_DSCN3746-HDR" title="DSCN3746-HDR" category="google" linkedscene="scene_DSCN3746-HDR" onstart="" thumburl="panos/DSCN3746-HDR.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/DSCN3746-HDR.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/DSCN3746-HDR.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
+		</image>
+
+	</scene>
+  <scene name="scene_mag_music" title="mag_music_right_done" category="yandex" linkedscene="scene_divan_nd_zal" onstart="" thumburl="panos/mag_music_right_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+    <preview url="panos/mag_music_right_done.tiles/preview.jpg" />
+
+    <image>
+      <cube url="panos/mag_music_right_done.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4160" />
+    </image>
+
+  </scene>
+  <scene name="scene_divan_nd_zal" title="3from_divan_nd_zal_IMG_0003_done" category="yandex" linkedscene="scene_mag_music" onstart="" thumburl="panos/3from_divan_nd_zal_IMG_0003_done.tiles/thumb.jpg" lat="" lng="" heading="">
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+    <preview url="panos/3from_divan_nd_zal_IMG_0003_done.tiles/preview.jpg" />
+
+    <image>
+      <cube url="panos/3from_divan_nd_zal_IMG_0003_done.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4160" />
+    </image>
+
+  </scene>
+	<scene name="scene_msk_mzn" title="Музион" category="sochipano" linkedscene="scene_bedroom01_snegiri" onstart="" thumburl="panos/msk_mzn.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="100" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+		<preview url="panos/msk_mzn.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3820" tiledimageheight="3820">
+				<cube url="panos/msk_mzn.tiles/%s/l4/%v/l4_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1910" tiledimageheight="1910">
+				<cube url="panos/msk_mzn.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="956" tiledimageheight="956">
+				<cube url="panos/msk_mzn.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="512" tiledimageheight="512">
+				<cube url="panos/msk_mzn.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/msk_mzn.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+	</scene>
+    <scene name="scene_bedroom01_snegiri" title="bedroom01_snegiri_IMG_0385-HDR(5)_Natural Panorama" category="sochipano" linkedscene="scene_msk_mzn" onstart="" thumburl="panos/bedroom01_snegiri_IMG_0385-HDR(5)_Natural_Panorama.tiles/thumb.jpg" lat="" lng="" heading="">
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1" fovmax="130" limitview="auto" />
+
+    <preview url="panos/hall_8bldng_snegiri.tiles/preview.jpg" />
+
+    <image type="CUBE" multires="true" tilesize="512">
+      <level tiledimagewidth="3328" tiledimageheight="3328">
+        <cube url="panos/hall_8bldng_snegiri.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1664" tiledimageheight="1664">
+        <cube url="panos/hall_8bldng_snegiri.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="768" tiledimageheight="768">
+        <cube url="panos/hall_8bldng_snegiri.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+    </image>
+
+  </scene>
+<!--
+	<scene name="scene_reception_snegiri" title="рецепция" category="sochipano" linkedscene="scene_msk_mzn" onstart="" thumburl="panos/reception_snegiri.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1" fovmax="130" limitview="auto" />
+
+		<preview url="panos/reception_snegiri.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3328" tiledimageheight="3328">
+				<cube url="panos/reception_snegiri.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1664" tiledimageheight="1664">
+				<cube url="panos/reception_snegiri.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="768" tiledimageheight="768">
+				<cube url="panos/reception_snegiri.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+		</image>
+
+	</scene>
+-->
+
+<!--
+  <scene name="scene_underwater" title="underwater" next_pano="scene_underwater_2" onstart="" thumburl="panos/underwater.tiles/thumb.jpg" category="underwater" linkedscene="scene_underwater_2" lat="" lng="" heading="">
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+    <preview url="panos/underwater.tiles/preview.jpg" />
+
+    <image type="CUBE" multires="true" tilesize="512">
+      <level tiledimagewidth="3200" tiledimageheight="3200">
+        <cube url="panos/underwater.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1536" tiledimageheight="1536">
+        <cube url="panos/underwater.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="768" tiledimageheight="768">
+        <cube url="panos/underwater.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+    </image>
+
+  </scene>
+
+  <scene name="scene_underwater_2" title="underwater_2" next_pano="scene_underwater" onstart="" thumburl="panos/underwater_2.tiles/thumb.jpg" category="underwater" linkedscene="scene_underwater" lat="" lng="" heading="">
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+    <preview url="panos/underwater_2.tiles/preview.jpg" />
+
+    <image type="CUBE" multires="true" tilesize="512">
+      <level tiledimagewidth="3200" tiledimageheight="3200">
+        <cube url="panos/underwater_2.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1536" tiledimageheight="1536">
+        <cube url="panos/underwater_2.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="768" tiledimageheight="768">
+        <cube url="panos/underwater_2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+    </image>
+
+  </scene>
+
+  <scene name="scene_vtour" title="vtour" next_pano="scene_vtour_2" onstart="" thumburl="panos/vtour.tiles/thumb.jpg" category="vtour" linkedscene="scene_vtour_2" lat="" lng="" heading="">
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+    <preview url="panos/vtour.tiles/preview.jpg" />
+
+    <image type="CUBE" multires="true" tilesize="512">
+      <level tiledimagewidth="3200" tiledimageheight="3200">
+        <cube url="panos/vtour.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1536" tiledimageheight="1536">
+        <cube url="panos/vtour.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="768" tiledimageheight="768">
+        <cube url="panos/vtour.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+    </image>
+
+  </scene>
+
+  <scene name="scene_vtour_2" title="vtour_2" next_pano="scene_vtour" onstart="" thumburl="panos/vtour_2.tiles/thumb.jpg" category="vtour" linkedscene="scene_vtour" lat="" lng="" heading="">
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+    <preview url="panos/vtour_2.tiles/preview.jpg" />
+
+    <image type="CUBE" multires="true" tilesize="512">
+      <level tiledimagewidth="3200" tiledimageheight="3200">
+        <cube url="panos/vtour_2.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1536" tiledimageheight="1536">
+        <cube url="panos/vtour_2.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="768" tiledimageheight="768">
+        <cube url="panos/vtour_2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+    </image>
+
+  </scene>
+    <scene name="scene_aerial" title="aerial" next_pano="scene_aerial_2" onstart="" thumburl="panos/aerial.tiles/thumb.jpg" category="aerial" linkedscene="scene_aerial_2" lat="" lng="" heading="">
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+    <preview url="panos/aerial.tiles/preview.jpg" />
+
+    <image type="CUBE" multires="true" tilesize="512">
+      <level tiledimagewidth="3200" tiledimageheight="3200">
+        <cube url="panos/aerial.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1536" tiledimageheight="1536">
+        <cube url="panos/aerial.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="768" tiledimageheight="768">
+        <cube url="panos/aerial.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+    </image>
+
+  </scene>
+
+  <scene name="scene_aerial_2" title="aerial_2" next_pano="scene_aerial" onstart="" thumburl="panos/aerial_2.tiles/thumb.jpg" category="aerial" linkedscene="scene_aerial" lat="-8.37120722" lng="115.13743917" heading="0.0">
+
+    <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="110" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+    <preview url="panos/aerial_2.tiles/preview.jpg" />
+
+    <image type="CUBE" prealign="0|0.0|0" multires="true" tilesize="512">
+      <level tiledimagewidth="3200" tiledimageheight="3200">
+        <cube url="panos/aerial_2.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="1536" tiledimageheight="1536">
+        <cube url="panos/aerial_2.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+      </level>
+      <level tiledimagewidth="768" tiledimageheight="768">
+        <cube url="panos/aerial_2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+      </level>
+    </image>
+
+  </scene>
+    <scene name="scene_virtual" title="virtual" next_pano="" onstart="" thumburl="" category="" linkedscene="" lat="" lng="" heading="">
+        <preview type="grid(CUBE,32,32,512,0x494e52,0xB8860B,0x999999);" />
+    </scene>
+
+    <scene name="scene_aerial" title="aerial" next_pano="" onstart="" thumburl="" category="" linkedscene="" lat="" lng="" heading="">
+        <preview type="grid(CUBE,32,32,512,0x494e52,0x191970,0x999999);" />
+    </scene>
+
+    <scene name="scene_underwater" title="underwater" next_pano="" onstart="" thumburl="" category="" linkedscene="" lat="" lng="" heading="">
+        <preview type="grid(CUBE,32,32,512,0x494e52,0x2E8B57,0x999999);" />
+    </scene>
+-->
+</krpano>
