@@ -79,14 +79,14 @@
 
 
 	
-	<scene name="scene___tiso_samsh_br_brige_nd" title="__tiso_samsh_br_brige_nd" onstart="" thumburl="panos/__tiso_samsh_br_brige_nd.tiles/thumb.jpg" lat="43.52944500" lng="39.87777833" heading="0.0">
+	<scene name="scene_tiso_samsh_br_brige_nd" title="tiso_samsh_br_brige_nd" onstart="" thumburl="panos/tiso_samsh_br_brige_nd.tiles/thumb.jpg" lat="43.52944500" lng="39.87777833" heading="0.0">
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/__tiso_samsh_br_brige_nd.tiles/preview.jpg" />
+		<preview url="panos/tiso_samsh_br_brige_nd.tiles/preview.jpg" />
 
 		<image>
-			<cube url="panos/__tiso_samsh_br_brige_nd.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4160" />
+			<cube url="panos/tiso_samsh_br_brige_nd.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4160" />
 		</image>
 
 	</scene>
