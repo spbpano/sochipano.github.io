@@ -31,7 +31,7 @@
                    tooltips_hotspots="false"
                    tooltips_mapspots="false"
                    deeplinking="false"
-                   loadscene_flags="MERGE"
+                   loadscene_flags="MERGE|KEEPVIEW|KEEPMOVING"
                    loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
                    loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
                    loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
@@ -88,6 +88,9 @@
         <image>
             <cube url="panos/lobby_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-89.058" atv="4.296" linkedscene="scene_hallway_camellia" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="131.414" atv="1.134" linkedscene="scene_master_bedroom_camellia" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="84.966" atv="2.695" linkedscene="scene_bedroom_2nd_camellia" />
 
     </scene>
     
@@ -100,6 +103,7 @@
         <image>
             <cube url="panos/bathroom_2nd_re_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-171.680" atv="-0.038" linkedscene="scene_hallway_camellia" />
 
     </scene>
 
@@ -112,6 +116,7 @@
         <image>
             <cube url="panos/bedroom_2nd_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-90.308" atv="0.255" linkedscene="scene_lobby_camellia" />
 
     </scene>
 
@@ -124,6 +129,9 @@
         <image>
             <cube url="panos/chill_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-25.226" atv="1.799" linkedscene="scene_lounge_camellia" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="16.230" atv="0.001" linkedscene="scene_kitchen_camellia" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="44.527" atv="-4.068" linkedscene="scene_hallway_camellia" />
 
     </scene>
 
@@ -136,6 +144,8 @@
         <image>
             <cube url="panos/hallway_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="17.106" atv="1.337" linkedscene="scene_bathroom_2nd_re_camellia" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-79.964" atv="1.970" linkedscene="scene_lounge_camellia" />
 
     </scene>
 
@@ -148,6 +158,10 @@
         <image>
             <cube url="panos/kitchen_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-135.509" atv="9.479" linkedscene="scene_lounge_camellia" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-84.484" atv="0.026" linkedscene="scene_terrace_camellia" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-168.914" atv="4.375" linkedscene="scene_chill_camellia" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="149.961" atv="1.263" linkedscene="scene_hallway_camellia" />
 
     </scene>
 
@@ -161,6 +175,10 @@
         <image>
             <cube url="panos/lounge_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="39.602" atv="1.437" linkedscene="scene_kitchen_camellia" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="99.083" atv="0.875" linkedscene="scene_hallway_camellia" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-68.981" atv="-5.283" linkedscene="scene_terrace_camellia" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="156.462" atv="1.208" linkedscene="scene_chill_camellia" />
 
     </scene>
 
@@ -173,6 +191,7 @@
         <image>
             <cube url="panos/master_bathroom_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="87.078" atv="-2.371" linkedscene="scene_master_bedroom_camellia" />
 
     </scene>
 
@@ -185,6 +204,8 @@
         <image>
             <cube url="panos/master_bedroom_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-63.479" atv="0.276" linkedscene="scene_lobby_camellia" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-95.618" atv="-0.230" linkedscene="scene_master_bathroom_camellia" />
 
     </scene>
 
@@ -197,6 +218,7 @@
         <image>
             <cube url="panos/terrace_camellia.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4672" />
         </image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="103.620" atv="-6.762" linkedscene="scene_lounge_camellia" />
 
     </scene>
 
