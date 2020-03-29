@@ -146,7 +146,6 @@
         </image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="17.106" atv="1.337" linkedscene="scene_bathroom_2nd_re_camellia" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-79.964" atv="1.970" linkedscene="scene_lounge_camellia" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="97.769" atv="-2.504" linkedscene="scene_lobby_camellia" />
 
     </scene>
 
