@@ -11,10 +11,24 @@
 	<!-- control buttons style -->
 	<style name="defaultskin_button" url="buttons-2.png" scale="0.5" align="lefttop" />
 	<style name="animation" alpha="0.001" enabled="false"/>
-	<style name="animate_button" url="buttons-2.png" scale="0.5" align="center" crop="800|0|80|80" onovercrop="800|80|80|80" enabled="true" onclick="trace(get(rel)); switch(hotspot[get(rel)].alpha, 1, 0.001); "/>
+	<style name="animate_button"
+		url="touch_app-white-48dp.svg"
+		alpha=".84"
+		scale="0.75"
+		scale.mobile="1"
+		align="center"
+		enabled="true"
+		onover="tween(alpha,1,0.17,easeincubic);"
+		onout="tween(alpha,0.84,0.17,easeincubic);"
+		onclick="trace(get(rel));
+		switch(hotspot[get(rel)].alpha, 1, 0.001);
+		tween(scale,1,0.05,easeoutcubic,tween(scale,0.75,0.125,easeincubic););
+		"
+	/>
 
 	<!-- the container layer that contains the buttons -->
-	<layer name="defaultskin_buttons" type="container" width="360" height="40" align="bottom=" y="10" scalechildren="true" scale="1.0" keep="true">
+
+	<!--  <layer name="defaultskin_buttons" type="container" width="360" height="40" align="bottom=" y="10" scalechildren="true" scale="1.0" keep="true">
 		<layer name="btn_in"       x="0"   style="defaultskin_button" crop="320|0|80|80" onovercrop="320|80|80|80" ondown="set(fov_moveforce,-1);"     onup="set(fov_moveforce,0);"     />
 		<layer name="btn_out"      x="40"  style="defaultskin_button" crop="400|0|80|80" onovercrop="400|80|80|80" ondown="set(fov_moveforce,+1);"     onup="set(fov_moveforce,0);"     />
 		<layer name="btn_left"     x="80"  style="defaultskin_button" crop=  "0|0|80|80" onovercrop=  "0|80|80|80" ondown="set(hlookat_moveforce,-1);" onup="set(hlookat_moveforce,0);" />
@@ -24,44 +38,44 @@
 		
 		<layer name="btn_autorot"  x="240" style="defaultskin_button" crop="480|0|80|80" onovercrop="480|80|80|80" onclick="switch(autorotate.enabled);" />
 		<layer name="btn_fs"       x="280" style="defaultskin_button" crop="560|0|80|80" onovercrop="560|80|80|80" onclick="switch(fullscreen);" visible="true" devices="fullscreensupport" />
-	</layer>
+	</layer> -->
 
 	<!-- no fullscreen support => no fullscreen button => smaller container width -->
-	<layer name="defaultskin_buttons" width="320" devices="!fullscreensupport" />
+	<!-- <layer name="defaultskin_buttons" width="320" devices="!fullscreensupport" /> -->
 
 	<!-- scale the buttons 2x for mobile devices -->
-	<layer name="defaultskin_buttons" scale="2.0" devices="mobile" />
+	<!-- <layer name="defaultskin_buttons" scale="2.0" devices="mobile" /> -->
 
 
 	<!-- events for handling dynamic changes -->
-	<events name="defaultskin_buttons" keep="true"
+	<!-- <events name="defaultskin_buttons" keep="true"
 	        onxmlcomplete="update_ctrl_mode(); update_fs_button();"
 	        onresize="adjust_button_sizes();"
 	        onenterfullscreen="update_fs_button();"
 	        onexitfullscreen ="update_fs_button();"
-	        />
+	        /> -->
 
 
 	<!-- check if the buttons fit inside the window, and if not, make them smaller so that they will fit -->
-	<action name="adjust_button_sizes">
+<!-- 	<action name="adjust_button_sizes">
 		if(layer[defaultskin_buttons].pixelwidth GT stagewidth,
 			div(layer[defaultskin_buttons].scale, stagewidth, layer[defaultskin_buttons].width);
 		  );
-	</action>
+	</action> -->
 
 	<!-- update the buttons and the cursors according to the current control mode setting -->
-	<action name="update_ctrl_mode">
+<!-- 	<action name="update_ctrl_mode">
 		if(control.mousetype == drag2d,
-			<!-- set mouse cursor graphic -->
+			set mouse cursor graphic
 			set(cursors.url, %SWFPATH%/skin/drag-cursors-2.png);
 			set(cursors.type, drag);
 			set(cursors.move,  0|0|32|32);
 			set(cursors.drag, 32|0|32|32);
-			<!-- set button graphic -->
+			set button graphic
 			set(layer[btn_ctrlmode].crop,       720|0|80|80);
 			set(layer[btn_ctrlmode].onovercrop, 720|80|80|80);
 		  ,
-			<!-- set mouse cursor graphic -->
+			set mouse cursor graphic
 			set(cursors.url, %SWFPATH%/skin/qtvr-cursors.png);
 			set(cursors.type, 8way);
 			set(cursors.move,       0|0|16|16);
@@ -74,13 +88,12 @@
 			set(cursors.arrow_ru, 112|0|16|16);
 			set(cursors.arrow_rd, 128|0|16|16);
 			set(cursors.arrow_ld, 144|0|16|16);
-			<!-- set button graphic -->
+			set button graphic
 			set(layer[btn_ctrlmode].crop,       800|0|80|80);
 			set(layer[btn_ctrlmode].onovercrop, 800|80|80|80);
 		  );
 	</action>
-
-	<!-- update the fullscreen button according to the current state -->
+	update the fullscreen button according to the current state
 	<action name="update_fs_button">
 		if(fullscreen,
 			set(layer[btn_fs].crop,       640|0|80|80);
@@ -90,6 +103,7 @@
 			set(layer[btn_fs].onovercrop, 560|80|80|80);
 		  );
 	</action>
+ -->
 
 
 	<!--
@@ -99,7 +113,7 @@
 		  pano image itself is a full 360x180 pano.
 		- Note: The distorted views will only work correctly when view.stereographic=true will be set.
 	-->
-
+<!-- 
 	<contextmenu>
 		<item name="kr" caption="KRPANO"     />
 		<item name="fs" caption="FULLSCREEN" />
@@ -170,7 +184,7 @@
 		tween(view.vlookat,        90, distance(100,0.8));
 		add(new_hlookat, view.hlookat, 123.0);
 		tween(view.hlookat, get(new_hlookat), distance(100,0.8));
-	</action>
+	</action> -->
 	<action name="calc_pos_from_hfov_yaw_pitch_roll">
 		div(hfov,%1,57.295779);
 		div(yaw,%2,-57.295779);
