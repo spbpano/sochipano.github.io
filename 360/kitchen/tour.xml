@@ -2,6 +2,9 @@
 
     <include url="skin/vtourskin.xml" />
     <include url="skin/defaultskin.xml" />
+    <!-- <include url="skin/youtube-player.xml" /> -->
+    <include url="skin/popup_blur.xml" />
+
 
 
 <skin_settings maps="false"
@@ -18,7 +21,7 @@
                    littleplanetintro="false"
                    followmousecontrol="false"
                    title="true"
-                   thumbs="true"
+                   thumbs="false"
                    thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
                    thumbs_opened="false"
                    thumbs_text="false"
@@ -36,7 +39,7 @@
                    loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
                    loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
                    loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
-                   loadingtext="loading..."
+                   loadingtext="...загрузка | loading..."
                    layout_width="100%"
                    layout_maxwidth="814"
                    controlbar_width="-24"
@@ -61,7 +64,7 @@
     <include url="skin/vtourskin_design_ultra_light.xml" />
 
 <!--  view settings  -->
-<view hlookat="290" vlookat="0" maxpixelzoom="1.0" fovmax="120" vlookatmax="-90" vlookatmin="75" limitview="range"/>
+<view hlookat="290" vlookat="0" maxpixelzoom="1.0" fovtype="DFOV" fov="130" fovmax="145" vlookatmax="-90" vlookatmin="75" limitview="range"/>
 <preview url="kitchen.tiles/preview.jpg"/>
 <image type="CUBE" multires="true" tilesize="512">
 <level tiledimagewidth="3820" tiledimageheight="3820">
@@ -82,19 +85,24 @@
 </image>
 
 <hotspot name="white" url="white_fh38y_43p_-7r_-10.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(38, 43, -7, -10);" keep="true" style="animation"/>
-<hotspot name="btn_white" rel="white" ath="-40.6199" atv="10.6101" style="animate_button"/>
+	<hotspot name="btn_white" rel="white" ath="-40.6199" atv="10.6101" style="animate_button" onclick.addevent=""/>
 
 <hotspot name="small" url="small_fh25_y92_p-5_r58.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(25, 92, -5, 58);" keep="true" style="animation"/>
-<hotspot name="btn_small" rel="small" ath="-95.0925" atv="53.4056" style="animate_button"/>
+	<hotspot name="btn_small" rel="small" ath="-95.0925" atv="53.4056" style="animate_button" onclick.addevent="info_video();"/>
+	<hotspot name="btn_video_small" rel="small" ath="277.7" atv="55.8277" style="video_button" onclick.addevent="looktohotspot(get(name), get(view.fov)); popup('iframe', 'https://www.youtube.com/embed/QT0d5du9_VQ?rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0&amp;autoplay=1', 900, 506, false);"/>
+
 
 <hotspot name="frige" url="frige_fh43_y157_p-3_r2.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(43, 157, -3, 2);" keep="true" style="animation"/>
-<hotspot name="btn_frige" rel="frige" ath="-147.1502" atv="-0.8809" style="animate_button"/>
+	<hotspot name="btn_frige" rel="frige" ath="-147.1502" atv="-0.8809" style="animate_button" onclick.addevent="info_html();"/>
+	<hotspot name="btn_html_frige" rel="info_frige" ath="-150.9820" atv="-17.3" style="info_button" onclick.addevent="looktohotspot(get(name), get(view.fov)); popup('html', get(data[data_html_example].content), 800, 500, true);"/>
 
 <hotspot name="big" url="big_fh40_y-45_p51_r-36.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(40, -45, 51, -36);" keep="true" style="animation"/>
-<hotspot name="btn_big" rel="big" ath="21.1461" atv="50.3285" style="animate_button"/>
+	<hotspot name="btn_big" rel="big" ath="22.5" atv="54.6299" style="animate_button" onclick.addevent="info_video();"/>
+	<hotspot name="btn_video_big" rel="big" ath="41.2569" atv="51.7129" style="video_button" onclick.addevent="looktohotspot(get(name), get(view.fov)); popup('iframe', 'https://www.youtube.com/embed/QT0d5du9_VQ?rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0&amp;autoplay=1', 900, 506, false);"/>
 
 <hotspot name="metall" url="metall_fh37_y93_p2_r-14.jpg" distorted="true" onloaded="calc_pos_from_hfov_yaw_pitch_roll(37, 93, 2, -14);" keep="true" style="animation"/>
-<hotspot name="btn_metall" rel="metall" ath="-95.2028" atv="9.8477" style="animate_button"/>
+	<hotspot name="btn_metall" rel="metall" ath="-95.2028" atv="9.8477" style="animate_button" onclick.addevent="info_image();"/>
+	<hotspot name="btn_image_metall" rel="metall" ath="-92.0105" atv="-10.7161" style="image_button" onclick.addevent="looktohotspot(get(name), get(view.fov)); popup('image', '%CURRENTXML%/skin/sushilka.jpg');"/>
 
 <events name="hlookat_v" keep="true" devices="all" onkeyup="if(keycode == 86, copy(curH_hlookat,view.hlookat); mod(curH_hlookat,360); roundval(curH_hlookat,4); copy(curV_vlookat,view.vlookat); mod(curV_vlookat,360); roundval(curV_vlookat,4); txtadd(msg, get(curH_hlookat),' ', get(curV_vlookat)); trace('msg'); set(plugin[clipboard].text,get(msg)); )"/>
 <events name="m2s_m"
