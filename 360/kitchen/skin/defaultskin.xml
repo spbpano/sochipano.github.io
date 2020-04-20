@@ -29,7 +29,7 @@
     />
             <!-- info_video(); -->
     <style name="info_button"
-        url="chat_bubble-white-48dp.svg"
+        url="info_notes-white-48dp.svg"
         alpha="0"
         scale="0.0"
         scale.mobile="0.0"
