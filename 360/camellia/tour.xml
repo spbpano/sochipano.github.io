@@ -79,7 +79,7 @@
     </action>
 
 
-    <scene name="scene_lobby_camellia" title="lobby_camellia" onstart="" thumburl="panos/lobby_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_lobby_camellia" title="lobby" onstart="" thumburl="panos/lobby_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="-181.568" vlookat="-0.019" fovtype="MFOV" fov="130.000" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -94,7 +94,7 @@
 
     </scene>
     
-    <scene name="scene_bathroom_2nd_re_camellia" title="bathroom_2nd_re_camellia" onstart="" thumburl="panos/bathroom_2nd_re_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_bathroom_2nd_re_camellia" title="bathroom_guest" onstart="" thumburl="panos/bathroom_2nd_re_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="130" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -107,7 +107,7 @@
 
     </scene>
 
-    <scene name="scene_bedroom_2nd_camellia" title="bedroom_2nd_camellia" onstart="" thumburl="panos/bedroom_2nd_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_bedroom_2nd_camellia" title="bedroom_guest" onstart="" thumburl="panos/bedroom_2nd_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="130" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -120,7 +120,7 @@
 
     </scene>
 
-    <scene name="scene_chill_camellia" title="chill_camellia" onstart="" thumburl="panos/chill_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_chill_camellia" title="chill" onstart="" thumburl="panos/chill_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="130" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -135,7 +135,7 @@
 
     </scene>
 
-    <scene name="scene_hallway_camellia" title="hallway_camellia" onstart="" thumburl="panos/hallway_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_hallway_camellia" title="hallway" onstart="" thumburl="panos/hallway_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="130" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -150,7 +150,7 @@
 
     </scene>
 
-    <scene name="scene_kitchen_camellia" title="kitchen_camellia" onstart="" thumburl="panos/kitchen_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_kitchen_camellia" title="kitchen" onstart="" thumburl="panos/kitchen_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="130" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -167,7 +167,7 @@
     </scene>
 
 
-    <scene name="scene_lounge_camellia" title="lounge_camellia" onstart="" thumburl="panos/lounge_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_lounge_camellia" title="lounge" onstart="" thumburl="panos/lounge_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="130" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -183,7 +183,7 @@
 
     </scene>
 
-    <scene name="scene_master_bathroom_camellia" title="master_bathroom_camellia" onstart="" thumburl="panos/master_bathroom_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_master_bathroom_camellia" title="bathroom_master" onstart="" thumburl="panos/master_bathroom_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="130" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -196,7 +196,7 @@
 
     </scene>
 
-    <scene name="scene_master_bedroom_camellia" title="master_bedroom_camellia" onstart="" thumburl="panos/master_bedroom_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_master_bedroom_camellia" title="bedroom_master" onstart="" thumburl="panos/master_bedroom_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="130" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
@@ -210,7 +210,7 @@
 
     </scene>
 
-    <scene name="scene_terrace_camellia" title="terrace_camellia" onstart="" thumburl="panos/terrace_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
+    <scene name="scene_terrace_camellia" title="terrace" onstart="" thumburl="panos/terrace_camellia.tiles/thumb.jpg" lat="" lng="" heading="">
 
         <view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="130" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
 
