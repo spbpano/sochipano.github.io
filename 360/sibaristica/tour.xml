@@ -1,0 +1,181 @@
+﻿<krpano version="1.20" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="false"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               maps_loadonfirstuse="true"
+	               gyro="true"
+	               gyro_keeplookingdirection="true"
+	               webvr="true"
+	               webvr_keeplookingdirection="true"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               followmousecontrol="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE | KEEPVIEW"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.svg"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+	<include url="skin/vtourskin_design_ultra_light.xml" />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+	</action>
+
+
+	
+	<scene name="scene_f_st_sibaristica" title="f_st_sibaristica" onstart="" thumburl="panos/f_st_sibaristica.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-168.003" vlookat="0.000" fovtype="MFOV" fov="108" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+		<preview url="panos/f_st_sibaristica.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/f_st_sibaristica.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4608" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-174.405" atv="0.0" linkedscene="scene_s_nd_sibaristica" />
+
+	</scene>
+
+	<scene name="scene_fi_th_sibaristica" title="fi_th_sibaristica" onstart="" thumburl="panos/fi_th_sibaristica.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="108" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+		<preview url="panos/fi_th_sibaristica.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/fi_th_sibaristica.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4608" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="160.458" atv="0.0" linkedscene="scene_se_th_sibaristica" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="3.649" atv="0.0" linkedscene="scene_fo_th_sibaristica" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-174.032" atv="0.0" linkedscene="scene_si_th_sibaristica" />
+
+	</scene>
+
+	<scene name="scene_fo_th_sibaristica" title="fo_th_sibaristica" onstart="" thumburl="panos/fo_th_sibaristica.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="108" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+		<preview url="panos/fo_th_sibaristica.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/fo_th_sibaristica.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4608" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="0.000" atv="0.0" linkedscene="scene_t_rd_sibaristica" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-169.727" atv="0.0" linkedscene="scene_fi_th_sibaristica" />
+
+	</scene>
+
+	<scene name="scene_s_nd_sibaristica" title="s_nd_sibaristica" onstart="" thumburl="panos/s_nd_sibaristica.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="108" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s_nd_sibaristica.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s_nd_sibaristica.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4608" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="10.918" atv="0.0" linkedscene="scene_f_st_sibaristica" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-175.982" atv="0.0" linkedscene="scene_t_rd_sibaristica" />
+
+	</scene>
+
+	<scene name="scene_se_th_sibaristica" title="se_th_sibaristica" onstart="" thumburl="panos/se_th_sibaristica.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="108" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+		<preview url="panos/se_th_sibaristica.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/se_th_sibaristica.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4608" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-37.883" atv="0.0" linkedscene="scene_si_th_sibaristica" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-13.200" atv="0.0" linkedscene="scene_fo_th_sibaristica" />
+
+	</scene>
+
+	<scene name="scene_si_th_sibaristica" title="si_th_sibaristica" onstart="" thumburl="panos/si_th_sibaristica.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="108" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+		<preview url="panos/si_th_sibaristica.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/si_th_sibaristica.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4608" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="135.032" atv="0.0" linkedscene="scene_se_th_sibaristica" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="9.711" atv="0.0" linkedscene="scene_fi_th_sibaristica" />
+
+	</scene>
+
+	<scene name="scene_t_rd_sibaristica" title="t_rd_sibaristica" onstart="" thumburl="panos/t_rd_sibaristica.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="108" maxpixelzoom="1.0" fovmax="140" limitview="auto" />
+
+		<preview url="panos/t_rd_sibaristica.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/t_rd_sibaristica.tiles/%s/l%l/%0v/l%l_%s_%0v_%0h.jpg" multires="512,640,1152,2304,4608" />
+		</image>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-9.804" atv="0.0" linkedscene="scene_s_nd_sibaristica" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-176.086" atv="0.0" linkedscene="scene_fo_th_sibaristica" />
+
+	</scene>
+
+
+</krpano>
