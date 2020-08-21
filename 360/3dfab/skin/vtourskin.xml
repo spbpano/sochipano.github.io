@@ -399,6 +399,7 @@
 	<events name="skin_events" keep="true"
 		
 	        onxmlcomplete="skin_startup(); wait(.27); tween(layer[cab_container].y, 0), .17, easeoutquint);"
+	        onnewscene="map_set(); "
 	        onnewpano="skin_update_scene_infos(); skin_deeplinking_update_url();"
 	        onloadcomplete="skin_showloading(false);"
 	        onpreviewcomplete=""

@@ -1,6 +1,6 @@
 ﻿<krpano>
 	<style name="spot_style" type="image" keep="true" visible="true" enabled="true"
-		url="%VIEWER%/skin/camera-grey-48dp.svg"
+		url="%VIEWER%/skin/camera-red-48dp.svg"
 		scale="0.57" align="lefttop" edge="center"
 		x="1" height="27" width="prop"
 		handcursor="true"
@@ -79,7 +79,7 @@
 			        parent="spot_container"
 			        align="lefttop"
 			        edge="center"
-			        x="282" y="9"
+			        x="405" y="38"
 			        scale=".49"
 			        heading="0.0"
 			        headingoffset="0.0"
@@ -87,16 +87,22 @@
 			        fillalpha="0.44"
 	        	/>
 
-	        	<layer name="active_spot" type="image" keep="true" visible="true" enabled="true"
-			        x="282" y="9"
-			        />
 
 		        <layer name="spot_fst" style="spot_style"
 			        x="282" y="9"
+			        onclick="loadscene(scene_f_st);"
 		        	/>
 		        <layer name="spot_snd" style="spot_style"
 			        x="405" y="38"
+			        onclick="loadscene(scene_s_nd);"
 		        	/>
+	        	<layer name="active_spot" type="image" keep="true" visible="true" enabled="true" capture="true"
+					url="%VIEWER%/skin/camera-grey-48dp.svg"
+			        x="282" y="9" alpha="0.0"
+			        scale="0.57" align="lefttop" edge="center"
+					height="27" width="prop"
+					handcursor="false"
+			        />
         	</layer>
     	</layer>
 		<layer name="close_map_container" type="container"  keep="true" visible="true" enabled="true"
@@ -144,17 +150,20 @@
 		switch(layer[map_container].toscale, 1.0, .001);
 		switch(layer[map_container].toalpha, 1.0, 0.0);
 
-		trace(get(layer[map_container].tox));
-		trace(get(layer[map_container].toy));
-		trace(get(layer[map_container].toscale));
-		trace(get(layer[map_container].toalpha));
-
-
 		tween(layer[map_container].x, get(layer[map_container].tox), .27, easeoutquad);
 		tween(layer[map_container].y, get(layer[map_container].toy), .27, easeoutquad);
 		tween(layer[map_container].scale, get(layer[map_container].toscale), .27, easeoutquad);
 		tween(layer[map_container].alpha, get(layer[map_container].toalpha), .27, easeoutquad);
+	</action>
 
+	<action name="map_set">
+		tween(layer[radar].alpha | layer[active_spot].alpha, 0.0, .07, easeoutcubic, set_spot_xy());
+			wait(.17);
+		set(scene_map_x, get(scene[get(xml.scene)].map_x));
+		set(scene_map_y, get(scene[get(xml.scene)].map_y));
+		tween(plugin[radar].x | layer[active_spot].x, get(scene_map_x), 0.0);
+		tween(plugin[radar].y | layer[active_spot].y, get(scene_map_y), 0.0);
+		tween(layer[radar].alpha | layer[active_spot].alpha, 1.0, .17, easeoutcubic);
 	</action>
 
 </krpano>
