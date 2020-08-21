@@ -1,0 +1,160 @@
+﻿<krpano>
+	<style name="spot_style" type="image" keep="true" visible="true" enabled="true"
+		url="%VIEWER%/skin/camera-grey-48dp.svg"
+		scale="0.57" align="lefttop" edge="center"
+		x="1" height="27" width="prop"
+		handcursor="true"
+		/>
+<layer name="cab_container" type="container"  keep="true" visible="true" enabled="true"  align="top" edge="top"
+	handcursor="true"  x="0" y="-37" width="280" height="36" towidth="300" minwidth="300" maxwidth="410" scale="1.0" alpha="1.0"  zorder="50"
+	bgcolor="0xDB2728" bgalpha="1.0" bgborder="0" bgroundedge="0" bgshadow="" bgcapture="true"
+	onover="cab_container_animation();" onout="cab_container_animation();">
+
+	<layer name="cab_type" type="text" zorder="50"
+       align="center" x="0" y="0"
+       html="[b]ТЕПОЛВОЗ ТЭП70БС[/b]"
+       css="font-family:Helvetica, Trebuchet MS, Arial, sans-serif; font-size:16px; color:#ffffff;"
+       vcenter="false"
+       padding="2"
+       wordwrap="true"
+       bg="false"
+       />
+
+   <layer name="full_scr_container" type="container" keep="true" visible="true" enabled="true"
+   		align="left" edge="right" width="55" height="37" x="55"
+		bgcolor="0xDB2728" bgcapture="true"
+		>
+
+   		<layer name="full_scr" type="image" url="%VIEWER%/skin/fullscreen-white-48dp.svg"
+   			keep="true" visible="true" enabled="true"  align="center"
+   			alpha=".87" scale="0.0" toscale="" onclick="switch(fullscreen);"
+   			onover="tween(alpha, 1.0, .17, easeoutquad);"
+			onout="tween(alpha, 0.87, .17, easeoutquad);"
+   		/>
+
+	</layer>
+
+   <layer name="map_spot_container" type="container" keep="true" visible="true" enabled="true"
+   		align="right" edge="left" width="55" height="37" x="55"
+		bgcolor="0xDB2728" bgcapture="true"
+		>
+
+   		<layer name="map_spot" type="image" url="%VIEWER%/skin/person_pin_circle-white-48dp.svg" tourl="%VIEWER%/skin/person_pin_circle-white-48dp.svg"
+   			keep="true" visible="true" enabled="true"  align="center"
+   			alpha=".87" scale="0.0" toscale="" onclick="cab_map_animation();"
+   			onover="tween(alpha, 1.0, .17, easeoutquad);"
+			onout="tween(alpha, 0.87, .17, easeoutquad);"		
+   		/>
+
+	</layer>
+	<layer name="left_poly" type="image" url="%VIEWER%/skin/left_poligon.svg"
+   			keep="true" visible="true" enabled="true" align="left" edge="right"
+   			x="1" width="prop" height="37"
+	/>
+	<layer name="right_poly" type="image" url="%VIEWER%/skin/right_poligon.svg"
+   			keep="true" visible="true" enabled="true" align="right" edge="left"
+   			x="1" width="prop" height="37"
+	/>
+</layer>
+
+	<layer name="map_container" type="container"  keep="true" visible="true" enabled="true"
+		align="top" edge="top" handcursor="false" width="620" height="113" 
+		scale="0.001" toscale="0.001" alpha="0.0" toalpha="0.0" x="177" tox="177" y="23" toy="23"
+		is_open="false" zorder="40" scalechildren="true"
+		bgcolor="0xDADADA" bgalpha="1.0" bgroundedge="10"  bgcapture="false">
+
+		<layer name="cab_map" type="image" url="%VIEWER%/skin/map_outside_3d.png"
+				keep="true" visible="true" enabled="true" align="top" edge="top"
+	   			y="0" width="600" height="prop" zorder="40" handcursor="false"
+	   			
+			>
+			<layer name="spot_container" type="container"  keep="true" visible="true" enabled="true"
+					align="center" edge="center" handcursor="false" width="574" height="82"
+					maskchildren="true" 
+					>
+
+				<plugin name="radar"
+			        url.flash="%VIEWER%/plugins/radar.swf"
+			        url.html5="%VIEWER%/plugins/radar.js"
+			        parent="spot_container"
+			        align="lefttop"
+			        edge="center"
+			        x="282" y="9"
+			        scale=".49"
+			        heading="0.0"
+			        headingoffset="0.0"
+			        fillcolor="0xDB2728"
+			        fillalpha="0.44"
+	        	/>
+
+	        	<layer name="active_spot" type="image" keep="true" visible="true" enabled="true"
+			        x="282" y="9"
+			        />
+
+		        <layer name="spot_fst" style="spot_style"
+			        x="282" y="9"
+		        	/>
+		        <layer name="spot_snd" style="spot_style"
+			        x="405" y="38"
+		        	/>
+        	</layer>
+    	</layer>
+		<layer name="close_map_container" type="container"  keep="true" visible="true" enabled="true"
+			bgcolor="0xDADADA" bgalpha="1.0" bgborder="0" bgroundedge="0" bgshadow="" bgcapture="false" 
+			align="bottom" edge="bottom" y="-27" width="47" height="27"
+		>
+			<layer name="left_grey_poly" type="image" url="%VIEWER%/skin/left_grey_poligon.svg"
+   					keep="true" visible="true" enabled="true" align="left" edge="right"
+   					x="1" height="27" width="prop"
+			/>
+			<layer name="right_grey_poly" type="image" url="%VIEWER%/skin/right_grey_poligon.svg"
+		   			keep="true" visible="true" enabled="true" align="right" edge="left"
+		   			x="1" height="27" width="prop"
+			/>
+			<layer name="close_map_grey" type="image" url="%VIEWER%/skin/location_off-grey-48dp.svg"
+					keep="true" visible="true" enabled="true" align="center" edge="center"
+		   			y="-3" scale=".57" alpha="1.0"
+				/>
+			<layer name="close_map" type="image" url="%VIEWER%/skin/location_off-red-48dp.svg"
+					keep="true" visible="true" enabled="true" align="center" edge="center"
+		   			y="-3" scale=".57" alpha="0.001"
+		   			onclick="cab_map_animation();"
+		   			onover="tween(alpha, 1.0, .17, easeoutquad);"
+					onout="tween(alpha, 0.001, .17, easeoutquad);"
+				/>
+		</layer>
+	</layer>
+	<action name="cab_container_animation">
+		switch(layer[cab_container].towidth, 410, 300);
+		switch(layer[map_spot].toscale, .57, 0.0);
+		switch(layer[full_scr].toscale, 0.87, 0.0);
+		
+		tween(layer[cab_container].width, get(layer[cab_container].towidth), .27, easeoutquint);
+		tween(layer[map_spot].scale, get(layer[map_spot].toscale), .27, easeoutcirc);
+		tween(layer[full_scr].scale, get(layer[map_spot].toscale), .37, easeoutcirc);
+
+	</action>
+
+	<action name="cab_map_animation">
+		switch(layer[map_spot].tourl, '%VIEWER%/skin/location_off-white-48dp.svg', '%VIEWER%/skin/person_pin_circle-white-48dp.svg');
+		set(layer[map_spot].url, get(layer[map_spot].tourl));
+
+		switch(layer[map_container].tox, 0, 177);
+		switch(layer[map_container].toy, 47, 23);
+		switch(layer[map_container].toscale, 1.0, .001);
+		switch(layer[map_container].toalpha, 1.0, 0.0);
+
+		trace(get(layer[map_container].tox));
+		trace(get(layer[map_container].toy));
+		trace(get(layer[map_container].toscale));
+		trace(get(layer[map_container].toalpha));
+
+
+		tween(layer[map_container].x, get(layer[map_container].tox), .27, easeoutquad);
+		tween(layer[map_container].y, get(layer[map_container].toy), .27, easeoutquad);
+		tween(layer[map_container].scale, get(layer[map_container].toscale), .27, easeoutquad);
+		tween(layer[map_container].alpha, get(layer[map_container].toalpha), .27, easeoutquad);
+
+	</action>
+
+</krpano>

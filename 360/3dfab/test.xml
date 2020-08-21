@@ -1,0 +1,25 @@
+﻿<krpano>
+
+<layer name="cab_container" type="container">
+	<layer name="cab_type"        type="text"
+       align="lefttop" x="10" y="10"
+       html="Text...[br][b]Bold Text...[/b]"
+       css="font-family:Arial; font-size:16px; color:#000000;"
+       vcenter="false"
+       padding="2"
+       wordwrap="true"
+       bg="false"
+       bgcolor="0xFFFFFF"
+       bgalpha="1.0"
+       bgborder="0"
+       bgroundedge="0"
+       bgshadow=""
+       txtshadow=""
+       mergedalpha="true"
+       interactivecontent="false"
+       onautosized=""
+       />
+</layer>
+	
+
+</krpano>
